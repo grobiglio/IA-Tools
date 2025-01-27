@@ -4,3 +4,9 @@ Repositorio del material de instrucción de ChatGPT y herramientas de Inteligenc
 
 ## Material de soporte
 - [Apuntes](./IA-Tools.md)
+- [Apuntes en formato pdf](https://github.com/grobiglio/IA-Tools/tree/main/Apuntes) descargados del curso de Udemy
+- [Prompts](https://github.com/grobiglio/IA-Tools/tree/main/Prompts)
+
+Enlace de acceso al repositorio del curso 👉🏻 [ingg.ar/ia](http://ingg.ar/ia)
+
+![Código QR de acceso al curso](./Imagenes/qr-curso.png)

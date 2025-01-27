@@ -5,7 +5,10 @@ Basado en el curso de Udemy [ChatGPT Complete Guide: Learn Generative AI, ChatGP
 ## Objetivo
 Familiarizar a los participantes con el funcionamiento básico de ChatGPT, incluyendo conceptos clave como ingeniería de prompts, tokens y las herramientas integradas para optimizar su uso.
 
-## Contenidos
+## Contenido
+
+- Markdown
+- Fundamentos de ChatGPT y conceptos clave
 
 ### Markdown
 
