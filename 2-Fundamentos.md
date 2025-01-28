@@ -1,123 +1,14 @@
-# Introducción General a ChatGPT: Conceptos Fundamentales y Uso Eficiente
-
-Basado en el curso de Udemy [ChatGPT Complete Guide: Learn Generative AI, ChatGPT & More](https://www.udemy.com/course/complete-ai-guide/?couponCode=KEEPLEARNING)
-
-## Objetivo
-Familiarizar a los participantes con el funcionamiento básico de ChatGPT, incluyendo conceptos clave como ingeniería de prompts, tokens y las herramientas integradas para optimizar su uso.
-
-## Contenido
-
-- Markdown
-- Fundamentos de ChatGPT y conceptos clave
-
-### Markdown
-
-**Objetivo:** Introducir a los participantes en el uso básico de Markdown para estructurar y formatear texto de manera eficiente.
-
-#### ¿Qué es Markdown?
-
-[Markdown](https://es.wikipedia.org/wiki/Markdown) es un lenguaje de marcado ligero que permite formatear texto utilizando una sintaxis simple.
-
-**Ventajas sobre otros editores:** es fácil de leer y escribir, y el resultado es limpio y bien estructurado.
-
-**Utilidad de Markdown**  
-- Creación de documentación técnica.  
-- Estructuración de reportes y presentaciones.  
-- Integración con plataformas como GitHub, Bitbucket, etc.
-- Es el lenguaje que usa ChatGPT.
-
-#### Sintaxis básica de Markdown
-
-**Títulos y encabezados:**
-
-- Uso de `#` para encabezados de diferentes niveles.  
-- Ejemplo:
-    ```markdown
-    # Título de nivel 1
-    ## Título de nivel 2
-    ### Título de nivel 3
-    ```
-
-**Listas:**  
-- Listas numeradas y no numeradas.  
-- Ejemplo:
-    ```markdown
-    - Elemento de lista
-    - Otro elemento de lista
-    1. Elemento numerado
-    2. Otro elemento numerado
-    ```
-
-**Negrita, cursiva y enlaces:**
-- Cómo resaltar texto, crear enlaces y agregar imágenes.  
-- Ejemplo:
-    ```markdown
-    **Texto en negrita**
-    *Texto en cursiva*
-    [Enlace a un sitio web](http://example.com)
-    ![Texto alternativo de la imagen](imagen.jpg)
-    ```
-
-**Bloques de código:**
-- Formateo de código con comillas invertidas (backticks).  
-- Ejemplo:
-    ```markdown
-    `Código en línea`
-    ```
-    ```markdown
-    ```python
-    print("Hola, mundo")
-    ```
-    ```
-
-**Tablas:**
-- Cómo crear tablas para organizar información.
-- Ejemplo:
-    ```markdown
-    | Columna 1 | Columna 2 | Columna 3 |
-    |-----------|-----------|-----------|
-    | Fila 1    | Dato 1    | Dato 2    |
-    | Fila 2    | Dato 3    | Dato 4    |
-    ```
-
-**Citas y comentarios:**
-- Cómo agregar citas y comentarios para mayor claridad.
-- Ejemplo:
-    ```markdown
-    > Esto es una cita.
-    <!-- Esto es un comentario -->
-    ```
-
-**Listas de tareas:**
-- Creación de listas de tareas con casillas de verificación.  
-- Ejemplo:
-    ```markdown
-    - [ ] Tarea 1
-    - [x] Tarea completada
-    ```
-
-En los siguientes enlaces hay más y muy completa información para aprender Markdown:
-- [The Ultimate Markdown Guide](https://medium.com/analytics-vidhya/the-ultimate-markdown-guide-for-jupyter-notebook-d5e5abf728fd)
-- [Basic writing and formatting syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
-- [Markdown Guide](https://www.markdownguide.org/)
-- [Markdown Preview](https://www.digitalocean.com/community/markdown)
-
-#### Editores y plataformas
-
-- [Visual Studio Code](https://code.visualstudio.com/) u otro editor de texto compatible con Markdown.  
-- [GitHub](https://github.com/) u otras plataformas.
-
-### Fundamentos de ChatGPT y conceptos clave
+# Fundamentos de ChatGPT y conceptos clave
 
 **Objetivo**: Comprender cómo funciona ChatGPT, su estructura y los conceptos esenciales para interactuar eficazmente.
 
-#### Introducción a ChatGP
+## Introducción a ChatGP
 
-##### **¿Qué es ChatGPT?**
+### **¿Qué es ChatGPT?**
 
 [ChatGPT](https://es.wikipedia.org/wiki/ChatGPT) (Chat Generative Pre-Trained Transformer) es un modelo avanzado de lenguaje desarrollado por OpenAI que utiliza inteligencia artificial para comprender y generar texto de manera coherente. Diseñado para asistir en tareas como responder preguntas, generar contenido, traducir, programar y más, ChatGPT interactúa de forma conversacional, adaptándose a diversos contextos y necesidades.
 
-###### Historia breve de los modelos de lenguaje.
+#### Historia breve de los modelos de lenguaje.
 
 El desarrollo de los [modelos de lenguaje](https://es.wikipedia.org/wiki/Modelaci%C3%B3n_del_lenguaje) está íntimamente ligado al avance del **Procesamiento de Lenguaje Natural (PLN)**, una rama de la Inteligencia Artificial (IA) que busca permitir que las máquinas comprendan, interpreten y generen lenguaje humano de manera efectiva. Desde sus inicios, el [PLN](https://es.wikipedia.org/wiki/Procesamiento_de_lenguajes_naturales) ha evolucionado desde técnicas estadísticas básicas hasta los impresionantes Grandes Modelos de Lenguaje ([LLM](https://es.wikipedia.org/wiki/Modelo_extenso_de_lenguaje)) que conocemos hoy en día.
 
@@ -143,7 +34,7 @@ Hoy en día, los modelos de lenguaje son esenciales en aplicaciones como asisten
 
 Para más información sobre el futuro de la IA leer este artículo 👉 [AI Top-of-Mind for 7.16.24 — Our AI Future](https://medium.com/a-i-society/ai-top-of-mind-for-7-16-24-our-ai-future-07f1bd9b1e41)
 
-###### Cómo se entrenan (procesamiento de texto masivo y aprendizaje supervisado)
+#### Cómo se entrenan (procesamiento de texto masivo y aprendizaje supervisado)
 
 El entrenamiento de los **grandes modelos de lenguaje (LLM)**, como GPT, sigue un proceso complejo que combina el procesamiento de texto masivo y técnicas de aprendizaje supervisado y no supervisado.
 
@@ -159,11 +50,11 @@ El entrenamiento de los **grandes modelos de lenguaje (LLM)**, como GPT, sigue u
 4. **Retroalimentación humana**
     Para mejorar la calidad de las respuestas, los modelos pueden entrenarse usando **aprendizaje por refuerzo a partir de retroalimentación humana (RLHF)**, donde evaluadores humanos clasifican las respuestas del modelo, guiándolo hacia respuestas más útiles y precisas.
 
-##### **¿Cómo funciona ChatGPT?**
+### **¿Cómo funciona ChatGPT?**
 
 ChatGPT se basa en los **Transformers**, una arquitectura de redes neuronales que utiliza un mecanismo de atención para procesar y generar texto. Su capacidad para interpretar y responder a las entradas de los usuarios depende de su entrenamiento en enormes cantidades de datos textuales y del uso de algoritmos avanzados que priorizan el contexto y las relaciones entre palabras.
 
-###### Generación de texto basada en predicciones probabilísticas
+#### Generación de texto basada en predicciones probabilísticas
 El núcleo del funcionamiento de ChatGPT es su capacidad para generar texto previendo cuál será la próxima palabra más probable en función del contexto. Durante el entrenamiento:  
 
 1. **Tokenización**: El texto de entrada se convierte en tokens (fracciones de palabras o subpalabras). Por ejemplo, "Hola, ¿cómo estás?" podría dividirse en "[Hola, ,, ¿, cómo, estás, ?]".  
@@ -172,34 +63,15 @@ El núcleo del funcionamiento de ChatGPT es su capacidad para generar texto prev
 
 3. **Selección y generación**: El modelo elige el token más probable (o una combinación ponderada para mayor variabilidad) y lo añade a la secuencia generada. Este proceso continúa hasta que se alcanza una longitud deseada o un token de finalización.
 
-###### Cómo ChatGPT interpreta las entradas de los usuarios
+#### Cómo ChatGPT interpreta las entradas de los usuarios
 Cuando un usuario envía un mensaje, ChatGPT procesa el texto de entrada como un todo, capturando no solo las palabras individuales, sino también sus relaciones en el contexto. Esto se logra mediante:
 
 - **Mecanismo de atención**: Cada palabra de la entrada influye en las demás según su relevancia, permitiendo que el modelo entienda dependencias incluso en frases largas o complejas.
 - **Contexto acumulativo**: ChatGPT considera no solo el mensaje más reciente, sino también el historial de la conversación. Esto le permite ofrecer respuestas coherentes y relevantes en interacciones más largas.
 
-###### Cómo ChatGPT genera respuestas
+#### Cómo ChatGPT genera respuestas
 Basándose en el contexto proporcionado, el modelo predice y genera la respuesta token por token.  
 - Si el usuario pregunta algo ambiguo, el modelo intenta dar una respuesta general o solicita aclaraciones.  
 - Si la entrada es específica, busca patrones en su conocimiento preentrenado para proporcionar detalles precisos.  
 
 En resumen, ChatGPT utiliza cálculos probabilísticos y el contexto proporcionado para generar texto fluido y relevante. Su diseño lo hace capaz de adaptarse a diferentes estilos, interpretar la intención detrás de las entradas y producir respuestas útiles.
-
----
-
-## Material de soporte
-
-### Apuntes
-
-Acceder desde 👉 [aquí](https://fadeasa-my.sharepoint.com/:f:/g/personal/robiglio_fadeasa_com_ar/Eria57XL0fFGorIPXN18dnwB244nMNau94q5K65IpPCKwA?e=lAFxyo) a los apuntes.
-
-### Lista de artículos
-
-- [ChatGPT vs. Google](https://leapyearlearning.mykajabi.com/blog/chatgpt-vs-google-key-differences-and-when-to-use-each)
-- [Comparing ChatGPT-4o, ChatGPT-4o Mini, and ChatGPT-4](https://leapyearlearning.mykajabi.com/blog/prompts-for-increasing-business-productivity)
-- [Prompting](https://leapyearlearning.mykajabi.com/blog/prompting-the-art-of-creating-effective-prompts-for-llm-s)
-- [Awesome ChatGPT prompts in GitHub](https://github.com/f/awesome-chatgpt-prompts)
-- [What are tokens and how to count them?](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them)
-- [Tokenizer](https://platform.openai.com/tokenizer)
-- [200 Best ChatGPT Prompts for 2024](https://leapyearlearning.mykajabi.com/blog/week-1)
-- [A Comprehensive Look Into Prompt Engineering Fundamentals](https://leapyearlearning.mykajabi.com/blog/a-comprehensive-guide-to-prompt-engineering)

@@ -1,12 +1,30 @@
-# IA-Tools
+# Introducción General a ChatGPT: Conceptos Fundamentales y Uso Eficiente
 
-Repositorio del material de instrucción de ChatGPT y herramientas de Inteligencia Artificial basado en el curso de Udemy [ChatGPT Complete Guide: Learn Generative AI, ChatGPT & More](https://www.udemy.com/course/complete-ai-guide/?couponCode=KEEPLEARNING)
+Instrucción basada en el curso de Udemy [ChatGPT Complete Guide: Learn Generative AI, ChatGPT & More](https://www.udemy.com/course/complete-ai-guide/?couponCode=KEEPLEARNING)
+
+Enlace de acceso al repositorio del curso 👉🏻 [ingg.ar/ia](http://ingg.ar/ia)
+
+<img src="./Imagenes/qr-curso.png" alt="Código QR de acceso al curso" style="height: 200px;">
+
+## Objetivo
+Familiarizar a los participantes con el funcionamiento básico de ChatGPT, incluyendo conceptos clave como ingeniería de prompts, tokens y las herramientas integradas para optimizar su uso.
+
+## Contenido
+- [Markdown](./1-Markdown.md)
+- [Fundamentos de ChatGPT y conceptos clave](./2-Fundamentos.md)
 
 ## Material de soporte
 - [Apuntes](./IA-Tools.md)
 - [Apuntes en formato pdf](https://github.com/grobiglio/IA-Tools/tree/main/Apuntes) descargados del curso de Udemy
 - [Prompts](https://github.com/grobiglio/IA-Tools/tree/main/Prompts)
 
-Enlace de acceso al repositorio del curso 👉🏻 [ingg.ar/ia](http://ingg.ar/ia)
+## Lista de artículos
 
-![Código QR de acceso al curso](./Imagenes/qr-curso.png)
+- [ChatGPT vs. Google](https://leapyearlearning.mykajabi.com/blog/chatgpt-vs-google-key-differences-and-when-to-use-each)
+- [Comparing ChatGPT-4o, ChatGPT-4o Mini, and ChatGPT-4](https://leapyearlearning.mykajabi.com/blog/prompts-for-increasing-business-productivity)
+- [Prompting](https://leapyearlearning.mykajabi.com/blog/prompting-the-art-of-creating-effective-prompts-for-llm-s)
+- [Awesome ChatGPT prompts in GitHub](https://github.com/f/awesome-chatgpt-prompts)
+- [What are tokens and how to count them?](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them)
+- [Tokenizer](https://platform.openai.com/tokenizer)
+- [200 Best ChatGPT Prompts for 2024](https://leapyearlearning.mykajabi.com/blog/week-1)
+- [A Comprehensive Look Into Prompt Engineering Fundamentals](https://leapyearlearning.mykajabi.com/blog/a-comprehensive-guide-to-prompt-engineering)
