@@ -1,3 +1,7 @@
+[Inicio](./README.md) | [Anterior (2. Fundamentos de ChatGPT)](./2-Fundamentos.md)
+
+---
+
 # Herramientas y funcionalidades
 
 ## Herramientas
@@ -21,3 +25,6 @@
 ## Chats específicos
 - [Aviation Safety Manager](https://chatgpt.com/g/g-qVCqJzMtW-aviation-safety-manager)
 - [TesisGPT](https://chatgpt.com/g/g-8yj8Hv6Kt-tesisgpt)
+
+---
+[Inicio](./README.md) | [Anterior (2. Fundamentos de ChatGPT)](./2-Fundamentos.md)

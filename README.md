@@ -10,11 +10,12 @@ Enlace de acceso al repositorio del curso 👉🏻 [ingg.ar/ia](http://ingg.ar/i
 Familiarizar a los participantes con el funcionamiento básico de ChatGPT, incluyendo conceptos clave como ingeniería de prompts, tokens y las herramientas integradas para optimizar su uso.
 
 ## Contenido
-- [Markdown](./1-Markdown.md)
-- [Fundamentos de ChatGPT y conceptos clave](./2-Fundamentos.md)
-- [Herramientas y funcionalidades específicas de ChatGPT](./3-Herramientas.md)
+1. [Markdown](./1-Markdown.md)
+2. [Fundamentos de ChatGPT y conceptos clave](./2-Fundamentos.md)
+3. [Herramientas y funcionalidades específicas de ChatGPT](./3-Herramientas.md)
 
 ## Material de soporte
+- [Apuntes](./IA-Tools.md)
 - [Apuntes en formato pdf](https://github.com/grobiglio/IA-Tools/tree/main/Apuntes) descargados del curso de Udemy
 - [Prompts](https://github.com/grobiglio/IA-Tools/tree/main/Prompts)
 

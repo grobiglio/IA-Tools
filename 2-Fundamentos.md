@@ -1,3 +1,7 @@
+[Inicio](./README.md) | [Anterior (1. Markdown)](./1-Markdown.md) | [Próximo (3. Herramientas y funcionalidades)](./3-Herramientas.md)
+
+---
+
 # Fundamentos de ChatGPT y conceptos clave
 
 **Objetivo**: Comprender cómo funciona ChatGPT, su estructura y los conceptos esenciales para interactuar eficazmente.
@@ -151,3 +155,6 @@ Ver los siguientes prompts archivados:
 
 - **Validar información técnica**: No asumir que la respuesta es correcta sin verificarla. Contrastarla con documentación oficial, artículos revisados o expertos en el tema.  
 - **Combinar ChatGPT con otras herramientas para mejorar resultados**: Usar ChatGPT junto con motores de búsqueda, bases de datos especializadas o software específico para obtener información más precisa y confiable.
+
+---
+[Inicio](./README.md) | [Anterior (1. Markdown)](./1-Markdown.md) | [Próximo (3. Herramientas y funcionalidades)](./3-Herramientas.md)

@@ -1,3 +1,7 @@
+[Inicio](./README.md) | [Próximo (2. Fundamentos de ChatGPT)](./2-Fundamentos.md)
+
+---
+
 # Markdown
 
 **Objetivo:** Introducir a los participantes en el uso básico de Markdown para estructurar y formatear texto de manera eficiente.
@@ -7,6 +11,8 @@
 [Markdown](https://es.wikipedia.org/wiki/Markdown) es un lenguaje de marcado ligero que permite formatear texto utilizando una sintaxis simple.
 
 **Ventajas sobre otros editores:** es fácil de leer y escribir, y el resultado es limpio y bien estructurado.
+
+<img src="./Imagenes/meme-word.jpeg" alt="Código QR de acceso al curso" style="height: 200px;">
 
 **Utilidad de Markdown**  
 - Creación de documentación técnica.  
@@ -94,3 +100,6 @@ En los siguientes enlaces hay más y muy completa información para aprender Mar
 
 - [Visual Studio Code](https://code.visualstudio.com/) u otro editor de texto compatible con Markdown.  
 - [GitHub](https://github.com/) u otras plataformas.
+
+---
+[Inicio](./README.md) | [Próximo (2. Fundamentos de ChatGPT)](./2-Fundamentos.md)
