@@ -34,6 +34,29 @@ Hoy en día, los modelos de lenguaje son esenciales en aplicaciones como asisten
 
 Para más información sobre el futuro de la IA leer este artículo 👉 [AI Top-of-Mind for 7.16.24 — Our AI Future](https://medium.com/a-i-society/ai-top-of-mind-for-7-16-24-our-ai-future-07f1bd9b1e41)
 
+**Otras herramientas de IA**
+
+![Logos de 16 herramientas de IA](./Imagenes/Herramientas-IA.png)
+
+| Nombre de la herramienta | Descripción | Enlace al sitio oficial | Enlace a Wikipedia en inglés |
+|--------------------------|-------------|-------------------------|------------------------------|
+| **Gemini** | Modelo de lenguaje grande multimodal desarrollado por Google DeepMind, sucesor de LaMDA y PaLM. | [Sitio oficial](https://ai.google/get-started/gemini-ecosystem/) | No disponible |
+| **ChatGPT** | Asistente conversacional desarrollado por OpenAI basado en modelos de lenguaje, útil para responder preguntas, generar texto y ayudar en tareas específicas. | [Sitio oficial](https://chat.openai.com/) | [Wikipedia](https://en.wikipedia.org/wiki/ChatGPT) |
+| **Perplexity** | Motor de búsqueda conversacional que utiliza modelos de lenguaje para responder consultas con fuentes verificadas. | [Sitio oficial](https://www.perplexity.ai/) | [Wikipedia](https://en.wikipedia.org/wiki/Perplexity_AI) |
+| **Runway** | Empresa estadounidense que se especializa en investigación y tecnologías de inteligencia artificial generativa, enfocada en la creación de productos y modelos para generar videos, imágenes y contenido multimedia. | [Sitio oficial](https://runwayml.com/) | [Wikipedia](https://en.wikipedia.org/wiki/Runway_%28company%29) |
+| **Claude** | Familia de modelos de lenguaje grandes desarrollados por Anthropic, con énfasis en la seguridad y controlabilidad de la IA. | [Sitio oficial](https://claude.ai/) | [Wikipedia](https://en.wikipedia.org/wiki/Claude_%28language_model%29) |
+| **MidJourney** | Herramienta especializada en la generación de imágenes mediante texto, popular en diseño gráfico y arte digital. | [Sitio oficial](https://www.midjourney.com/) | No disponible |
+| **Flux** | Modelo de texto a imagen desarrollado por Black Forest Labs, que genera imágenes a partir de descripciones en lenguaje natural. | [Sitio oficial](https://blackforestlabs.ai/) | [Wikipedia](https://en.wikipedia.org/wiki/Flux_%28text-to-image_model%29) |
+| **Mistral** | Modelo de lenguaje de código abierto que busca competir con grandes actores de IA, ofreciendo soluciones de generación de texto. | [Sitio oficial](https://www.mistral.ai/) | No disponible |
+| **Grok** | Asistente de IA integrado en plataformas como Slack, diseñado para la automatización y análisis de conversaciones en equipo. | [Sitio oficial](https://slack.com/intl/en-gb/blog/news/grok-ai-assistant) | No disponible |
+| **Ideogram** | Herramienta para la generación de texto en imágenes, como carteles o diseños gráficos con fuentes estilizadas. | [Sitio oficial](https://ideogram.ai/) | No disponible |
+| **Meta** | Empresa detrás de proyectos avanzados de IA como LLaMA, enfocados en la investigación y desarrollo de modelos de lenguaje e IA generativa. | [Sitio oficial](https://about.meta.com/) | [Wikipedia](https://en.wikipedia.org/wiki/Meta_Platforms) |
+| **Deepseek** | Plataforma para búsqueda avanzada que combina capacidades de IA y procesamiento del lenguaje natural. | [Sitio oficial](https://deepseek.io/) | No disponible |
+| **Minimax** | Herramienta que ofrece soluciones de IA integradas, como chatbots y modelos personalizados para empresas. | [Sitio oficial](https://www.minimax.com/) | No disponible |
+| **QvQ** | Proyecto menos conocido, posiblemente relacionado con modelos de simulación o computación cuántica aplicada a la IA. | [Sitio oficial](https://qvq.ai/) | No disponible |
+| **Luma** | Plataforma de IA para la creación y edición de contenido en 3D, como renderizados y animaciones. | [Sitio oficial](https://lumalabs.ai/) | No disponible |
+| **DALL·E 3** | Modelo de OpenAI diseñado para generar imágenes a partir de descripciones en texto con una calidad y precisión mejoradas. | [Sitio oficial](https://openai.com/dall-e-3) | [Wikipedia](https://en.wikipedia.org/wiki/DALL-E) |
+
 #### Cómo se entrenan (procesamiento de texto masivo y aprendizaje supervisado)
 
 El entrenamiento de los **grandes modelos de lenguaje (LLM)**, como GPT, sigue un proceso complejo que combina el procesamiento de texto masivo y técnicas de aprendizaje supervisado y no supervisado.
@@ -70,8 +93,61 @@ Cuando un usuario envía un mensaje, ChatGPT procesa el texto de entrada como un
 - **Contexto acumulativo**: ChatGPT considera no solo el mensaje más reciente, sino también el historial de la conversación. Esto le permite ofrecer respuestas coherentes y relevantes en interacciones más largas.
 
 #### Cómo ChatGPT genera respuestas
-Basándose en el contexto proporcionado, el modelo predice y genera la respuesta token por token.  
-- Si el usuario pregunta algo ambiguo, el modelo intenta dar una respuesta general o solicita aclaraciones.  
-- Si la entrada es específica, busca patrones en su conocimiento preentrenado para proporcionar detalles precisos.  
+Basándose en el contexto proporcionado, el modelo predice y genera la respuesta token por token.
+- Si el usuario pregunta algo ambiguo, el modelo intenta dar una respuesta general o solicita aclaraciones.
+- Si la entrada es específica, busca patrones en su conocimiento preentrenado para proporcionar detalles precisos.
 
 En resumen, ChatGPT utiliza cálculos probabilísticos y el contexto proporcionado para generar texto fluido y relevante. Su diseño lo hace capaz de adaptarse a diferentes estilos, interpretar la intención detrás de las entradas y producir respuestas útiles.
+
+## Concepto de tokens
+
+### Definición de un token
+- **Palabras, partes de palabras y caracteres especiales.**
+Un [token](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them) es la unidad básica de texto que los modelos de lenguaje procesan, como palabras completas, fragmentos de palabras o caracteres especiales. Por ejemplo, "programación" puede dividirse en varios tokens dependiendo del modelo utilizado.
+
+- **Relación entre tokens y la longitud de las respuestas.**
+La longitud de las respuestas está limitada por el número total de tokens que el modelo puede procesar en una interacción, incluyendo entrada y salida. Respuestas más largas utilizan más tokens, reduciendo el espacio disponible para el contexto.
+
+### Límites de tokens en ChatGPT
+
+#### ¿Por qué es importante comprender estos límites?
+Porque en un chat, la cantidad de tokens es limitada. En la medida en que se aproxima al límite de tokens, las respuestas pierden precisión. Cuando se alcanza el límite de tokens se debe iniciar un nuevo chat.
+
+El límite de tokens para el modelo ChatGPT Plus con GPT-4 turbo es de 128,000 tokens por conversación (aproximadamente 90 páginas de texto). Esto incluye tanto los tokens del texto de entrada como los de salida.
+
+#### Ejemplo práctico: cómo calcular tokens
+Una regla práctica útil es que un token generalmente corresponde a ~4 caracteres de texto en inglés común. Esto se traduce aproximadamente a ¾ de una palabra (por lo tanto, 100 tokens equivalen aproximadamente a 75 palabras).
+
+👉 [Tokenizador](https://platform.openai.com/tokenizer) para calcular la cantidad de tokens de un texto.
+
+## Ingeniería de prompts
+
+### ¿Qué es y por qué es importante?
+
+La **ingeniería de *prompts*** es el proceso de diseñar y optimizar *prompts* que se utilizan en modelos de procesamiento del lenguaje natural (PLN), como ChatGPT, chatbots o asistentes virtuales. Esto implica crear indicaciones que sean claras, concisas y eficaces para obtener la respuesta deseada.
+
+### Técnicas clave:
+
+1. **Ser específico:** cuantos más criterios se proporcionen, más específico será el resultado.
+2. **Trabajar por pasos:** dividir las tareas en fragmentos pequeños. Esto arrojará mejores resultados, tal como lo haría un humano.
+3. **Iterar y mejorar:** vuelver a trabajar las entradas editándolas para que ChatGPT mejore su propio resultado.
+
+### Ejemplos prácticos:
+
+Ver caprpeta de prompts aquí 👉 [Prompts](https://github.com/grobiglio/IA-Tools/tree/main/Prompts)
+
+Ver los siguientes prompts archivados:
+    - [Corrección de Informe Técnico](https://chatgpt.com/share/6799109e-e5d4-800d-ab2c-ec7ff5d9bf2c)
+    - [Informe del área](https://chatgpt.com/share/67991053-a638-800d-8003-3e592b221f1b)
+
+## Limitaciones y buenas prácticas
+
+### **Limitaciones del modelo**  
+
+- **Datos desactualizados**: ChatGPT no tiene acceso en tiempo real a internet, por lo que su conocimiento puede estar desactualizado. Para información reciente, es recomendable contrastar con fuentes externas actualizadas.  
+- **Respuestas generadas incorrectas o "alucinaciones"**: El modelo puede generar respuestas incorrectas o inventadas de manera convincente. Esto ocurre porque predice texto en función de patrones, sin una comprensión real de la veracidad de la información.  
+
+### **Buenas prácticas para interactuar**  
+
+- **Validar información técnica**: No asumir que la respuesta es correcta sin verificarla. Contrastarla con documentación oficial, artículos revisados o expertos en el tema.  
+- **Combinar ChatGPT con otras herramientas para mejorar resultados**: Usar ChatGPT junto con motores de búsqueda, bases de datos especializadas o software específico para obtener información más precisa y confiable.

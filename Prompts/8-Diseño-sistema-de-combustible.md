@@ -1,0 +1,2 @@
+¡Hola Hal! Necesito que actúes como un esxperto en diseño de sistemas del avión y me propongas el diseño de un sistema de combustible para una aeronave pequeña con las siguientes características:
+- FAR 23 nivel de aeronavegabilidad 1, baja velocidad. Debe ser un sistema estándar, algo simple y fácil de mantaner. Por ahora necesito que me hagas la propuesta del la aquitectura del sistema y principio de funcionamiento. La aeronave tienen un solo motor a pistón. Si necesitás más información no duides en preguntar.

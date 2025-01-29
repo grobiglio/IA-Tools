@@ -12,6 +12,7 @@ Familiarizar a los participantes con el funcionamiento básico de ChatGPT, inclu
 ## Contenido
 - [Markdown](./1-Markdown.md)
 - [Fundamentos de ChatGPT y conceptos clave](./2-Fundamentos.md)
+- [Herramientas y funcionalidades específicas de ChatGPT](./3-Herramientas.md)
 
 ## Material de soporte
 - [Apuntes](./IA-Tools.md)
@@ -24,7 +25,5 @@ Familiarizar a los participantes con el funcionamiento básico de ChatGPT, inclu
 - [Comparing ChatGPT-4o, ChatGPT-4o Mini, and ChatGPT-4](https://leapyearlearning.mykajabi.com/blog/prompts-for-increasing-business-productivity)
 - [Prompting](https://leapyearlearning.mykajabi.com/blog/prompting-the-art-of-creating-effective-prompts-for-llm-s)
 - [Awesome ChatGPT prompts in GitHub](https://github.com/f/awesome-chatgpt-prompts)
-- [What are tokens and how to count them?](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them)
-- [Tokenizer](https://platform.openai.com/tokenizer)
 - [200 Best ChatGPT Prompts for 2024](https://leapyearlearning.mykajabi.com/blog/week-1)
 - [A Comprehensive Look Into Prompt Engineering Fundamentals](https://leapyearlearning.mykajabi.com/blog/a-comprehensive-guide-to-prompt-engineering)
