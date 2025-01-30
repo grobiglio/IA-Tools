@@ -23,8 +23,9 @@
 - Personalización de ChatGPT
 
 ## Chats específicos
-- [Aviation Safety Manager](https://chatgpt.com/g/g-qVCqJzMtW-aviation-safety-manager)
-- [TesisGPT](https://chatgpt.com/g/g-8yj8Hv6Kt-tesisgpt)
+- [Aviation Safety Manager](https://chatgpt.com/g/g-qVCqJzMtW-aviation-safety-manager): Ayuda a los responsables de seguridad operacional con los Sistemas de Gestión de la Seguridad Operacional.
+- [TesisGPT](https://chatgpt.com/g/g-8yj8Hv6Kt-tesisgpt): Asistencia académica o en escritura técnica y de investigación.
+- [Airwothiness](https://chatgpt.com/g/g-g1t2ZcMk0-airwothiness): Perspectivas expertas sobre el diseño del mantenimiento y reparación de aeronaves, centrándose en principios, métodos y consideraciones clave.
 
 ---
 [Inicio](./README.md) | [Anterior (2. Fundamentos de ChatGPT)](./2-Fundamentos.md)
