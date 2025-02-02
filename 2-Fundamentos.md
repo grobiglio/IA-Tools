@@ -141,8 +141,8 @@ La **ingeniería de *prompts*** es el proceso de diseñar y optimizar *prompts* 
 Ver caprpeta de prompts aquí 👉 [Prompts](https://github.com/grobiglio/IA-Tools/tree/main/Prompts)
 
 Ver los siguientes prompts archivados:
-    - [Corrección de Informe Técnico](https://chatgpt.com/share/6799109e-e5d4-800d-ab2c-ec7ff5d9bf2c)
-    - [Informe del área](https://chatgpt.com/share/67991053-a638-800d-8003-3e592b221f1b)
+- [Corrección de Informe Técnico](https://chatgpt.com/share/6799109e-e5d4-800d-ab2c-ec7ff5d9bf2c)
+- [Informe del área](https://chatgpt.com/share/67991053-a638-800d-8003-3e592b221f1b)
 
 ## Limitaciones y buenas prácticas
 

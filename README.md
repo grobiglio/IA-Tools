@@ -15,7 +15,6 @@ Familiarizar a los participantes con el funcionamiento básico de ChatGPT, inclu
 3. [Herramientas y funcionalidades específicas de ChatGPT](./3-Herramientas.md)
 
 ## Material de soporte
-- [Apuntes](./IA-Tools.md)
 - [Apuntes en formato pdf](https://github.com/grobiglio/IA-Tools/tree/main/Apuntes) descargados del curso de Udemy
 - [Prompts](https://github.com/grobiglio/IA-Tools/tree/main/Prompts)
 
