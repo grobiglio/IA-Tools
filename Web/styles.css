@@ -1,0 +1,146 @@
+body {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  margin: 0;
+}
+
+.content-wrapper { /* Estilos para el nuevo div wrapper */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Asegura que ocupe al menos el alto de la ventana */
+  width: 100%;
+  padding-top: 30px; /* Espacio superior para el título */
+}
+
+.container {
+  text-align: center; /* Centra el título "Herramientas IA" */
+  display: flex; /* Convertimos el .container en un contenedor Flexbox */
+  flex-direction: column; /* Alineamos los elementos internos (título y .button-grid) en columna */
+  align-items: center; /* Centra horizontalmente los elementos internos dentro del .container */
+  flex: 1; /* Permite que el contenedor crezca para ocupar el espacio disponible */
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Una única columna que ocupa todo el ancho del contenedor */
+  gap: 10px; /* Espacio entre los botones */
+  margin-top: 20px;
+  width: 300px; /* Ancho fijo para el contenedor de los botones (ajusta según necesites) */
+  max-width: 90%; /* Para que no se vea demasiado grande en pantallas más anchas */
+}
+
+.ai-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  width: 100%; /* Los botones ocupan todo el ancho de su celda en la cuadrícula */
+  box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+}
+
+.ai-button img,
+.ai-button svg {
+  margin-right: 10px; /* Restauramos un poco más de margen derecho para el logo */
+  max-height: 24px;
+  max-width: 24px;
+}
+
+.gemini {
+  background-color: #4285f4;
+}
+
+.gemini:hover {
+  background-color: #357ae8;
+}
+
+.notebooklm {
+  background-color: #0f9d58;
+}
+
+.notebooklm:hover {
+  background-color: #0b8043;
+}
+
+.chatgpt {
+  background-color: #10a37f;
+}
+
+.chatgpt:hover {
+  background-color: #0e8f70;
+}
+
+.grok {
+  background-color: #000;
+}
+
+.grok:hover {
+  background-color: #222;
+}
+
+.deepseek {
+  background-color: #673ab7;
+}
+
+.deepseek:hover {
+  background-color: #512da8;
+}
+
+.qwen {
+  background-color: #7e57c2; /* Un morado oscuro */
+}
+
+.qwen:hover {
+  background-color: #6d47b3;
+}
+
+.mistral {
+  background-color: #03a9f4; /* Un celeste brillante */
+}
+
+.mistral:hover {
+  background-color: #0288d1;
+}
+
+.claude {
+  background-color: #ff9800; /* Un naranja intenso */
+}
+
+.claude:hover {
+  background-color: #f57c00;
+}
+
+.firebase {
+  background-color: #f4511e; /* Un rojo anaranjado */
+}
+
+.firebase:hover {
+  background-color: #e64a19;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f2f2f2;
+  font-size: 0.8em;
+}
+
+.footer a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
