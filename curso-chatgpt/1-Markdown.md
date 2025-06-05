@@ -6,6 +6,24 @@
 
 **Objetivo:** Introducir a los participantes en el uso básico de Markdown para estructurar y formatear texto de manera eficiente.
 
+## Índice
+
+- [¿Qué es Markdown?](#qué-es-markdown)
+
+- [Sintaxis básica de Markdown](#sintaxis-básica-de-markdown)
+  - [Títulos y encabezados](#títulos-y-encabezados)
+  - [Listas](#listas)
+  - [Negrita, cursiva y enlaces](#negrita-cursiva-y-enlaces)
+  - [Bloques de código](#bloques-de-código)
+  - [Tablas](#tablas)
+  - [Citas y comentarios](#citas-y-comentarios)
+  - [Listas de tareas](#listas-de-tareas)
+  
+- [Editores y plataformas](#editores-y-plataformas)
+  - [Visual Studio Code (VS Code)](#visual-studio-code-vs-code)
+  - [GitHub](#github)
+  - [MarkItDown](#markitdown)
+
 ## ¿Qué es Markdown?
 
 [Markdown](https://es.wikipedia.org/wiki/Markdown) es un lenguaje de marcado ligero que permite formatear texto utilizando una sintaxis simple.
@@ -98,8 +116,45 @@ En los siguientes enlaces hay más y muy completa información para aprender Mar
 
 ## Editores y plataformas
 
-- [Visual Studio Code](https://code.visualstudio.com/) u otro editor de texto compatible con Markdown.  
-- [GitHub](https://github.com/) u otras plataformas.
+### **Visual Studio Code (VS Code)**
+
+[Visual Studio Code](https://code.visualstudio.com/) es un editor de código fuente gratuito, liviano y altamente extensible, desarrollado por Microsoft.
+Ofrece soporte para Markdown con vista previa integrada, resaltado de sintaxis, extensiones útiles como *Markdown Preview Enhanced*, y funciones que facilitan la escritura técnica y estructurada.
+Es ideal para quienes desean trabajar localmente en sus archivos Markdown con mayor control y personalización.
+
+### **GitHub**
+
+[GitHub](https://github.com/) es una plataforma de desarrollo colaborativo basada en Git, utilizada para alojar proyectos, compartir código y gestionar versiones.
+Permite renderizar archivos Markdown directamente en los repositorios, por lo que es ampliamente usado para documentar proyectos, escribir README y generar wikis.
+Además, es compatible con herramientas como GitHub Pages, que permiten convertir archivos Markdown en sitios web estáticos.
+
+### MarkItDown
+
+**MarkItDown** es una herramienta escrita en Python que permite convertir archivos de Word (.docx), Excel (.xlsx), PowerPoint (.pptx), PDF, imágenes, audio, HTML, CSV, JSON, XML y archivos ZIP a formato Markdown . Es especialmente útil para preparar documentos que se integrarán con modelos de lenguaje o flujos de trabajo de IA.
+
+✅ **Características destacadas**
+
+* **Amplio soporte de formatos**: Convierte documentos de Office, PDF, imágenes (con OCR), audio (con transcripción), HTML, CSV, JSON, XML y archivos comprimidos.
+
+* **Integración con IA**: Puede utilizar modelos de lenguaje para generar descripciones de contenido, lo que facilita la preparación de datos para análisis o entrenamiento de modelos.
+
+* **Código abierto**: Disponible en GitHub, lo que permite a los desarrolladores personalizar y mejorar la herramienta según sus necesidades.
+
+🚀 **¿Cómo usarla?**
+
+Para utilizar MarkItDown, necesitás tener Python instalado en tu sistema. Podés instalar la herramienta utilizando pip :
+
+```bash
+pip install markitdown
+```
+
+Luego, podés convertir un archivo ejecutando un comando similar al siguiente:
+
+```bash
+markitdown convert archivo.docx
+```
+
+Esto generará un archivo en formato Markdown con el contenido convertido.
 
 ---
 [Inicio](./README.md) | [Próximo (2. Fundamentos de ChatGPT)](./2-Fundamentos.md)

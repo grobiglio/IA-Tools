@@ -8,7 +8,8 @@ body {
   margin: 0;
 }
 
-.content-wrapper { /* Estilos para el nuevo div wrapper */
+.content-wrapper {
+  /* Estilos para el nuevo div wrapper */
   display: flex;
   flex-direction: column;
   min-height: 100vh; /* Asegura que ocupe al menos el alto de la ventana */
@@ -128,6 +129,22 @@ body {
   background-color: #f57c00;
 }
 
+.minimax {
+  background-color: #8b0000; /* Un rojo oscuro, distintivo */
+}
+
+.minimax:hover {
+  background-color: #6a0000;
+}
+
+.manus {
+  background-color: #4a148c; /* Un morado profundo */
+}
+
+.manus:hover {
+  background-color: #380d75;
+}
+
 .firebase {
   background-color: #f4511e; /* Un rojo anaranjado */
 }
@@ -136,9 +153,41 @@ body {
   background-color: #e64a19;
 }
 
-.footer {
+.additional-links {
   text-align: center;
   margin-top: 30px;
+  padding: 20px;
+  background-color: #f2f2f2;
+  font-size: 0.9em;
+  border-top: 1px solid #ccc; /* Añade una línea para separarlo visualmente */
+}
+
+.additional-links h2 {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+.additional-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.additional-links li {
+  margin-bottom: 10px;
+}
+
+.additional-links a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.additional-links a:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  text-align: center;
+  margin-top: auto;
   padding: 20px;
   background-color: #f2f2f2;
   font-size: 0.8em;
