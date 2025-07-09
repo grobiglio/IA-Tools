@@ -153,6 +153,14 @@ body {
   background-color: #e64a19;
 }
 
+.ai-studio {
+  background-color: #4285F4; /* Azul de Google */
+}
+
+.ai-studio:hover {
+  background-color: #357AE8;
+}
+
 .additional-links {
   text-align: center;
   margin-top: 30px;
