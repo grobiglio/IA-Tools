@@ -161,44 +161,88 @@ body {
   background-color: #357AE8;
 }
 
+.kimi {
+  background-color: #61A4B4; /* Un azul suave/verde azulado */
+}
+
+.kimi:hover {
+  background-color: #4A879B;
+}
+
 .additional-links {
   text-align: center;
-  margin-top: 30px;
-  padding: 20px;
-  background-color: #f2f2f2;
-  font-size: 0.9em;
-  border-top: 1px solid #ccc; /* Añade una línea para separarlo visualmente */
+  margin: 30px auto;
+  padding: 30px 20px; /* Aumenta el padding vertical para más "aire" */
+  background-color: #ffffff; /* Fondo blanco para destacarlo */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  font-size: 1em; /* Un poco más grande para mejor legibilidad */
+  max-width: 600px; /* Limita el ancho para que no se extienda demasiado en pantallas grandes */
+  border-top: none; /* Quitamos el borde superior que ya no es necesario con el box-shadow */
 }
 
 .additional-links h2 {
-  font-size: 1.2em;
-  margin-bottom: 15px;
+  font-size: 1.5em; /* Un poco más grande para el título */
+  color: #333; /* Color de texto más oscuro para el título */
+  margin-bottom: 25px; /* Más espacio debajo del título */
 }
 
 .additional-links ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .additional-links li {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  display: flex; /* Mantenemos flex para alinear el icono y el resto */
+  align-items: flex-start; /* Alinea los elementos al inicio (arriba) */
+  justify-content: left; /* Centra el grupo completo de icono + texto */
+  text-align: left; /* Alinea el texto a la izquierda dentro de cada ítem */
 }
 
 .additional-links a {
-  color: #007bff;
+  color: #007bff; /* Mantiene el color azul de enlace */
   text-decoration: none;
+  font-weight: bold; /* Hacer los enlaces un poco más prominentes */
+  transition: color 0.3s ease;
 }
 
 .additional-links a:hover {
+  color: #0056b3; /* Un azul más oscuro al pasar el mouse */
   text-decoration: underline;
+}
+
+/* Estilo para los iconos si decides agregarlos - por ejemplo, con emojis o SVGs */
+.additional-links li span.icon {
+  margin-right: 8px;
+  font-size: 1.2em; /* Tamaño del icono */
+  line-height: 1; /* Asegura que no afecte el espaciado de línea */
+}
+
+.additional-links li .icon {
+  margin-right: 10px; /* Más espacio entre el icono y el texto del enlace */
+  font-size: 1.2em;
+  flex-shrink: 0; /* Evita que el icono se encoja */
+}
+
+.additional-links li .description {
+  margin-left: 5px; /* Pequeño margen entre el enlace y la descripción */
+  color: #555; /* Color más suave para la descripción */
+  font-weight: normal; /* Asegura que no sea negrita */
 }
 
 .footer {
   text-align: center;
   margin-top: auto;
-  padding: 20px;
+  padding: 40px;
   background-color: #f2f2f2;
   font-size: 0.8em;
+}
+
+.footer p {
+  margin: 0;
+  color: #333;
 }
 
 .footer a {
