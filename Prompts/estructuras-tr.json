@@ -1,0 +1,31 @@
+{
+  "description": "Cinematic sequence showing a small gray Scania truck with a silver metallic chassis and a custom logo on the chassis, driving from right to left across a grassy field. The truck stops at the center of the frame. The structure leaps out from inside the chassis and assembles progressively forward, covering the truck. The structure features exposed truss elements, colorful fabric panels (pink, aqua, yellow), and two large LED panels. Time-lapse style animation conveys the rapid yet realistic assembly process. The final view should show only the fully assembled, modern stage structure with visible truss architecture and a clean finish.",
+  "style": "cinematic",
+  "camera": "tracking shot transitioning into fixed wide-angle",
+  "lighting": "natural daylight",
+  "room": "outdoor grassy field",
+  "elements": [
+    "gray Scania truck with silver metallic chassis and custom logo",
+    "open field under blue sky",
+    "steel truss components",
+    "base plates and connectors",
+    "stage platforms",
+    "two large LED panels",
+    "colorful fabric panels (pink, aqua, yellow)",
+    "rigging towers and crossbeams",
+    "no people present"
+  ],
+  "motion": "truck drives in, stops, structure leaps from inside the chassis and assembles forward covering the truck via realistic time-lapse animation",
+  "ending": "only the fully assembled, modern stage structure visible with visible truss architecture and clean finish (truck covered)",
+  "text": "none",
+  "keywords": [
+    "16:9",
+    "multidirectional truss",
+    "stage assembly",
+    "cinematic animation",
+    "event structure",
+    "time-lapse",
+    "truck unload"
+  ],
+  "duration_seconds": 8
+}

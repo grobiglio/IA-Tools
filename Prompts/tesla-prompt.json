@@ -1,0 +1,29 @@
+{
+  "description": "Cinematic shot of a minimalist Tesla-branded crate magically opening to reveal a fully formed Tesla vehicle and an instantly assembled, sleek Tesla-themed showroom around it. No text.",
+  "style": "cinematic",
+  "camera": "fixed wide angle, with subtle zooms on key transformations",
+  "lighting": "controlled, high-tech, transitioning from dim to bright and clean",
+  "room": "empty futuristic space transforming into a minimalist Tesla showroom",
+  "elements": [
+    "Tesla-branded crate (glowing seams)",
+    "Tesla vehicle (e.g., Model 3/Y/Cybertruck)",
+    "charging station",
+    "minimalist display panels",
+    "sleek showroom furniture",
+    "ambient lighting elements"
+  ],
+  "motion": "crate panels retract smoothly and silently, car revealed, showroom elements rise/unfold precisely and rapidly",
+  "ending": "pristine, inviting Tesla showroom with car as centerpiece",
+  "text": "none",
+  "keywords": [
+    "16:9",
+    "Tesla",
+    "magic assembly",
+    "showroom",
+    "innovation",
+    "futuristic",
+    "no text",
+    "clean design",
+    "reveal"
+  ]
+}

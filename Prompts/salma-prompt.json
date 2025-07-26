@@ -1,0 +1,57 @@
+{
+  "description": "A transparent SMEG kettle is placed onto a chrome gas stove set against a pure white studio backdrop. The stove remains fully visible throughout. As the kettle touches the burner, a quick squirt of red mist injects upward from the flame. The mist swirls inside the transparent body and gradually fills the form. As the red mist rises, the kettle seamlessly transitions into its iconic glossy red finish with chrome accents. The stove remains beneath, untouched, anchoring the shot in reality. Editorial, clean, and cinematic.",
+  "style": "editorial cinematic, high-end product transformation",
+  "camera": {
+    "type": "macro to mid shot",
+    "movement": "macro close-up on burner ignition → dolly back during kettle placement → slow push-in as color fills → lock-off hero angle"
+  },
+  "lighting": "natural diffused daylight from above and side; soft shadows beneath stove and kettle; gentle highlight wrapping across chrome and glass surfaces; bright white background with no distractions",
+  "environment": {
+    "location": "infinite white cyclorama",
+    "props": [
+      "chrome gas burner (remains visible the entire time)",
+      "white matte countertop",
+      "clean floor reflection",
+      "no additional objects or textures"
+    ]
+  },
+  "elements": [
+    "transparent SMEG kettle (entirely clear, with silver chrome handle and spout)",
+    "chrome gas burner with blue-orange flame",
+    "burst of red mist injected from base upon contact",
+    "volumetric mist rising inside kettle from base to top",
+    "color gradually becoming solid red as mist fills",
+    "final glossy red SMEG kettle with visible logo",
+    "subtle steam from spout",
+    "gas stove visible and grounded throughout"
+  ],
+  "motion": {
+    "burner": "ignites softly with a click before kettle is placed",
+    "kettle": "gently placed onto burner — no bounce or jitter",
+    "mist": "sharp squirt enters base at moment of contact (0.3s), then smooth rise for 3–4 seconds as red fills upward",
+    "transformation": "color transition is continuous and seamless, with no product distortion",
+    "camera": "dolly out during placement, slow push-in during color fill, then static for final product reveal"
+  },
+  "ending": "Kettle finishes in deep glossy red with chrome accents, steam rising, stove beneath still glowing; white studio background remains untouched",
+  "audio": {
+    "sfx": [
+      "gas burner ignition click",
+      "flame flicker (subtle, controlled)",
+      "pressurized mist squirt (clean and fast)",
+      "low swirling fill ambience",
+      "gentle steam hiss at end"
+    ]
+  },
+  "text": "none",
+  "keywords": [
+    "transparent SMEG kettle",
+    "red mist color fill",
+    "chrome gas stove",
+    "editorial transformation",
+    "premium appliance visual",
+    "seamless color transition",
+    "natural daylight",
+    "white cyclorama studio",
+    "clean cinematic product shot"
+  ]
+}
