@@ -34,7 +34,17 @@
 
     Para más detalles sobre cómo utilizar Canvas, puedes consultar el siguiente artículo: [What is the canvas feature in ChatGPT and how do I use it?](https://help.openai.com/en/articles/9930697-what-is-the-canvas-feature-in-chatgpt-and-how-do-i-use-it?utm_source=chatgpt.com)
 
-    Esta herramienta está diseñada para mejorar la colaboración y eficiencia en proyectos que van más allá de una simple conversación, facilitando la creación y refinamiento de ideas junto a ChatGPT. 
+    Esta herramienta está diseñada para mejorar la colaboración y eficiencia en proyectos que van más allá de una simple conversación, facilitando la creación y refinamiento de ideas junto a ChatGPT.
+
+- **Estudia y aprende**: Un modo de tutoría interactiva diseñado para promover el aprendizaje activo en lugar de proveer respuestas completas. Utiliza técnicas pedagógicas como preguntas socráticas, quizzes, feedback personalizado y checkpoints para fomentar la metacognición, la retención y la transferencia de conocimientos.
+  Más información  sobre esta opción en el sitio oficial de [OpenAI](https://openai.com/es-419/index/chatgpt-study-mode/).
+
+- **Modo Agente**: Una arquitectura agente unificada que fusiona:
+  - La capacidad de navegación web y GUI de Operator
+  - El poder analítico de Deep Research
+  - La fluidez conversacional de ChatGPT
+  Todo integrado en un agente que puede realizar flujos de trabajo completos (por ejemplo: reservar viajes, actualizar hojas de cálculo, generar presentaciones y hasta ejecutar código).
+  Más información  sobre este modo en el sitio oficial de [OpenAI](https://openai.com/es-419/index/introducing-chatgpt-agent/?utm_source=chatgpt.com).
 
 ## Funcionalidades
 - Manejo de memoria
@@ -44,8 +54,8 @@
 - [Aviation Safety Manager](https://chatgpt.com/g/g-qVCqJzMtW-aviation-safety-manager): Ayuda a los responsables de seguridad operacional con los Sistemas de Gestión de la Seguridad Operacional.
 - [TesisGPT](https://chatgpt.com/g/g-8yj8Hv6Kt-tesisgpt): Asistencia académica o en escritura técnica y de investigación.
 - [Airwothiness](https://chatgpt.com/g/g-g1t2ZcMk0-airwothiness): Perspectivas expertas sobre el diseño del mantenimiento y reparación de aeronaves, centrándose en principios, métodos y consideraciones clave.
-- [Voxscript](https://chatgpt.com/g/g-g24EzkDta-voxscript)
-- [Prompt Engineer](https://chatgpt.com/g/g-5XtVuRE8Y-prompt-engineer)
+- [Prompt Engineer](https://chatgpt.com/g/g-5XtVuRE8Y-prompt-engineer): Genera *prompts* para ChatGPT de alta calidad o mejora los propuestos.
+- [Generador de QR Inggar](https://chatgpt.com/g/g-6890f1a691448191afe7bad88c28114f-generador-de-qr-inggar): Genera códigos QR con estilo redondeado simplemente poniendo el enlace como prompt.
 
 #### Otras herramientas de IA
 

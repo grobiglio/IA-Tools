@@ -1,63 +1,89 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Curso de ChatGPT</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background: #F4F6F8;
-      color: #1F2A44;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-    }
-    header {
-      margin-bottom: 2rem;
-    }
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-    }
-    a.button {
-      background-color: #0077B6;
-      color: white;
-      padding: 1rem 2rem;
-      border-radius: 2rem;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      transition: background-color 0.3s ease;
-    }
-    a.button:hover {
-      background-color: #005f94;
-    }
-    footer {
-      position: absolute;
-      bottom: 1rem;
-      font-size: 0.9rem;
-      color: #555;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Curso de ChatGPT</h1>
-    <p>Una introducción práctica al uso de inteligencia artificial conversacional para potenciar tu productividad.</p>
-    <a class="button" href="https://ingg.ar/curso-chatgpt/">Acceder al curso</a>
-  </header>
-  <footer>
-    © 2025 Guillermo A. Robiglio · ingg.ar
-  </footer>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curso de ChatGPT</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Montserrat", sans-serif;
+        background: #f4f6f8;
+        color: #1f2a44;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+      }
+      header {
+        margin-bottom: 2rem;
+      }
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+      }
+      .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem; /* Espacio entre botones */
+        width: 300px; /* o 100% si preferís que ocupen todo el ancho disponible */
+        margin: 0 auto;
+      }
+      a.button {
+        display: block;
+        width: 100%;
+        text-align: center;
+        background-color: #0077b6;
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 2rem;
+        text-decoration: none;
+        font-weight: bold;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transition: background-color 0.3s ease;
+      }
+      a.button:hover {
+        background-color: #005f94;
+      }
+      footer {
+        position: absolute;
+        bottom: 1rem;
+        font-size: 0.9rem;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Curso de ChatGPT</h1>
+      <p>
+        Una introducción práctica al uso de inteligencia artificial
+        conversacional para potenciar tu productividad.
+      </p>
+
+      <div class="button-container">
+        <a class="button" href="https://ingg.ar/curso-chatgpt/" target="_blank"
+          >Acceder al curso web</a
+        >
+        <a
+          class="button"
+          href="https://fadeasa-my.sharepoint.com/:b:/g/personal/robiglio_fadeasa_com_ar/EU0_Toe5VgVLsvbzyet8m_oB0SByqVGg7Z8rDZFcq5UBrA?e=jVKF39"
+          target="_blank"
+          >Acceder a la presentación</a
+        >
+      </div>
+    </header>
+    <footer>© 2025 Guillermo A. Robiglio · ingg.ar</footer>
+  </body>
 </html>
