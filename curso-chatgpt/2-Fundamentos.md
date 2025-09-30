@@ -1,4 +1,4 @@
-[Inicio](./README.md) | [Anterior (1. Markdown)](./1-Markdown.md) | [Próximo (3. Ingeniería de Prompts)](./3-IngPrompts.md)
+[Inicio](./README.md) | [Anterior (2. Markdown)](./1-Markdown.md) | [Próximo (4. Ingeniería de Prompts)](./3-IngPrompts.md)
 
 ---
 
@@ -152,4 +152,4 @@ Cuando se alcanza este límite:
 
 ---
 
-[Inicio](./README.md) | [Anterior (1. Markdown)](./1-Markdown.md) | [Próximo (3. Ingeniería de Prompts)](./3-IngPrompts.md)
+[Inicio](./README.md) | [Anterior (2. Markdown)](./1-Markdown.md) | [Próximo (4. Ingeniería de Prompts)](./3-IngPrompts.md)

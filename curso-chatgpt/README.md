@@ -19,6 +19,7 @@ Las instrucciones se han adaptado y actualizado en 2025, integrando las novedade
 
 ## Índice de contenidos
 
+1. [Introducción](0-Introduccion.md)
 1. [Markdown](1-Markdown.md)
 2. [Fundamentos de ChatGPT](2-Fundamentos.md)
 3. [Ingeniería de Prompts](3-IngPrompts.md)
@@ -28,8 +29,9 @@ Las instrucciones se han adaptado y actualizado en 2025, integrando las novedade
 
 ## Material de soporte
 
-* [Repositorio de apuntes en GitHub](https://github.com/grobiglio/IA-Tools/tree/main/Apuntes)
-* [Colección de prompts de ejemplo](https://github.com/grobiglio/IA-Tools/tree/main/Prompts)
+* [Apuntes y presentaciones](https://fadeasa-my.sharepoint.com/:f:/g/personal/robiglio_fadeasa_com_ar/EmwUeFDeDylDsSEj4UgvZh4Bk4lAy-WdCI4Y_g2XlVYLIg)
+* [Radiografía de ChatGPT](https://ingg.ar/ia/infografia.html)
+* [Uso de ChatGPT](https://ingg.ar/ia/uso.html)
 
 ---
 

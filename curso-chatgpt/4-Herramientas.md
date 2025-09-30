@@ -1,4 +1,4 @@
-[Inicio](./README.md) | [Anterior (3. Ingeniería de Prompts)](./3-IngPrompts.md)
+[Inicio](./README.md) | [Anterior (4. Ingeniería de Prompts)](./3-IngPrompts.md)
 
 ---
 
@@ -31,10 +31,10 @@
 Además de la versión estándar de ChatGPT, existen asistentes especializados creados por OpenAI y la comunidad:
 
 * [Aviation Safety Manager](https://chatgpt.com/g/g-qVCqJzMtW-aviation-safety-manager): apoyo a la gestión de seguridad operacional.
-* [TesisGPT](https://chatgpt.com/g/g-8yj8Hv6Kt-tesisgpt): asistencia académica y de investigación.
+* [Professional LinkedIn Post Writer](https://chatgpt.com/g/g-wzCQWPdaA-professional-linkedin-post-writer): Adapta el tono, busca claridad y crea publicaciones de LinkedIn formales pero accesibles.
 * [Airworthiness](https://chatgpt.com/g/g-g1t2ZcMk0-airwothiness): enfoque en mantenimiento y certificación de aeronaves.
 * [Prompt Engineer](https://chatgpt.com/g/g-5XtVuRE8Y-prompt-engineer): especializado en diseño y mejora de prompts.
-* [Voxscript](https://chatgpt.com/g/g-g24EzkDta-voxscript): pensado para análisis de videos, audios y transcripciones.
+* [Generador de QR Inggar](https://chatgpt.com/g/g-6890f1a691448191afe7bad88c28114f-generador-de-qr-inggar): Genera códigos QR con estilo redondeado ingresando un enlace como prompt.
 
 ---
 
@@ -65,4 +65,4 @@ Además de la versión estándar de ChatGPT, existen asistentes especializados c
 
 ---
 
-[Inicio](./README.md) | [Anterior (3. Ingeniería de Prompts)](./3-IngPrompts.md)
+[Inicio](./README.md) | [Anterior (4. Ingeniería de Prompts)](./3-IngPrompts.md)

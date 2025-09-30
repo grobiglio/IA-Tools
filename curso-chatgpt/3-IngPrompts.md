@@ -1,4 +1,4 @@
-[Inicio](./README.md) | [Anterior (2. Fundamentos de ChatGPT y conceptos clave)](./2-Fundamentos.md) | [Próximo (4. Herramientas y funcionalidades)](./4-Herramientas.md)
+[Inicio](./README.md) | [Anterior (3. Fundamentos de ChatGPT)](./2-Fundamentos.md) | [Próximo (5. Herramientas y funcionalidades)](./4-Herramientas.md)
 
 ---
 
@@ -137,4 +137,4 @@ Con práctica y atención al detalle, la IA se convierte en un aliado estratégi
 
 ---
 
-[Inicio](./README.md) | [Anterior (2. Fundamentos de ChatGPT y conceptos clave)](./2-Fundamentos.md) | [Próximo (4. Herramientas y funcionalidades)](./4-Herramientas.md)
+[Inicio](./README.md) | [Anterior (3. Fundamentos de ChatGPT)](./2-Fundamentos.md) | [Próximo (5. Herramientas y funcionalidades)](./4-Herramientas.md)

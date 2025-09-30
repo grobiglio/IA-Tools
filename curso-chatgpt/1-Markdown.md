@@ -1,4 +1,4 @@
-[Inicio](./README.md) | [Próximo (2. Fundamentos de ChatGPT)](./2-Fundamentos.md)
+[Inicio](./README.md) | [Anterior (1. Introducción)](./0-Introduccion.md) | [Próximo (3. Fundamentos de ChatGPT)](./2-Fundamentos.md)
 
 ---
 
@@ -157,4 +157,4 @@ markitdown convert archivo.docx
 Esto generará un archivo en formato Markdown con el contenido convertido.
 
 ---
-[Inicio](./README.md) | [Próximo (2. Fundamentos de ChatGPT)](./2-Fundamentos.md)
+[Inicio](./README.md) | [Anterior (1. Introducción)](./0-Introduccion.md) | [Próximo (3. Fundamentos de ChatGPT)](./2-Fundamentos.md)
