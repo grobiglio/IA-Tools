@@ -19,226 +19,319 @@
     <div class="content-wrapper">
       <div class="container">
         <h1>Herramientas IA</h1>
-        <div class="button-grid">
-          <!-- Gemini -->
-          <div class="ai-button-row">
-            <a
-              href="https://gemini.google.com/"
-              target="_blank"
-              class="ai-button gemini"
-            >
-              <img
-                src="https://www.gstatic.com/marketing-cms/assets/images/5a/7f/7d72d31140b9bf7e0d6d9d1c71d8/gemini.png"
-                alt="Gemini Logo"
-              />
-              Gemini
-            </a>
-            <button class="info-button" data-modal="modal-gemini">?</button>
-          </div>
 
-          <!-- Notebook LM -->
-          <div class="ai-button-row">
-            <a
-              href="https://notebooklm.google.com/"
-              target="_blank"
-              class="ai-button notebooklm"
-            >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0  0 175 130"
-                style="fill: currentColor; margin-right: 5px"
+        <div class="category-container">
+          <h2>Chatbots</h2>
+          <div class="button-grid">
+            <div class="ai-button-row">
+              <a
+                href="https://gemini.google.com/"
+                target="_blank"
+                class="ai-button gemini"
               >
-                <path
+                <img
+                  src="https://www.gstatic.com/marketing-cms/assets/images/5a/7f/7d72d31140b9bf7e0d6d9d1c71d8/gemini.png"
+                  alt="Gemini Logo"
+                />
+                Gemini
+              </a>
+              <button class="info-button" data-modal="modal-gemini">?</button>
+              <a href="https://youtu.be/a-fX3GEWjBY?si=M_cU6O41GsZvIli8" class="youtube-button" target="_blank">▶</a>
+            </div>
+
+            <div class="ai-button-row">
+              <a
+                href="https://chat.openai.com/"
+                target="_blank"
+                class="ai-button chatgpt"
+              >
+                <img src="Logo.ChatGPT.png" alt="ChatGPT Logo" />
+                ChatGPT
+              </a>
+              <button class="info-button" data-modal="modal-chatgpt">?</button>
+              <a href="#" class="youtube-button sin-enlace" target="_blank">▶</a>
+            </div>
+
+            <div class="ai-button-row">
+              <a
+                href="https://www.perplexity.ai/"
+                target="_blank"
+                class="ai-button perplexity"
+              >
+                <img src="Perplexity.PNG" alt="Perplexity Logo" />
+                Perplexity
+              </a>
+              <button class="info-button" data-modal="modal-perplexity">?</button>
+              <a href="#" class="youtube-button sin-enlace" target="_blank">▶</a>
+            </div>
+
+            <div class="ai-button-row">
+              <a
+                href="https://grok.x.ai/"
+                target="_blank"
+                class="ai-button grok"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
-                  d="M87.27,1.14C39.07,1.14,0,39.88,0,87.69v41.44h16.09v-4.13c0-19.39,15.84-35.11,35.39-35.11s35.39,15.72,35.39,35.11v4.13h16.09v-4.13c0-28.2-23.05-51.05-51.48-51.05-11.07,0-21.32,3.46-29.72,9.37,8.79-17.32,26.88-29.21,47.77-29.21,29.51,0,53.44,23.74,53.44,53v22.02h16.09v-22.02c0-38.08-31.13-68.96-69.53-68.96-17.27,0-33.06,6.24-45.22,16.58,11.94-22.39,35.65-37.64,62.97-37.64,39.32,0,71.19,31.61,71.19,70.6v41.44h16.09v-41.44C174.55,39.88,135.48,1.14,87.27,1.14Z"
-                />
-              </svg>
-              Notebook LM
-            </a>
-            <button class="info-button" data-modal="modal-notebooklm">?</button>
-          </div>
+                  style="fill: currentColor; margin-right: 5px"
+                >
+                  <path
+                    d="M2.30047 8.77631L12.0474 23H16.3799L6.63183 8.77631H2.30047ZM6.6285 16.6762L2.29492 23H6.63072L8.79584 19.8387L6.6285 16.6762ZM17.3709 1L9.88007 11.9308L12.0474 15.0944L21.7067 1H17.3709ZM18.1555 7.76374V23H21.7067V2.5818L18.1555 7.76374Z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+                Grok 3
+              </a>
+              <button class="info-button" data-modal="modal-grok3">?</button>
+              <a href="#" class="youtube-button sin-enlace" target="_blank">▶</a>
+            </div>
 
-          <!-- ChatGPT -->
-          <div class="ai-button-row">
-            <a
-              href="https://chat.openai.com/"
-              target="_blank"
-              class="ai-button chatgpt"
-            >
-              <img src="Logo.ChatGPT.png" alt="ChatGPT Logo" />
-              ChatGPT
-            </a>
-            <button class="info-button" data-modal="modal-chatgpt">?</button>
-          </div>
-
-          <!-- Perplexity -->
-          <div class="ai-button-row">
-            <a
-              href="https://www.perplexity.ai/"
-              target="_blank"
-              class="ai-button perplexity"
-            >
-              <img src="Perplexity.PNG" alt="ChatGPT Logo" />
-              Perplexity
-            </a>
-            <button class="info-button" data-modal="modal-perplexity">?</button>
-          </div>
-
-          <!-- Grok -->
-          <div class="ai-button-row">
-            <a href="https://grok.x.ai/" target="_blank" class="ai-button grok">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                style="fill: currentColor; margin-right: 5px"
+            <div class="ai-button-row">
+              <a
+                href="https://www.deepseek.com/"
+                target="_blank"
+                class="ai-button deepseek"
               >
-                <path
-                  d="M2.30047 8.77631L12.0474 23H16.3799L6.63183 8.77631H2.30047ZM6.6285 16.6762L2.29492 23H6.63072L8.79584 19.8387L6.6285 16.6762ZM17.3709 1L9.88007 11.9308L12.0474 15.0944L21.7067 1H17.3709ZM18.1555 7.76374V23H21.7067V2.5818L18.1555 7.76374Z"
-                  fill="currentColor"
-                ></path>
-              </svg>
-              Grok 3
-            </a>
-            <button class="info-button" data-modal="modal-grok3">?</button>
-          </div>
+                <img src="deepseek.png" alt="DeepSeek Logo" /> DeepSeek
+              </a>
+              <button class="info-button" data-modal="modal-deepseek">?</button>
+              <a href="#" class="youtube-button sin-enlace" target="_blank">▶</a>
+            </div>
 
-          <!-- Deepseek -->
-          <div class="ai-button-row">
-            <a
-              href="https://www.deepseek.com/"
-              target="_blank"
-              class="ai-button deepseek"
-            >
-              <img src="deepseek.png" alt="DeepSeek Logo" /> DeepSeek
-            </a>
-            <button class="info-button" data-modal="modal-deepseek">?</button>
-          </div>
-
-          <!-- Qwen -->
-          <div class="ai-button-row">
-            <a
-              href="https://chat.qwen.ai/"
-              target="_blank"
-              class="ai-button qwen"
-            >
-              <img src="Qwen.png" alt="Qwen Logo" /> Qwen
-            </a>
-            <button class="info-button" data-modal="modal-qwen">?</button>
-          </div>
-
-          <!-- Mistral -->
-          <div class="ai-button-row">
-            <a
-              href="https://chat.mistral.ai/chat"
-              target="_blank"
-              class="ai-button mistral"
-            >
-              <img src="Mistral.svg" alt="Mistral Logo" /> Mistral
-            </a>
-            <button class="info-button" data-modal="modal-mistral">?</button>
-          </div>
-
-          <!-- Claude -->
-          <div class="ai-button-row">
-            <a
-              href="https://claude.ai/new"
-              target="_blank"
-              class="ai-button claude"
-            >
-              <svg
-                width="24"
-                height="24"
-                viewBox="100 250 150 50"
-                style="fill: currentColor; margin-right: 5px"
+            <div class="ai-button-row">
+              <a
+                href="https://chat.qwen.ai/"
+                target="_blank"
+                class="ai-button qwen"
               >
-                <path
-                  class="cls-2"
-                  d="m 105.01,322.07 29.14,-16.35 0.49,-1.42 -0.49,-0.79 h -1.42 l -4.87,-0.3 -16.65,-0.45 -14.44,-0.6 -13.99,-0.75 -3.52,-0.75 -3.3,-4.35 0.34,-2.17 2.96,-1.99 4.24,0.37 9.37,0.64 14.06,0.97 10.2,0.6 15.11,1.57 h 2.4 l 0.34,-0.97 -0.82,-0.6 -0.64,-0.6 -14.55,-9.86 -15.75,-10.42 -8.25,-6 -4.46,-3.04 -2.25,-2.85 -0.97,-6.22 4.05,-4.46 5.44,0.37 1.39,0.37 5.51,4.24 11.77,9.11 15.37,11.32 2.25,1.87 0.9,-0.64 0.11,-0.45 -1.01,-1.69 -8.36,-15.11 -8.92,-15.37 -3.97,-6.37 -1.05,-3.82 c -0.37,-1.57 -0.64,-2.89 -0.64,-4.5 l 4.61,-6.26 2.55,-0.82 6.15,0.82 2.59,2.25 3.82,8.74 6.19,13.76 9.6,18.71 2.81,5.55 1.5,5.14 0.56,1.57 h 0.97 v -0.9 l 0.79,-10.54 1.46,-12.94 1.42,-16.65 0.49,-4.69 2.32,-5.62 4.61,-3.04 3.6,1.72 2.96,4.24 -0.41,2.74 -1.76,11.44 -3.45,17.92 -2.25,12 h 1.31 l 1.5,-1.5 6.07,-8.06 10.2,-12.75 4.5,-5.06 5.25,-5.59 3.37,-2.66 h 6.37 l 4.69,6.97 -2.1,7.2 -6.56,8.32 -5.44,7.05 -7.8,10.5 -4.87,8.4 0.45,0.67 1.16,-0.11 17.62,-3.75 9.52,-1.72 11.36,-1.95 5.14,2.4 0.56,2.44 -2.02,4.99 -12.15,3 -14.25,2.85 -21.22,5.02 -0.26,0.19 0.3,0.37 9.56,0.9 4.09,0.22 h 10.01 l 18.64,1.39 4.87,3.22 2.92,3.94 -0.49,3 -7.5,3.82 -10.12,-2.4 -23.62,-5.62 -8.1,-2.02 h -1.12 v 0.67 l 6.75,6.6 12.37,11.17 15.49,14.4 0.79,3.56 -1.99,2.81 -2.1,-0.3 -13.61,-10.24 -5.25,-4.61 -11.89,-10.01 h -0.79 v 1.05 l 2.74,4.01 14.47,21.75 0.75,6.67 -1.05,2.17 -3.75,1.31 -4.12,-0.75 -8.47,-11.89 -8.74,-13.39 -7.05,-12 -0.86,0.49 -4.16,44.81 -1.95,2.29 -4.5,1.72 -3.75,-2.85 -1.99,-4.61 1.99,-9.11 2.4,-11.89 1.95,-9.45 1.76,-11.74 1.05,-3.9 -0.07,-0.26 -0.86,0.11 -8.85,12.15 -13.46,18.19 -10.65,11.4 -2.55,1.01 -4.42,-2.29 0.41,-4.09 2.47,-3.64 14.74,-18.75 8.89,-11.62 5.74,-6.71 -0.04,-0.97 h -0.34 l -39.15,25.42 -6.97,0.9 -3,-2.81 0.37,-4.61 1.42,-1.5 11.77,-8.1 -0.04,0.04 z"
-                  shape-rendering="optimizeQuality"
-                  id="path147"
+                <img src="Qwen.png" alt="Qwen Logo" /> Qwen
+              </a>
+              <button class="info-button" data-modal="modal-qwen">?</button>
+              <a href="#" class="youtube-button sin-enlace" target="_blank">▶</a>
+            </div>
+
+            <div class="ai-button-row">
+              <a
+                href="https://chat.mistral.ai/chat"
+                target="_blank"
+                class="ai-button mistral"
+              >
+                <img src="Mistral.svg" alt="Mistral Logo" /> Mistral
+              </a>
+              <button class="info-button" data-modal="modal-mistral">?</button>
+              <a href="#" class="youtube-button sin-enlace" target="_blank">▶</a>
+            </div>
+
+            <div class="ai-button-row">
+              <a
+                href="https://claude.ai/new"
+                target="_blank"
+                class="ai-button claude"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="100 250 150 50"
+                  style="fill: currentColor; margin-right: 5px"
+                >
+                  <path
+                    class="cls-2"
+                    d="m 105.01,322.07 29.14,-16.35 0.49,-1.42 -0.49,-0.79 h -1.42 l -4.87,-0.3 -16.65,-0.45 -14.44,-0.6 -13.99,-0.75 -3.52,-0.75 -3.3,-4.35 0.34,-2.17 2.96,-1.99 4.24,0.37 9.37,0.64 14.06,0.97 10.2,0.6 15.11,1.57 h 2.4 l 0.34,-0.97 -0.82,-0.6 -0.64,-0.6 -14.55,-9.86 -15.75,-10.42 -8.25,-6 -4.46,-3.04 -2.25,-2.85 -0.97,-6.22 4.05,-4.46 5.44,0.37 1.39,0.37 5.51,4.24 11.77,9.11 15.37,11.32 2.25,1.87 0.9,-0.64 0.11,-0.45 -1.01,-1.69 -8.36,-15.11 -8.92,-15.37 -3.97,-6.37 -1.05,-3.82 c -0.37,-1.57 -0.64,-2.89 -0.64,-4.5 l 4.61,-6.26 2.55,-0.82 6.15,0.82 2.59,2.25 3.82,8.74 6.19,13.76 9.6,18.71 2.81,5.55 1.5,5.14 0.56,1.57 h 0.97 v -0.9 l 0.79,-10.54 1.46,-12.94 1.42,-16.65 0.49,-4.69 2.32,-5.62 4.61,-3.04 3.6,1.72 2.96,4.24 -0.41,2.74 -1.76,11.44 -3.45,17.92 -2.25,12 h 1.31 l 1.5,-1.5 6.07,-8.06 10.2,-12.75 4.5,-5.06 5.25,-5.59 3.37,-2.66 h 6.37 l 4.69,6.97 -2.1,7.2 -6.56,8.32 -5.44,7.05 -7.8,10.5 -4.87,8.4 0.45,0.67 1.16,-0.11 17.62,-3.75 9.52,-1.72 11.36,-1.95 5.14,2.4 0.56,2.44 -2.02,4.99 -12.15,3 -14.25,2.85 -21.22,5.02 -0.26,0.19 0.3,0.37 9.56,0.9 4.09,0.22 h 10.01 l 18.64,1.39 4.87,3.22 2.92,3.94 -0.49,3 -7.5,3.82 -10.12,-2.4 -23.62,-5.62 -8.1,-2.02 h -1.12 v 0.67 l 6.75,6.6 12.37,11.17 15.49,14.4 0.79,3.56 -1.99,2.81 -2.1,-0.3 -13.61,-10.24 -5.25,-4.61 -11.89,-10.01 h -0.79 v 1.05 l 2.74,4.01 14.47,21.75 0.75,6.67 -1.05,2.17 -3.75,1.31 -4.12,-0.75 -8.47,-11.89 -8.74,-13.39 -7.05,-12 -0.86,0.49 -4.16,44.81 -1.95,2.29 -4.5,1.72 -3.75,-2.85 -1.99,-4.61 1.99,-9.11 2.4,-11.89 1.95,-9.45 1.76,-11.74 1.05,-3.9 -0.07,-0.26 -0.86,0.11 -8.85,12.15 -13.46,18.19 -10.65,11.4 -2.55,1.01 -4.42,-2.29 0.41,-4.09 2.47,-3.64 14.74,-18.75 8.89,-11.62 5.74,-6.71 -0.04,-0.97 h -0.34 l -39.15,25.42 -6.97,0.9 -3,-2.81 0.37,-4.61 1.42,-1.5 11.77,-8.1 -0.04,0.04 z"
+                    shape-rendering="optimizeQuality"
+                    id="path147"
+                  />
+                </svg>
+                Claude
+              </a>
+              <button class="info-button" data-modal="modal-claude">?</button>
+              <a href="#" class="youtube-button sin-enlace" target="_blank">▶</a>
+            </div>
+
+            <div class="ai-button-row">
+              <a
+                href="https://chat.minimax.io/"
+                target="_blank"
+                class="ai-button minimax"
+              >
+                <img
+                  src="https://chat.minimax.io/favicon.ico"
+                  alt="Minimax Logo"
+                  style="max-height: 24px; margin-right: 5px"
                 />
-              </svg>
-              Claude
-            </a>
-            <button class="info-button" data-modal="modal-claude">?</button>
-          </div>
+                Minimax
+              </a>
+              <button class="info-button" data-modal="modal-minimax">?</button>
+              <a href="#" class="youtube-button sin-enlace" target="_blank">▶</a>
+            </div>
 
-          <!-- Manus -->
-          <div class="ai-button-row">
-            <a href="https://manus.im/" target="_blank" class="ai-button manus">
-              <img
-                src="https://manus.im/favicon.ico"
-                alt="Manus Logo"
-                style="max-height: 24px; margin-right: 5px"
-              />
-              Manus
-            </a>
-            <button class="info-button" data-modal="modal-manus">?</button>
-          </div>
-
-          <!-- Minimax -->
-          <div class="ai-button-row">
-            <a
-              href="https://chat.minimax.io/"
-              target="_blank"
-              class="ai-button minimax"
-            >
-              <img
-                src="https://chat.minimax.io/favicon.ico"
-                alt="Minimax Logo"
-                style="max-height: 24px; margin-right: 5px"
-              />
-              Minimax
-            </a>
-            <button class="info-button" data-modal="modal-minimax">?</button>
-          </div>
-
-          <!-- Firebase Studio -->
-          <div class="ai-button-row">
-            <a
-              href="https://studio.firebase.google.com/"
-              target="_blank"
-              class="ai-button firebase"
-            >
-              <img src="firebase_studio.png" alt="Firebase Studio Logo" />
-              Firebase Studio
-            </a>
-            <button class="info-button" data-modal="modal-firebase">?</button>
-          </div>
-
-          <!-- Google IA Studio -->
-          <div class="ai-button-row">
-            <a
-              href="https://aistudio.google.com/prompts/new_chat"
-              target="_blank"
-              class="ai-button ai-studio"
-            >
-              <img src="IA-Studio.svg" alt="Mistral Logo" /> Google AI Studio
-            </a>
-            <button class="info-button" data-modal="modal-iastudio">?</button>
-          </div>
-
-          <!-- Kimi -->
-          <div class="ai-button-row">
-            <a
-              href="https://www.kimi.com/"
-              target="_blank"
-              class="ai-button kimi"
-            >
-              <img
-                src="https://www.kimi.com/favicon.ico"
-                alt="Kimi Logo"
-                style="max-height: 24px; margin-right: 5px"
-              />
-              Kimi
-            </a>
-            <button class="info-button" data-modal="modal-kimi">?</button>
+            <div class="ai-button-row">
+              <a
+                href="https://www.kimi.com/"
+                target="_blank"
+                class="ai-button kimi"
+              >
+                <img
+                  src="https://www.kimi.com/favicon.ico"
+                  alt="Kimi Logo"
+                  style="max-height: 24px; margin-right: 5px"
+                />
+                Kimi
+              </a>
+              <button class="info-button" data-modal="modal-kimi">?</button>
+              <a href="#" class="youtube-button sin-enlace" target="_blank">▶</a>
+            </div>
           </div>
         </div>
-      </div>
+        <div class="category-container">
+          <h2>Agentes</h2>
+          <div class="button-grid">
+            <div class="ai-button-row">
+              <a
+                href="https://www.genspark.ai/"
+                target="_blank"
+                class="ai-button genspark"
+              >
+                <img
+                  src="https://www.genspark.ai/favicon.ico"
+                  alt="Genspark Logo"
+                  style="max-height: 24px; margin-right: 5px"
+                />
+                Genspark
+              </a>
+              <button class="info-button" data-modal="modal-genspark">?</button>
+              <a href="#" class="youtube-button sin-enlace" target="_blank">▶</a>
+            </div>
+            <div class="ai-button-row">
+              <a
+                href="https://manus.im/"
+                target="_blank"
+                class="ai-button manus"
+              >
+                <img
+                  src="https://manus.im/favicon.ico"
+                  alt="Manus Logo"
+                  style="max-height: 24px; margin-right: 5px"
+                />
+                Manus
+              </a>
+              <button class="info-button" data-modal="modal-manus">?</button>
+              <a href="#" class="youtube-button sin-enlace" target="_blank">▶</a>
+            </div>
+          </div>
+        </div>
+        <div class="category-container">
+          <h2>Productividad</h2>
+          <div class="button-grid">
+            <div class="ai-button-row">
+              <a
+                href="https://notebooklm.google.com/"
+                target="_blank"
+                class="ai-button notebooklm"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0  0 175 130"
+                  style="fill: currentColor; margin-right: 5px"
+                >
+                  <path
+                    xmlns="http://www.w3.org/2000/svg"
+                    d="M87.27,1.14C39.07,1.14,0,39.88,0,87.69v41.44h16.09v-4.13c0-19.39,15.84-35.11,35.39-35.11s35.39,15.72,35.39,35.11v4.13h16.09v-4.13c0-28.2-23.05-51.05-51.48-51.05-11.07,0-21.32,3.46-29.72,9.37,8.79-17.32,26.88-29.21,47.77-29.21,29.51,0,53.44,23.74,53.44,53v22.02h16.09v-22.02c0-38.08-31.13-68.96-69.53-68.96-17.27,0-33.06,6.24-45.22,16.58,11.94-22.39,35.65-37.64,62.97-37.64,39.32,0,71.19,31.61,71.19,70.6v41.44h16.09v-41.44C174.55,39.88,135.48,1.14,87.27,1.14Z"
+                  />
+                </svg>
+                Notebook LM
+              </a>
+              <button class="info-button" data-modal="modal-notebooklm">?</button>
+              <a href="#" class="youtube-button sin-enlace" target="_blank">▶</a>
+            </div>
+            <div class="ai-button-row">
+              <a
+                href="https://www.notion.com/"
+                target="_blank"
+                class="ai-button notion"
+              >
+                <img
+                  src="https://www.notion.so/favicon.ico"
+                  alt="Notion Logo"
+                  style="max-height: 24px; margin-right: 5px"
+                />
+                Notion
+              </a>
+              <button class="info-button" data-modal="modal-notion">?</button>
+              <a href="#" class="youtube-button sin-enlace" target="_blank">▶</a>
+            </div>
+          </div>
+        </div>
+        <div class="category-container">
+          <h2>Automatización</h2>
+          <div class="button-grid">
+            <div class="ai-button-row">
+              <a
+                href="https://us2.make.com/"
+                target="_blank"
+                class="ai-button make"
+              >
+                <img
+                  src="https://www.make.com/favicon.ico"
+                  alt="Make Logo"
+                  style="max-height: 24px; margin-right: 5px"
+                />
+                Make
+              </a>
+              <button class="info-button" data-modal="modal-make">?</button>
+              <a href="#" class="youtube-button sin-enlace" target="_blank">▶</a>
+            </div>
+          </div>
+        </div>
+        <div class="category-container">
+          <h2>Vibe Coding</h2>
+          <div class="button-grid">
+            <div class="ai-button-row">
+              <a
+                href="https://studio.firebase.google.com/"
+                target="_blank"
+                class="ai-button firebase"
+              >
+                <img src="firebase_studio.png" alt="Firebase Studio Logo" />
+                Firebase Studio
+              </a>
+              <button class="info-button" data-modal="modal-firebase">?</button>
+              <a href="#" class="youtube-button sin-enlace" target="_blank">▶</a>
+            </div>
+            <div class="ai-button-row">
+              <a
+                href="https://aistudio.google.com/prompts/new_chat"
+                target="_blank"
+                class="ai-button ai-studio"
+              >
+                <img src="IA-Studio.svg" alt="Google AI Studio Logo" /> Google
+                AI Studio
+              </a>
+              <button class="info-button" data-modal="modal-iastudio">?</button>
+              <a href="https://youtube.com/playlist?list=PLMkO9wseBDZbqJ4aXwRpjpsRU27ox59sv&si=cYjw1F8rPjE1LWoC" class="youtube-button" target="_blank">▶</a>
+            </div>
+            <div class="ai-button-row">
+              <a
+                href="https://lovable.dev/"
+                target="_blank"
+                class="ai-button lovable"
+              >
+                <img
+                  src="https://lovable.dev/favicon.ico"
+                  alt="Lovable Logo"
+                  style="max-height: 24px; margin-right: 5px"
+                />
+                Lovable
+              </a>
+              <button class="info-button" data-modal="modal-lovable">?</button>
+              <a href="#" class="youtube-button sin-enlace" target="_blank">▶</a>
+            </div>
+          </div>
+        </div>
+        </div>
 
       <div id="modal-gemini" class="modal">
         <div class="modal-content">
@@ -315,18 +408,18 @@
           <p>
             Es un motor de conocimiento conversacional y motor de búsqueda potenciado por IA. Su principal característica es que proporciona respuestas directas y concisas, citando siempre las fuentes web que utilizó para generar esa respuesta.
           </p>
-          <!--   
-          <div class="modal-links">
-            <a href="https://en.wikipedia.org/wiki/ChatGPT" target="_blank"
-              >More info (EN)</a
-            >
-            <a href="https://es.wikipedia.org/wiki/ChatGPT" target="_blank"
-              >Más info (ES)</a
-            >
-          </div>
-          -->
         </div>
       </div>
+
+      <div id="modal-genspark" class="modal">
+         <div class="modal-content">
+           <span class="close-button">&times;</span>
+           <h3>Genspark</h3>
+           <p>
+             Un motor de búsqueda y descubrimiento impulsado por IA. En lugar de solo enlaces, genera 'Sparkpages', páginas de resumen creadas por IA sobre un tema específico, combinando información de múltiples fuentes.
+           </p>
+         </div>
+       </div>
 
       <div id="modal-grok3" class="modal">
         <div class="modal-content">
@@ -335,16 +428,6 @@
           <p>
             Es un gran modelo de lenguaje (LLM) desarrollado por xAI, la empresa de Elon Musk. Se distingue por su capacidad para responder a preguntas con humor e ingenio, y por su acceso en tiempo real a la información a través de la plataforma X (anteriormente Twitter).
           </p>
-          <!--   
-          <div class="modal-links">
-            <a href="https://en.wikipedia.org/wiki/ChatGPT" target="_blank"
-              >More info (EN)</a
-            >
-            <a href="https://es.wikipedia.org/wiki/ChatGPT" target="_blank"
-              >Más info (ES)</a
-            >
-          </div>
-          -->
         </div>
       </div>
 
@@ -355,16 +438,6 @@
           <p>
             Es una plataforma de modelos de lenguaje abierto desarrollada por DeepSeek AI. Ofrece modelos multilingües y multimodales de alto rendimiento, destacándose por su modelo de codificación (DeepSeek Coder) y su compromiso con la investigación abierta.
           </p>
-          <!--   
-          <div class="modal-links">
-            <a href="https://en.wikipedia.org/wiki/ChatGPT" target="_blank"
-              >More info (EN)</a
-            >
-            <a href="https://es.wikipedia.org/wiki/ChatGPT" target="_blank"
-              >Más info (ES)</a
-            >
-          </div>
-          -->
         </div>
       </div>
 
@@ -375,16 +448,6 @@
           <p>
             Son modelos de lenguaje de código abierto de Alibaba Group. Están diseñados para ser potentes y eficientes, capaces de manejar una amplia gama de tareas, incluyendo comprensión, generación y programación, con un fuerte enfoque en el soporte multilingüe.
           </p>
-          <!--   
-          <div class="modal-links">
-            <a href="https://en.wikipedia.org/wiki/ChatGPT" target="_blank"
-              >More info (EN)</a
-            >
-            <a href="https://es.wikipedia.org/wiki/ChatGPT" target="_blank"
-              >Más info (ES)</a
-            >
-          </div>
-          -->
         </div>
       </div>
 
@@ -395,16 +458,6 @@
           <p>
             Es un modelo de lenguaje de alto rendimiento desarrollado por la compañía francesa Mistral AI. Es conocido por su eficiencia, velocidad y excelencia en razonamiento, matemáticas y codificación, a menudo superando a modelos más grandes en tareas específicas.
           </p>
-          <!--   
-          <div class="modal-links">
-            <a href="https://en.wikipedia.org/wiki/ChatGPT" target="_blank"
-              >More info (EN)</a
-            >
-            <a href="https://es.wikipedia.org/wiki/ChatGPT" target="_blank"
-              >Más info (ES)</a
-            >
-          </div>
-          -->
         </div>
       </div>
 
@@ -415,16 +468,6 @@
           <p>
             Son modelos de lenguaje desarrollados por Anthropic. Se destacan por su enfoque en la seguridad y la utilidad, siendo particularmente buenos en el resumen, la escritura creativa y el manejo de conversaciones largas y complejas.
           </p>
-          <!--   
-          <div class="modal-links">
-            <a href="https://en.wikipedia.org/wiki/ChatGPT" target="_blank"
-              >More info (EN)</a
-            >
-            <a href="https://es.wikipedia.org/wiki/ChatGPT" target="_blank"
-              >Más info (ES)</a
-            >
-          </div>
-          -->
         </div>
       </div>
 
@@ -435,16 +478,6 @@
           <p>
             Un asistente de escritura con IA enfocado en la generación de contenido extenso y la optimización de SEO. Está diseñado para ayudar a crear artículos, entradas de blog y textos de marketing de manera rápida y eficiente.
           </p>
-          <!--   
-          <div class="modal-links">
-            <a href="https://en.wikipedia.org/wiki/ChatGPT" target="_blank"
-              >More info (EN)</a
-            >
-            <a href="https://es.wikipedia.org/wiki/ChatGPT" target="_blank"
-              >Más info (ES)</a
-            >
-          </div>
-          -->
         </div>
       </div>
 
@@ -455,16 +488,6 @@
           <p>
             Es una startup china de IA conocida por sus grandes modelos de lenguaje. Ofrecen capacidades avanzadas de generación de voz y video con IA, además de sus modelos de chat conversacionales.
           </p>
-          <!--   
-          <div class="modal-links">
-            <a href="https://en.wikipedia.org/wiki/ChatGPT" target="_blank"
-              >More info (EN)</a
-            >
-            <a href="https://es.wikipedia.org/wiki/ChatGPT" target="_blank"
-              >Más info (ES)</a
-            >
-          </div>
-          -->
         </div>
       </div>
 
@@ -475,16 +498,6 @@
           <p>
             Es una herramienta de Google que forma parte de la plataforma Firebase. Está orientada a desarrolladores para construir, probar e implementar aplicaciones. El Studio ofrece un entorno para experimentar con las capacidades de IA y prompts dentro de los proyectos de desarrollo.
           </p>
-          <!--   
-          <div class="modal-links">
-            <a href="https://en.wikipedia.org/wiki/ChatGPT" target="_blank"
-              >More info (EN)</a
-            >
-            <a href="https://es.wikipedia.org/wiki/ChatGPT" target="_blank"
-              >Más info (ES)</a
-            >
-          </div>
-          -->
         </div>
       </div>
 
@@ -495,16 +508,6 @@
           <p>
             Es una herramienta online que permite a los desarrolladores y usuarios experimentar y prototipar rápidamente con los modelos de Gemini. Es el entorno ideal para crear prompts, encadenar modelos y construir aplicaciones de IA.
           </p>
-          <!--   
-          <div class="modal-links">
-            <a href="https://en.wikipedia.org/wiki/ChatGPT" target="_blank"
-              >More info (EN)</a
-            >
-            <a href="https://es.wikipedia.org/wiki/ChatGPT" target="_blank"
-              >Más info (ES)</a
-            >
-          </div>
-          -->
         </div>
       </div>
 
@@ -515,19 +518,39 @@
           <p>
             Un asistente de chat con IA desarrollado por Moonshot AI. Su principal diferenciador es su capacidad para manejar ventanas de contexto extremadamente grandes, lo que le permite procesar y resumir documentos y libros muy extensos con gran precisión.
           </p>
-          <!--   
-          <div class="modal-links">
-            <a href="https://en.wikipedia.org/wiki/ChatGPT" target="_blank"
-              >More info (EN)</a
-            >
-            <a href="https://es.wikipedia.org/wiki/ChatGPT" target="_blank"
-              >Más info (ES)</a
-            >
-          </div>
-          -->
+        </div>
+      </div>
+      
+      <div id="modal-notion" class="modal">
+        <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <h3>Notion</h3>
+          <p>
+            Una plataforma de productividad todo en uno que combina notas, tareas, wikis y bases de datos. Recientemente ha integrado funciones de IA (Notion AI) para resumir, escribir y organizar contenido.
+          </p>
         </div>
       </div>
 
+      <div id="modal-make" class="modal">
+        <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <h3>Make</h3>
+          <p>
+            Una plataforma de automatización visual que permite conectar aplicaciones y servicios (APIs) para crear flujos de trabajo (escenarios) sin necesidad de código.
+          </p>
+        </div>
+      </div>
+
+      <div id="modal-lovable" class="modal">
+        <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <h3>Lovable</h3>
+          <p>
+            Una plataforma de 'Vibe Coding' que permite a los desarrolladores construir agentes de IA que pueden interactuar con interfaces de usuario web, entender objetivos y realizar tareas.
+          </p>
+        </div>
+      </div>
+      
       <section class="additional-links">
         <h2>Recursos Adicionales</h2>
         <ul>
@@ -566,42 +589,6 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        // Seleccionar todos los botones de información
-        const infoButtons = document.querySelectorAll(".info-button");
-
-        // Seleccionar todos los botones de cerrar (la 'x')
-        const closeButtons = document.querySelectorAll(".close-button");
-
-        // Función para abrir un modal
-        infoButtons.forEach((button) => {
-          button.addEventListener("click", () => {
-            const modalId = button.getAttribute("data-modal");
-            const modal = document.getElementById(modalId);
-            if (modal) {
-              modal.style.display = "flex"; // Usamos 'flex' para centrar el modal-content
-            }
-          });
-        });
-
-        // Función para cerrar un modal
-        closeButtons.forEach((button) => {
-          button.addEventListener("click", () => {
-            const modal = button.closest(".modal"); // Encuentra el modal más cercano al botón 'x'
-            if (modal) {
-              modal.style.display = "none";
-            }
-          });
-        });
-
-        // Cerrar modal si el usuario hace clic fuera de él
-        window.addEventListener("click", (event) => {
-          if (event.target.classList.contains("modal")) {
-            event.target.style.display = "none";
-          }
-        });
-      });
-    </script>
+    <script src="scripts.js"></script>
   </body>
 </html>

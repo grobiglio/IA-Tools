@@ -9,37 +9,57 @@ body {
 }
 
 .content-wrapper {
-  /* Estilos para el nuevo div wrapper */
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Asegura que ocupe al menos el alto de la ventana */
+  min-height: 100vh;
   width: 100%;
-  padding-top: 30px; /* Espacio superior para el título */
+  padding-top: 30px;
 }
 
 .container {
-  text-align: center; /* Centra el título "Herramientas IA" */
-  display: flex; /* Convertimos el .container en un contenedor Flexbox */
-  flex-direction: column; /* Alineamos los elementos internos (título y .button-grid) en columna */
-  align-items: center; /* Centra horizontalmente los elementos internos dentro del .container */
-  flex: 1; /* Permite que el contenedor crezca para ocupar el espacio disponible */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
 }
 
-/* Nuevo estilo para el contenedor de la cuadrícula, para permitir posicionamiento relativo de los modales si se desea, aunque no es estrictamente necesario aquí. */
+/* --- NUEVOS ESTILOS DE CATEGORÍA --- */
+.category-container {
+  width: 100%;
+  max-width: 600px; /* Ancho máximo para el contenedor */
+  margin-bottom: 30px;
+  padding: 20px 20px 30px 20px; /* Padding (más abajo) */
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e0e0e0; /* Borde sutil como en el esquema */
+}
+
+.category-container h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 25px; /* Espacio entre título y grilla */
+  color: #333;
+  font-weight: 600;
+  text-transform: uppercase; /* Mayúsculas como en el esquema */
+  letter-spacing: 1px;
+  font-size: 1.2em;
+}
+/* --- FIN NUEVOS ESTILOS --- */
+
 .button-grid {
-    /* Mantener estilos existentes... */
-    display: grid;
-    /* Cambiamos a 2 columnas: una para el botón principal (1fr) y otra pequeña para el botón de info (auto) */
-    grid-template-columns: 1fr auto; 
-    gap: 10px;
-    margin-top: 20px;
-    width: 350px; /* Aumentamos un poco el ancho total para alojar el nuevo botón y el gap */
-    max-width: 90%;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 10px;
+  /* El margin-top ahora lo maneja el h2 */
+  margin: 0 auto; /* Centramos la grilla dentro del category-container */
+  width: 450px;
+  max-width: 90%;
 }
 
-/* Estilo para el contenedor de cada fila de botón (principal + info) */
 .ai-button-row {
-    display: contents; /* Permite que los hijos (.ai-button y .info-button) se coloquen directamente en la cuadrícula */
+  display: contents;
 }
 
 .ai-button {
@@ -54,13 +74,13 @@ body {
   color: #fff;
   font-weight: bold;
   transition: background-color 0.3s ease;
-  width: 100%; /* Los botones ocupan todo el ancho de su celda en la cuadrícula */
-  box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .ai-button img,
 .ai-button svg {
-  margin-right: 10px; /* Restauramos un poco más de margen derecho para el logo */
+  margin-right: 10px;
   max-height: 24px;
   max-width: 24px;
 }
@@ -90,11 +110,19 @@ body {
 }
 
 .perplexity {
-  background-color: #2c3e50; /* Un azul grisáceo oscuro (como el de Perplexity) */
+  background-color: #2c3e50;
 }
 
 .perplexity:hover {
-  background-color: #1e2e3d; /* Un poco más oscuro al hacer hover */
+  background-color: #1e2e3d;
+}
+
+.genspark {
+  background-color: #ff6f61;
+}
+
+.genspark:hover {
+  background-color: #e65a50;
 }
 
 .grok {
@@ -114,7 +142,7 @@ body {
 }
 
 .qwen {
-  background-color: #7e57c2; /* Un morado oscuro */
+  background-color: #7e57c2;
 }
 
 .qwen:hover {
@@ -122,7 +150,7 @@ body {
 }
 
 .mistral {
-  background-color: #03a9f4; /* Un celeste brillante */
+  background-color: #03a9f4;
 }
 
 .mistral:hover {
@@ -130,31 +158,31 @@ body {
 }
 
 .claude {
-  background-color: #ff9800; /* Un naranja intenso */
+  background-color: #ff9800;
 }
 
 .claude:hover {
   background-color: #f57c00;
 }
 
-.minimax {
-  background-color: #8b0000; /* Un rojo oscuro, distintivo */
-}
-
-.minimax:hover {
-  background-color: #6a0000;
-}
-
 .manus {
-  background-color: #4a148c; /* Un morado profundo */
+  background-color: #4a148c;
 }
 
 .manus:hover {
   background-color: #380d75;
 }
 
+.minimax {
+  background-color: #8b0000;
+}
+
+.minimax:hover {
+  background-color: #6a0000;
+}
+
 .firebase {
-  background-color: #f4511e; /* Un rojo anaranjado */
+  background-color: #f4511e;
 }
 
 .firebase:hover {
@@ -162,139 +190,197 @@ body {
 }
 
 .ai-studio {
-  background-color: #4285F4; /* Azul de Google */
+  background-color: #4285f4;
 }
 
 .ai-studio:hover {
-  background-color: #357AE8;
+  background-color: #357ae8;
 }
 
 .kimi {
-  background-color: #61A4B4; /* Un azul suave/verde azulado */
+  background-color: #61a4b4;
 }
 
 .kimi:hover {
-  background-color: #4A879B;
+  background-color: #4a879b;
 }
+
+/* --- NUEVOS BOTONES --- */
+.notion {
+  background-color: #000000;
+}
+.notion:hover {
+  background-color: #333333;
+}
+
+.make {
+  background-color: #6a00ff; /* Make's brand purple */
+}
+.make:hover {
+  background-color: #5500d4;
+}
+
+.lovable {
+  background-color: #4a90e2; /* A nice blue */
+}
+.lovable:hover {
+  background-color: #357abd;
+}
+/* --- FIN NUEVOS BOTONES --- */
 
 /* Estilo para el botón de Información (el signo de pregunta) */
 .info-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    width: 30px; /* Ancho fijo para el icono */
-    height: 100%; /* Ocupa la altura del botón principal */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #ced4da; /* Un gris claro, neutral */
-    color: #495057; /* Texto o ícono gris oscuro */
-    font-weight: bold;
-    font-size: 1.2em;
-    transition: background-color 0.3s ease;
-    text-decoration: none; /* Asegura que si es un <a>, no tenga subrayado */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  aspect-ratio: 1 / 1;
+  height: 100%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #ced4da;
+  color: #495057;
+  font-weight: bold;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
 }
 
 .info-button:hover {
-    background-color: #adb5bd; /* Un poco más oscuro al hacer hover */
-    color: #212529;
+  background-color: #adb5bd;
+  color: #212529;
+}
+
+/* Estilo para el botón de YouTube */
+.youtube-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  aspect-ratio: 1 / 1;
+  height: 100%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #ff0000;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.youtube-button:hover {
+  background-color: #cc0000;
+}
+
+.youtube-button.sin-enlace {
+  background-color: #e9ecef;
+  color: #adb5bd;
+  cursor: default;
+}
+
+.youtube-button.sin-enlace:hover {
+  background-color: #e9ecef;
 }
 
 /* --- Estilos del Modal (Ventana Emergente) --- */
-
-/* Contenedor principal que oscurece el fondo */
 .modal {
-    display: none; /* Por defecto está oculto */
-    position: fixed; /* Fijo en la ventana de visualización */
-    z-index: 1000; /* Asegura que esté por encima de todo */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto; /* Habilita el scroll si el contenido es muy largo */
-    background-color: rgba(0, 0, 0, 0.4); /* Fondo semi-transparente negro */
-    justify-content: center;
-    align-items: center;
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
 }
 
-/* Contenido del Modal (la caja blanca) */
 .modal-content {
-    background-color: #ffffff;
-    margin: auto; /* Centrado */
-    padding: 20px;
-    border-radius: 8px;
-    width: 90%; /* Ancho en móviles */
-    max-width: 400px; /* Ancho máximo en escritorio */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    position: relative;
-    animation-name: animatetop;
-    animation-duration: 0.4s;
+  background-color: #ffffff;
+  margin: auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
 }
 
-/* Animación para que aparezca desde arriba */
 @keyframes animatetop {
-    from {top: -300px; opacity: 0} 
-    to {top: 0; opacity: 1}
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }
 
-/* Botón de cerrar (la 'x') */
 .close-button {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    line-height: 20px;
-    text-align: right;
-    padding-left: 10px;
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 20px;
+  text-align: right;
+  padding-left: 10px;
 }
 
 .close-button:hover,
 .close-button:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-/* Estilo para los enlaces de información dentro del modal */
 .modal-links {
-    margin-top: 15px;
-    display: flex;
-    justify-content: space-around;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .modal-links a {
-    color: #4285f4; /* Usamos un color de Google para los enlaces */
-    text-decoration: none;
-    font-weight: bold;
-    padding: 8px 15px;
-    border: 1px solid #4285f4;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
+  color: #4285f4;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 15px;
+  border: 1px solid #4285f4;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .modal-links a:hover {
-    background-color: #4285f4;
-    color: #fff;
-    text-decoration: none;
+  background-color: #4285f4;
+  color: #fff;
+  text-decoration: none;
 }
 
+/* --- Sección Recursos Adicionales --- */
 .additional-links {
   text-align: center;
   margin: 30px auto;
-  padding: 30px 20px; /* Aumenta el padding vertical para más "aire" */
-  background-color: #ffffff; /* Fondo blanco para destacarlo */
-  border-radius: 10px; /* Bordes redondeados */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  font-size: 1em; /* Un poco más grande para mejor legibilidad */
-  max-width: 600px; /* Limita el ancho para que no se extienda demasiado en pantallas grandes */
-  border-top: none; /* Quitamos el borde superior que ya no es necesario con el box-shadow */
+  padding: 30px 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 1em;
+  max-width: 600px; /* Igual al max-width del category-container */
+  border-top: none;
 }
 
 .additional-links h2 {
-  font-size: 1.5em; /* Un poco más grande para el título */
-  color: #333; /* Color de texto más oscuro para el título */
-  margin-bottom: 25px; /* Más espacio debajo del título */
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 25px;
 }
 
 .additional-links ul {
@@ -305,43 +391,43 @@ body {
 
 .additional-links li {
   margin-bottom: 15px;
-  display: flex; /* Mantenemos flex para alinear el icono y el resto */
-  align-items: flex-start; /* Alinea los elementos al inicio (arriba) */
-  justify-content: left; /* Centra el grupo completo de icono + texto */
-  text-align: left; /* Alinea el texto a la izquierda dentro de cada ítem */
+  display: flex;
+  align-items: flex-start;
+  justify-content: left;
+  text-align: left;
 }
 
 .additional-links a {
-  color: #007bff; /* Mantiene el color azul de enlace */
+  color: #007bff;
   text-decoration: none;
-  font-weight: bold; /* Hacer los enlaces un poco más prominentes */
+  font-weight: bold;
   transition: color 0.3s ease;
 }
 
 .additional-links a:hover {
-  color: #0056b3; /* Un azul más oscuro al pasar el mouse */
+  color: #0056b3;
   text-decoration: underline;
 }
 
-/* Estilo para los iconos si decides agregarlos - por ejemplo, con emojis o SVGs */
 .additional-links li span.icon {
   margin-right: 8px;
-  font-size: 1.2em; /* Tamaño del icono */
-  line-height: 1; /* Asegura que no afecte el espaciado de línea */
+  font-size: 1.2em;
+  line-height: 1;
 }
 
 .additional-links li .icon {
-  margin-right: 10px; /* Más espacio entre el icono y el texto del enlace */
+  margin-right: 10px;
   font-size: 1.2em;
-  flex-shrink: 0; /* Evita que el icono se encoja */
+  flex-shrink: 0;
 }
 
 .additional-links li .description {
-  margin-left: 5px; /* Pequeño margen entre el enlace y la descripción */
-  color: #555; /* Color más suave para la descripción */
-  font-weight: normal; /* Asegura que no sea negrita */
+  margin-left: 5px;
+  color: #555;
+  font-weight: normal;
 }
 
+/* --- Footer --- */
 .footer {
   text-align: center;
   margin-top: auto;
