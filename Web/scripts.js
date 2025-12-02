@@ -1,35 +1,66 @@
 document.addEventListener("DOMContentLoaded", () => {
-        // Seleccionar todos los botones de información
-        const infoButtons = document.querySelectorAll(".info-button");
+  // --- CÓDIGO DE MODALES (Existente) ---
+  const infoButtons = document.querySelectorAll(".info-button");
+  const closeButtons = document.querySelectorAll(".close-button");
 
-        // Seleccionar todos los botones de cerrar (la 'x')
-        const closeButtons = document.querySelectorAll(".close-button");
+  infoButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const modalId = button.getAttribute("data-modal");
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.style.display = "flex";
+      }
+    });
+  });
 
-        // Función para abrir un modal
-        infoButtons.forEach((button) => {
-          button.addEventListener("click", () => {
-            const modalId = button.getAttribute("data-modal");
-            const modal = document.getElementById(modalId);
-            if (modal) {
-              modal.style.display = "flex"; // Usamos 'flex' para centrar el modal-content
-            }
-          });
-        });
+  closeButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const modal = button.closest(".modal");
+      if (modal) {
+        modal.style.display = "none";
+      }
+    });
+  });
 
-        // Función para cerrar un modal
-        closeButtons.forEach((button) => {
-          button.addEventListener("click", () => {
-            const modal = button.closest(".modal"); // Encuentra el modal más cercano al botón 'x'
-            if (modal) {
-              modal.style.display = "none";
-            }
-          });
-        });
+  window.addEventListener("click", (event) => {
+    if (event.target.classList.contains("modal")) {
+      event.target.style.display = "none";
+    }
+  });
 
-        // Cerrar modal si el usuario hace clic fuera de él
-        window.addEventListener("click", (event) => {
-          if (event.target.classList.contains("modal")) {
-            event.target.style.display = "none";
-          }
-        });
-      });
+  // --- NUEVO CÓDIGO DARK MODE ---
+  const themeToggle = document.getElementById("theme-toggle");
+  const body = document.body;
+
+  // Función para aplicar el tema
+  const applyTheme = (isDark) => {
+    if (isDark) {
+      body.classList.add("dark-mode");
+    } else {
+      body.classList.remove("dark-mode");
+    }
+  };
+
+  // Cargar preferencia guardada al cargar la página
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    themeToggle.checked = true; // Sincroniza el checkbox
+    applyTheme(true); // Aplica el tema oscuro
+  } else {
+    themeToggle.checked = false; // Sincroniza el checkbox
+    applyTheme(false); // Aplica el tema claro (por defecto)
+  }
+
+  // Evento al cambiar el toggle
+  themeToggle.addEventListener("change", () => {
+    if (themeToggle.checked) {
+      // Si está marcado (oscuro)
+      applyTheme(true);
+      localStorage.setItem("theme", "dark"); // Guarda la preferencia
+    } else {
+      // Si no está marcado (claro)
+      applyTheme(false);
+      localStorage.setItem("theme", "light"); // Guarda la preferencia
+    }
+  });
+});

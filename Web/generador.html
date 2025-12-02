@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Generador de Íconos PWA</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 20px; background: #f0f0f0; }
+        .container { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+        .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        canvas { border: 1px dashed #ccc; margin-bottom: 10px; background: transparent; }
+        button { background: #0d6efd; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 16px; }
+        button:hover { background: #0b5ed7; }
+    </style>
+</head>
+<body>
+    <h1>Generador de Íconos para tu PWA</h1>
+    <p>Los íconos se generan a partir de tu código SVG original.</p>
+    
+    <div class="container">
+        <div class="card">
+            <h3>icon-192.png</h3>
+            <canvas id="canvas192" width="192" height="192"></canvas><br>
+            <button onclick="descargar('canvas192', 'icon-192.png')">Descargar 192px</button>
+        </div>
+
+        <div class="card">
+            <h3>icon-512.png</h3>
+            <canvas id="canvas512" width="512" height="512"></canvas><br>
+            <button onclick="descargar('canvas512', 'icon-512.png')">Descargar 512px</button>
+        </div>
+    </div>
+
+    <script>
+        // Tu SVG original (decodificado para que funcione bien en el Canvas)
+        const svgString = `
+        <svg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'>
+            <circle cx='50' cy='50' r='45' fill='#4285F4'/>
+            <text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='70' fill='#FFFFFF' font-family='Arial, sans-serif' font-weight='bold'>i</text>
+        </svg>`;
+
+        // Función para convertir SVG a Data URL
+        const svgBlob = new Blob([svgString], {type: 'image/svg+xml;charset=utf-8'});
+        const url = URL.createObjectURL(svgBlob);
+
+        const img = new Image();
+        img.onload = function() {
+            // Dibujar en Canvas 192
+            const ctx192 = document.getElementById('canvas192').getContext('2d');
+            ctx192.drawImage(img, 0, 0, 192, 192);
+
+            // Dibujar en Canvas 512
+            const ctx512 = document.getElementById('canvas512').getContext('2d');
+            ctx512.drawImage(img, 0, 0, 512, 512);
+            
+            // Liberar memoria
+            URL.revokeObjectURL(url);
+        };
+        img.src = url;
+
+        // Función de descarga
+        function descargar(canvasId, nombreArchivo) {
+            const canvas = document.getElementById(canvasId);
+            const link = document.createElement('a');
+            link.download = nombreArchivo;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+    </script>
+</body>
+</html>
