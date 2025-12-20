@@ -227,6 +227,7 @@ body {
 }
 
 /* --- Sección Recursos Adicionales --- */
+
 .additional-links {
   text-align: center;
   margin: 30px auto;
@@ -235,7 +236,7 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-size: 1em;
-  max-width: 600px; /* Igual al max-width del category-container */
+  max-width: 600px;
   border-top: none;
 }
 
@@ -245,6 +246,7 @@ body {
   margin-bottom: 25px;
 }
 
+/* 
 .additional-links ul {
   list-style: none;
   padding: 0;
@@ -287,6 +289,42 @@ body {
   margin-left: 5px;
   color: #555;
   font-weight: normal;
+} */
+
+/* --- CTA único en Recursos Adicionales (botón negro estilo ai-button) --- */
+.additional-cta{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Override: dentro de .additional-links, no queremos el estilo de link azul */
+.additional-links a.ai-button{
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Ajuste de tamaño: ai-button trae width:100%, acá lo hacemos “tamaño botón” */
+/* 
+.additional-cta-button{
+  width: auto;
+  min-width: 220px;
+} */
+
+/* Evitar underline/azul del hover general de .additional-links a:hover */
+.additional-links a.ai-button:hover{
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Texto */
+.additional-cta-text{
+  margin: 0;
+  color: #555;
+  max-width: 360px;
+  line-height: 1.35;
 }
 
 /* --- Footer --- */
@@ -311,3 +349,19 @@ body {
 .footer a:hover {
   text-decoration: underline;
 }
+
+/* Mobile: botón arriba, texto abajo */
+/* 
+@media (max-width: 480px){
+  .additional-cta{
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .additional-cta-button{
+    width: 100%;
+    min-width: unset;
+  }
+  .additional-cta-text{
+    text-align: center;
+  }
+} */
