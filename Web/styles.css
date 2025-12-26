@@ -24,36 +24,33 @@ body {
   flex: 1;
 }
 
-/* --- NUEVOS ESTILOS DE CATEGORÍA --- */
 .category-container {
   width: 100%;
-  max-width: 600px; /* Ancho máximo para el contenedor */
+  max-width: 600px;
   margin-bottom: 30px;
-  padding: 20px 20px 30px 20px; /* Padding (más abajo) */
+  padding: 20px 20px 30px 20px;
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  border: 1px solid #e0e0e0; /* Borde sutil como en el esquema */
+  border: 1px solid #e0e0e0;
 }
 
 .category-container h2 {
   text-align: center;
   margin-top: 0;
-  margin-bottom: 25px; /* Espacio entre título y grilla */
+  margin-bottom: 25px;
   color: #333;
   font-weight: 600;
-  text-transform: uppercase; /* Mayúsculas como en el esquema */
+  text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 1.2em;
 }
-/* --- FIN NUEVOS ESTILOS --- */
 
 .button-grid {
   display: grid;
   grid-template-columns: 1fr auto auto;
   gap: 10px;
-  /* El margin-top ahora lo maneja el h2 */
-  margin: 0 auto; /* Centramos la grilla dentro del category-container */
+  margin: 0 auto;
   width: 450px;
   max-width: 90%;
 }
@@ -227,7 +224,6 @@ body {
 }
 
 /* --- Sección Recursos Adicionales --- */
-
 .additional-links {
   text-align: center;
   margin: 30px auto;
@@ -246,85 +242,47 @@ body {
   margin-bottom: 25px;
 }
 
-/* 
-.additional-links ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.additional-links li {
-  margin-bottom: 15px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: left;
-  text-align: left;
-}
-
-.additional-links a {
-  color: #007bff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-.additional-links a:hover {
-  color: #0056b3;
-  text-decoration: underline;
-}
-
-.additional-links li span.icon {
-  margin-right: 8px;
-  font-size: 1.2em;
-  line-height: 1;
-}
-
-.additional-links li .icon {
-  margin-right: 10px;
-  font-size: 1.2em;
-  flex-shrink: 0;
-}
-
-.additional-links li .description {
-  margin-left: 5px;
-  color: #555;
-  font-weight: normal;
-} */
-
-/* --- CTA único en Recursos Adicionales (botón negro estilo ai-button) --- */
-.additional-cta{
+/* Contenedor flexible para botón y texto */
+.additional-cta {
   display: flex;
   align-items: center;
   gap: 16px;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Permite que el texto baje en celulares */
 }
 
-/* Override: dentro de .additional-links, no queremos el estilo de link azul */
-.additional-links a.ai-button{
+/* Botón específico de esta sección */
+.additional-cta-button {
+  /* Sobrescribe el width: 100% de .ai-button para que se ajuste al contenido */
+  width: auto !important; 
+  min-width: 200px;
+  padding: 10px 20px;
+}
+
+/* Asegura que el texto del enlace sea blanco y sin subrayado */
+.additional-links a.ai-button {
   color: #fff;
   text-decoration: none;
 }
 
-/* Ajuste de tamaño: ai-button trae width:100%, acá lo hacemos “tamaño botón” */
-/* 
-.additional-cta-button{
-  width: auto;
-  min-width: 220px;
-} */
-
-/* Evitar underline/azul del hover general de .additional-links a:hover */
-.additional-links a.ai-button:hover{
-  color: #fff;
-  text-decoration: none;
+.additional-links a.ai-button:hover {
+  color: #fff; /* Mantiene blanco al hover */
+  background-color: #222; /* Mismo hover que los otros botones */
 }
 
-/* Texto */
-.additional-cta-text{
+.additional-cta-text {
   margin: 0;
   color: #555;
   max-width: 360px;
   line-height: 1.35;
+  text-align: left; /* Lectura más natural junto al botón */
+}
+
+/* Ajuste para móviles: centra el texto si la pantalla es muy chica */
+@media (max-width: 480px) {
+  .additional-cta-text {
+    text-align: center;
+  }
 }
 
 /* --- Footer --- */
@@ -349,22 +307,6 @@ body {
 .footer a:hover {
   text-decoration: underline;
 }
-
-/* Mobile: botón arriba, texto abajo */
-/* 
-@media (max-width: 480px){
-  .additional-cta{
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .additional-cta-button{
-    width: 100%;
-    min-width: unset;
-  }
-  .additional-cta-text{
-    text-align: center;
-  }
-} */
 
 /* Estilo para el emoji en la esquina */
 .corner-link {
