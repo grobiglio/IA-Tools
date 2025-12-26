@@ -365,3 +365,20 @@ body {
     text-align: center;
   }
 } */
+
+/* Estilo para el emoji en la esquina */
+.corner-link {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 2rem; /* Tamaño del emoji */
+  text-decoration: none;
+  z-index: 1000; /* Asegura que quede por encima de otros elementos */
+  transition: transform 0.2s ease;
+  line-height: 1;
+}
+
+.corner-link:hover {
+  transform: scale(1.2); /* Efecto zoom al pasar el mouse */
+  text-decoration: none;
+}
