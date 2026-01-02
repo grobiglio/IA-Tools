@@ -1,5 +1,5 @@
 // sw.js - Service Worker Básico
-const CACHE_NAME = 'herramientas-ia-v2';
+const CACHE_NAME = 'herramientas-ia-v3';
 const urlsToCache = [
   './',
   './index.html',

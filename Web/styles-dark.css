@@ -1,0 +1,334 @@
+body {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #121212; /* Fondo oscuro */
+  color: #e0e0e0; /* Texto claro */
+  margin: 0;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  padding-top: 30px;
+}
+
+.container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.category-container {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 30px;
+  padding: 20px 20px 30px 20px;
+  background-color: #1e1e1e; /* Fondo de tarjeta oscuro */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border: 1px solid #333; /* Borde sutil */
+}
+
+.category-container h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 25px;
+  color: #ffffff; /* Título en blanco */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.2em;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 10px;
+  margin: 0 auto;
+  width: 450px;
+  max-width: 90%;
+}
+
+.ai-button-row {
+  display: contents;
+}
+
+.ai-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+  
+  /* ESTILOS SOLICITADOS */
+  background-color: black;
+  color: #fff;
+  border: 2px solid #ffd700; /* Borde Amarillo */
+  box-shadow: 0 0 5px #ffd700; /* Sombra/Resplandor Amarillo */
+}
+
+.ai-button img,
+.ai-button svg {
+  margin-right: 10px;
+  max-height: 24px;
+  max-width: 24px;
+}
+
+.ai-button:hover {
+  background-color: #111;
+  box-shadow: 0 0 15px #ffd700; /* Resplandor más intenso al pasar el mouse */
+}
+
+/* Estilo para el botón de Información */
+.info-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  aspect-ratio: 1 / 1;
+  height: 100%;
+  border: 1px solid #444;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #333; /* Gris oscuro */
+  color: #ffd700; /* Icono amarillo para combinar */
+  font-weight: bold;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.info-button:hover {
+  background-color: #444;
+  color: #fff;
+}
+
+/* Estilo para el botón de YouTube */
+.youtube-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  aspect-ratio: 1 / 1;
+  height: 100%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #cc0000;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.youtube-button:hover {
+  background-color: #ff0000;
+}
+
+.youtube-button.sin-enlace {
+  background-color: #333; /* Desactivado oscuro */
+  color: #555;
+  cursor: default;
+}
+
+.youtube-button.sin-enlace:hover {
+  background-color: #333;
+}
+
+/* --- Estilos del Modal (Ventana Emergente) --- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo más oscuro */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #1e1e1e; /* Modal oscuro */
+  color: #ddd;
+  margin: auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  position: relative;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  border: 1px solid #444;
+  text-align: left;
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 20px;
+  text-align: right;
+  padding-left: 10px;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-links {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.modal-links a {
+  color: #ffd700; /* Enlaces amarillos */
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 15px;
+  border: 1px solid #ffd700;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.modal-links a:hover {
+  background-color: #ffd700;
+  color: #000;
+  text-decoration: none;
+}
+
+/* --- Sección Recursos Adicionales --- */
+.additional-links {
+  text-align: center;
+  margin: 30px auto;
+  padding: 30px 20px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  font-size: 1em;
+  max-width: 600px;
+  border-top: none;
+  border: 1px solid #333;
+}
+
+.additional-links h2 {
+  font-size: 1.5em;
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+/* Contenedor flexible para botón y texto */
+.additional-cta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap; 
+}
+
+/* Botón específico de esta sección */
+.additional-cta-button {
+  width: auto !important; 
+  min-width: 200px;
+  padding: 10px 20px;
+}
+
+/* Asegura que el texto del enlace sea blanco y sin subrayado */
+.additional-links a.ai-button {
+  color: #fff;
+  text-decoration: none;
+}
+
+.additional-links a.ai-button:hover {
+  color: #fff;
+  background-color: #111; 
+}
+
+.additional-cta-text {
+  margin: 0;
+  color: #bbb; /* Texto gris claro */
+  max-width: 360px;
+  line-height: 1.35;
+  text-align: left; 
+}
+
+@media (max-width: 480px) {
+  .additional-cta-text {
+    text-align: center;
+  }
+}
+
+/* --- Footer --- */
+.footer {
+  text-align: center;
+  margin: 0;
+  padding: 40px;
+  background-color: #000; /* Footer negro */
+  font-size: 0.8em;
+  border-top: 1px solid #333;
+}
+
+.footer p {
+  margin: 0;
+  color: #888;
+}
+
+.footer a {
+  color: #ffd700; /* Enlace amarillo */
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Estilo para el emoji en la esquina */
+.corner-link {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 2rem; 
+  text-decoration: none;
+  z-index: 1000; 
+  transition: transform 0.2s ease;
+  line-height: 1;
+}
+
+.corner-link:hover {
+  transform: scale(1.2); 
+  text-decoration: none;
+}
