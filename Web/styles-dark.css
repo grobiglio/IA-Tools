@@ -332,3 +332,27 @@ body {
   transform: scale(1.2); 
   text-decoration: none;
 }
+
+.header-image {
+    display: block;           /* Para que respete los márgenes y se pueda centrar */
+    max-width: 100%;          /* Responsivo: no se saldrá de la pantalla en móviles */
+    width: 350px;             /* Tamaño razonable por defecto (puedes ajustar este número) */
+    height: auto;             /* Mantiene la proporción de la imagen */
+    margin: 0 auto 20px auto; /* Centrado horizontal y margen inferior */
+    
+    /* Estética */
+    border-radius: 15px;      /* Bordes redondeados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra suave y elegante */
+    transition: transform 0.3s ease; /* Efecto opcional: suavidad si decides animarla */
+}
+
+/* Opcional: Un pequeño efecto al pasar el mouse */
+.header-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Invierte los colores de la imagen en modo oscuro */
+/* .header-image {
+    filter: invert(1) hue-rotate(180deg);
+} */

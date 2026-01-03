@@ -3,6 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Open Graph para WhatsApp -->
+    <meta property="og:title" content="Herramientas IA">
+    <meta property="og:description" content="Directorio de acceso directo a las principales herramientas de Inteligencia Artificial. Posee también acceso a tutoriales cuidadosamente seleccionados, y a otros recursos valiosos.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ingg.ar/herramientas-ia/">
+    <meta property="og:image" content="https://ingg.ar/herramientas-ia/herramientas-ia.jpg">
+    <meta property="og:image:width" content="1362">
+    <meta property="og:image:height" content="1160">
+    <meta property="og:site_name" content="Herramientas IA">
+
     <title>Herramientas IA</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link
@@ -19,7 +30,8 @@
     <a href="cual.html" class="corner-link" title="¿Cuál IA elegir?">😱</a>
     <div class="content-wrapper">
       <div class="container">
-        <h1>Herramientas IA</h1>
+        <!-- <h1>Herramientas IA</h1> -->
+        <img src="herramientas-ia.jpg" alt="Logo Herramientas IA" class="header-image">
         
         <!-- CHATBOTS -->
         <div class="category-container">
@@ -193,15 +205,11 @@
             <div class="ai-button-row">
               <a
                 href="https://www.genspark.ai/" target="_blank" class="ai-button">
-                <img
-                  src="https://www.genspark.ai/favicon.ico"
-                  alt="Genspark Logo"
-                  style="max-height: 24px; margin-right: 5px"
-                />
+                <img src="https://www.genspark.ai/favicon.ico" alt="Genspark Logo" />
                 Genspark
               </a>
               <button class="info-button" data-modal="modal-genspark">?</button>
-              <a href="#" class="youtube-button sin-enlace" target="_blank">▶</a>
+              <a href="https://youtube.com/playlist?list=PLMkO9wseBDZZ3N9hzSlQQMMB02Ktmnk1K&si=dTG7UP7Mh6TJUtAz" class="youtube-button" target="_blank">▶</a>
             </div>
 
             <!-- MANUS -->
@@ -255,13 +263,8 @@
 
             <!-- MAKE -->
             <div class="ai-button-row">
-              <a
-                href="https://us2.make.com/" target="_blank" class="ai-button">
-                <img
-                  src="https://www.make.com/favicon.ico"
-                  alt="Make Logo"
-                  style="max-height: 24px; margin-right: 5px"
-                />
+              <a href="https://us2.make.com/" target="_blank" class="ai-button">
+                <img src="https://www.make.com/favicon.ico" alt="Make Logo"/>
                 Make
               </a>
               <button class="info-button" data-modal="modal-make">?</button>
@@ -269,7 +272,18 @@
             </div>
 
             <!-- N8N -->
+            <div class="ai-button-row">
+              <a href="https://n8n.io/" target="_blank" class="ai-button">
+                <img src="https://www.n8n.io/favicon.ico" alt="N8N Logo" />
+                n8n
+              </a>
+              <button class="info-button" data-modal="modal-n8n">?</button>
+              <a href="https://youtube.com/playlist?list=PLMkO9wseBDZaCdUOXuKkSAanXgyRoTITl&si=IkzevIdijDCCt6Gu" class="youtube-button" target="_blank">▶</a>
+            </div>
 
+            <!-- OPAL -->
+            <!-- https://opal.withgoogle.com -->
+              
           </div>
         </div>
 
@@ -362,6 +376,25 @@
             <!-- KLING -->
           </div>
         </div>
+
+      <!-- MODAL N8N -->
+      <div id="modal-n8n" class="modal">
+        <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <h3>n8n</h3>
+          <p>
+            n8n (pronunciado n-ocho-n) te ayuda a conectar cualquier aplicación con una API y a manipular sus datos con poco o ningún código.<br>
+            n8n es:<br>
+            ✔ Personalizable: flujos de trabajo altamente flexibles y la opción de crear nodos personalizados.<br>
+            ✔ Práctico: usa npm o Docker para probar n8n, o la opción de alojamiento en la nube si prefieres que n8n se encargue de la infraestructura.<br>
+            ✔ Privado: puedes aloja n8n tú mismo para mayor privacidad y seguridad.
+          </p>
+          <div class="modal-links">
+            <a href="https://docs.n8n.io/" target="_blank" >More info (EN)</a>
+            <!-- <a href="https://es.wikipedia.org/wiki/Runway" target="_blank" >Más info (ES)</a> -->
+          </div>
+        </div>
+      </div>
 
       <!-- MODAL CHAT Z -->
       <div id="modal-chatz" class="modal">
