@@ -778,20 +778,63 @@
 
     <script src="scripts.js"></script>
     <script>
-      // Tracking de clics en botones de herramientas IA
-      document.querySelectorAll('a.ai-button').forEach((btn) => {
+      // 1. TRACKING DE HERRAMIENTAS (Solo las de la grilla principal)
+      // Usamos '.ai-button-row .ai-button' para evitar contar el botón de recursos aquí
+      document.querySelectorAll('.ai-button-row .ai-button').forEach((btn) => {
         btn.addEventListener('click', () => {
-          const herramienta = btn.textContent.trim().replace(/\s+/g, ' ');
-          const destino = btn.href;
-
+          const herramienta = btn.textContent.trim();
           gtag('event', 'click_herramienta', {
-            herramienta: herramienta,
-            destino: destino
+            herramienta: herramienta
           });
         });
       });
-    </script>
 
+      // 2. TRACKING DE TUTORIALES (Youtube)
+      document.querySelectorAll('.youtube-button').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          // Buscamos el nombre de la herramienta que está al lado (hermano)
+          const row = btn.closest('.ai-button-row');
+          const herramienta = row.querySelector('.ai-button').textContent.trim();
+          
+          gtag('event', 'click_tutorial', {
+            herramienta: herramienta
+          });
+        });
+      });
+
+      // 3. TRACKING DE INFO (Botón ?)
+      document.querySelectorAll('.info-button').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const row = btn.closest('.ai-button-row');
+          const herramienta = row.querySelector('.ai-button').textContent.trim();
+
+          gtag('event', 'click_info', {
+            herramienta: herramienta
+          });
+        });
+      });
+
+      // 4. TRACKING DE GUÍA "¿CUÁL ELEGIR?" (Botón esquina)
+      const guiaBtn = document.querySelector('.corner-link');
+      if (guiaBtn) {
+        guiaBtn.addEventListener('click', () => {
+          gtag('event', 'click_guia', {
+            destino: 'cual.html'
+          });
+        });
+      }
+
+      // 5. TRACKING DE RECURSOS ADICIONALES (Botón final)
+      const recursosBtn = document.querySelector('.additional-cta-button');
+      if (recursosBtn) {
+        recursosBtn.addEventListener('click', () => {
+          gtag('event', 'click_recursos', {
+            destino: 'enlaces.html'
+          });
+        });
+      }
+    </script>
+    
     <script>
       // Registro del Service Worker para PWA
       if ('serviceWorker' in navigator) {
