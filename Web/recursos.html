@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Enlaces de interés</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='45' fill='%234285F4'/%3E%3Ctext x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='70' fill='%23FFFFFF'%3Ei%3C/text%3E%3C/svg%3E"
+      type="image/svg+xml"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #f4f6f8;       /* paleta de index.html */
+        --text: #1f2a44;     /* paleta de index.html */
+        --accent: #0077b6;   /* paleta de index.html */
+        --accent-hover: #005f94;
+        --radius: 16px;
+        --shadow: 0 6px 16px rgba(0,0,0,.12);
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Montserrat", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
+      header { text-align: center; padding: 2.5rem 1rem 1rem; }
+      h1 { margin: 0 0 .5rem; font-size: clamp(1.6rem, 2.2vw + 1rem, 2.6rem); }
+      p.sub { margin: 0; opacity: .8; }
+
+      .container { max-width: 1100px; margin: 1.5rem auto 3rem; padding: 0 1rem; }
+
+      .grid { display: grid; grid-template-columns: 1fr; gap: 1rem 1.25rem; }
+      @media (min-width: 880px) { .grid { grid-template-columns: 1fr 1fr; } }
+
+      .card {
+        background: #fff; border-radius: var(--radius); box-shadow: var(--shadow);
+        padding: 1rem; display: flex; flex-direction: column; gap: .75rem;
+      }
+      .media { border-radius: calc(var(--radius) - 4px); overflow: hidden; background: #e9eef3; aspect-ratio: 16/9; display: grid; place-items: center; }
+      .media img, .media iframe { width: 100%; height: 100%; display: block; border: 0; }
+
+      .explain { padding: .5rem 0; line-height: 1.5; }
+
+      .actions { margin-top: auto; display: flex; gap: .5rem; flex-wrap: wrap; }
+      .btn { background: var(--accent); color: #fff; text-decoration: none; font-weight: 700; padding: .75rem 1rem; border-radius: 999px; display: inline-block; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,.15); transition: background-color .25s ease; }
+      .btn:hover { background: var(--accent-hover); }
+
+      .whatsapp { margin-top: 1.25rem; display: grid; gap: .75rem; }
+      .wa-btn { padding: 1rem 1.25rem; font-size: 1.05rem; }
+
+      footer { text-align: center; padding: 2rem 1rem 2.5rem; font-size: .95rem; opacity: .75; }
+      footer a { text-decoration: none; }
+
+      /* -------- Tarjeta estilo Udemy (reemplaza la miniatura del curso) -------- */
+      .udemy-card { max-width: 750px; }
+      .udemy-card .media { position: relative; display: block; aspect-ratio: 16/9; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+      .udemy-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+      .udemy-card .overlay { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,.45), rgba(0,0,0,.05)); }
+      .udemy-card .play { position: absolute; inset: 0; display: grid; place-items: center; font-size: clamp(2rem, 4vw, 3rem); color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,.6); }
+      .udemy-card .label { position: absolute; left: .75rem; bottom: .6rem; color: #fff; font-weight: 700; background: rgba(0,0,0,.55); padding: .35rem .6rem; border-radius: 999px; }
+      .udemy-card .media:hover .label { background: var(--accent); }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Enlaces de interés</h1>
+      <p class="sub">Accesos rápidos a cursos y canales recomendados</p>
+    </header>
+
+    <main class="container">
+      <!-- Fila 1: Udemy (tarjeta estilo Udemy + explicación) -->
+      <section class="grid">
+        <article class="card">
+          <div class="udemy-card">
+            <a class="media" href="https://www.udemy.com/course/complete-ai-guide/" target="_blank" rel="noopener">
+              <img
+                src="https://img-c.udemycdn.com/course/480x270/5170404_d282_10.jpg"
+                srcset="https://img-c.udemycdn.com/course/240x135/5170404_d282_10.jpg 240w,
+                        https://img-c.udemycdn.com/course/480x270/5170404_d282_10.jpg 480w,
+                        https://img-c.udemycdn.com/course/750x422/5170404_d282_10.jpg 750w"
+                sizes="(min-width: 1080px) 480px, (min-width: 700px) 480px, 100vw"
+                alt="Preview del curso en Udemy" loading="lazy" />
+              <span class="overlay"></span>
+              <span class="play">▶</span>
+              <span class="label">Ver preview en Udemy</span>
+            </a>
+          </div>
+        </article>
+        <aside class="card">
+          <div class="explain">
+            <strong>Completísimo curso de IA en Udemy.</strong> Este curso tiene la gran ventaja de que se mantiene permanentemente actualizado. Ideal para construir una base sólida y seguir las novedades sin quedar desfasado.
+          </div>
+        </aside>
+      </section>
+
+      <!-- Fila 2: Video 23 horas (video + explicación) -->
+      <section class="grid" style="margin-top: .25rem;">
+        <article class="card">
+          <div class="media">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Phal-sPAunk?si=RyfIoUwFRX19_cnt" title="Curso de IA de 23 horas" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </article>
+        <aside class="card">
+          <div class="explain">
+            <strong>Curso de IA de 23 horas en YouTube.</strong> Formato intensivo y completo para sentar bases y repasar rápido conceptos clave. Ideal como complemento práctico del curso de Udemy.
+          </div>
+        </aside>
+      </section>
+
+      <!-- Fila 3: Playlist (video + explicación) -->
+      <section class="grid" style="margin-top: .25rem;">
+        <article class="card">
+          <div class="media">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=Scn4J9XMAaTTHcJv&amp;list=PLMkO9wseBDZYjXZUt6IlzGM_TDV20EmHk" title="Playlist de cursos IA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </article>
+        <aside class="card">
+          <div class="explain">
+            <strong>Playlist curada de cursos y tutoriales de IA.</strong> Selección personal para aprender de forma continua. Se actualiza periódicamente con el mejor contenido disponible.
+          </div>
+        </aside>
+      </section>
+
+      <!-- Fila 4: OpenAI Academy (enlace oficial) -->
+      <section class="grid" style="margin-top: .25rem;">
+        <!-- Cuadro izquierdo: imagen / banner -->
+        <article class="card">
+          <a class="media" href="https://academy.openai.com/home" target="_blank" rel="noopener">
+            <img
+              src="./OpenAI-Academy.png"
+              alt="OpenAI Academy · Formación oficial en IA"
+              loading="lazy"
+            />
+          </a>
+        </article>
+
+        <!-- Cuadro derecho: descripción y botón -->
+        <aside class="card">
+          <div class="explain">
+            <strong>OpenAI Academy: IA directamente de la fuente.</strong>
+            Plataforma oficial de formación de OpenAI, con rutas de aprendizaje guiadas,
+            eventos en vivo y recursos prácticos para aplicar la IA en proyectos reales.
+            Ideal para profesionales, docentes y equipos que quieren actualizarse rápido
+            con contenidos de primera mano, sin perderse entre miles de cursos.
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://academy.openai.com/home" target="_blank" rel="noopener">
+              Ir a OpenAI Academy
+            </a>
+          </div>
+        </aside>
+      </section>
+
+      <!-- Fila 5: Video Capacita -->
+      <section class="grid" style="margin-top: .25rem;">
+        <article class="card">
+          <div class="media">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/8tR6x6q_pw8?si=6tn89BYIvIzkh2xz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </article>
+        <aside class="card">
+          <div class="explain">
+            <strong>Capacita+: el mayor entrenamiento en AI de Google Cloud en América Latina.</strong> Vas a aprender AI con Google Cloud y descubrir, con los especialistas de Google, conceptos fundamentales, aplicaciones prácticas de la AI generativa y cómo optimizar tus estudios y trabajo con la ayuda de la tecnología.
+          </div>
+        </aside>
+      </section>
+
+      <!-- Canales de WhatsApp -->
+      <section class="whatsapp">
+        <a class="btn wa-btn" href="https://whatsapp.com/channel/0029VapThS265yDAfwe97c23" target="_blank" rel="noopener">Canal WhatsApp · ChatGPT</a>
+        <a class="btn wa-btn" href="https://whatsapp.com/channel/0029Vb6ISO1Fsn0kEemhE03b" target="_blank" rel="noopener">Canal WhatsApp · Prompt Engineering &amp; Tech Updates</a>
+        <a class="btn wa-btn" href="https://whatsapp.com/channel/0029VbBSlua9Gv7TPLIEpR1o" target="_blank" rel="noopener">Canal WhatsApp · ChatGPT Prompts</a>
+      </section>
+    </main>
+
+    <footer>
+        © 2025 Guillermo A. Robiglio · <a href="https://ingg.ar/enlaces/" target="_blank">ingg.ar</a>
+    </footer>
+  </body>
+</html>
