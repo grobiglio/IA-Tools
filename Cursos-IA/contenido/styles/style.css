@@ -1,0 +1,339 @@
+:root {
+--bg: #0a0f16; /* Fondo oscuro principal */
+--bg-surface: #121a24; /* Fondo para cajas y tablas */
+--fg: #e2e8f0; /* Texto claro */
+--accent: #00f3ff; /* Azul neón */
+--text-muted: #a0aec0;
+--neon-shadow: 0 0 8px rgba(0, 243, 255, 0.5), 0 0 16px rgba(0, 243, 255, 0.3);
+--neon-shadow-hover: 0 0 12px rgba(0, 243, 255, 0.8), 0 0 24px rgba(0, 243, 255, 0.6), 0 0 35px rgba(0, 243, 255, 0.4);
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; scroll-behavior: smooth; }
+
+body {
+margin: 0;
+font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+background: var(--bg);
+color: var(--fg);
+display: flex;
+flex-direction: column;
+align-items: center;
+min-height: 100vh;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: #2d3748; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+.container {
+width: 100%;
+max-width: 960px;
+padding: 1.5rem 1.25rem;
+}
+
+header {
+margin: 2rem 0 1rem;
+text-align: center;
+}
+
+h1 {
+font-size: clamp(1.8rem, 4vw, 2.5rem);
+margin-bottom: 1rem;
+color: var(--accent);
+text-shadow: 0 0 10px rgba(0, 243, 255, 0.6);
+}
+
+h2 {
+font-size: 1.5rem;
+color: var(--accent);
+border-bottom: 1px solid rgba(0, 243, 255, 0.2);
+padding-bottom: 0.5rem;
+margin-top: 3rem;
+margin-bottom: 1.5rem;
+}
+
+h3 {
+font-size: 1.2rem;
+color: #fff;
+margin-top: 2rem;
+}
+
+p {
+line-height: 1.7;
+margin-bottom: 1.2rem;
+}
+
+p.lead {
+font-size: clamp(1rem, 2.2vw, 1.1rem);
+margin: 0 0 1.5rem;
+color: var(--text-muted);
+text-align: center;
+max-width: 800px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.content {
+text-align: left;
+}
+
+ul, ol {
+line-height: 1.7;
+margin-bottom: 1.5rem;
+padding-left: 1.5rem;
+}
+
+li { margin-bottom: 0.8rem; }
+
+strong { color: #fff; }
+
+/* Estilo para los recuadros de Aplicación FAdeA */
+.aplicacion-box {
+background: var(--bg-surface);
+border-left: 4px solid var(--accent);
+padding: 1.5rem;
+margin: 2rem 0;
+border-radius: 0 0.5rem 0.5rem 0;
+box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.aplicacion-box h4 {
+margin-top: 0;
+color: var(--accent);
+font-size: 1.1rem;
+display: flex;
+align-items: center;
+gap: 0.5rem;
+}
+
+.aplicacion-box ul {
+margin-bottom: 0;
+}
+
+.aplicacion-box li {
+margin-bottom: 1.5rem;
+}
+.aplicacion-box li:last-child {
+margin-bottom: 0;
+}
+
+/* Estilos de la caja de Prompts y Botón de Copiar */
+.prompt-box {
+background-color: #0d131a;
+border: 1px solid rgba(0, 243, 255, 0.2);
+border-radius: 6px;
+padding: 1rem 3.5rem 1rem 1rem;
+margin-top: 0.5rem;
+position: relative;
+color: #cbd5e1;
+font-style: italic;
+line-height: 1.6;
+transition: border-color 0.3s ease;
+}
+
+.prompt-box:hover {
+border-color: rgba(0, 243, 255, 0.5);
+}
+
+.copy-btn {
+position: absolute;
+top: 0.75rem;
+right: 0.75rem;
+background: rgba(0, 243, 255, 0.05);
+border: 1px solid rgba(0, 243, 255, 0.2);
+color: var(--accent);
+border-radius: 4px;
+padding: 0.4rem;
+cursor: pointer;
+transition: all 0.2s ease;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.copy-btn:hover {
+background: rgba(0, 243, 255, 0.2);
+border-color: rgba(0, 243, 255, 0.6);
+transform: scale(1.05);
+}
+
+.copy-btn:active {
+transform: scale(0.95);
+}
+
+code {
+background-color: #1a202c;
+color: #63b3ed;
+padding: 0.2rem 0.4rem;
+border-radius: 4px;
+font-family: monospace;
+font-size: 0.9em;
+}
+
+/* Tabla de Frameworks */
+.table-responsive {
+width: 100%;
+overflow-x: auto;
+margin: 2rem 0;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+background: var(--bg-surface);
+border-radius: 8px;
+overflow: hidden;
+}
+
+th, td {
+padding: 1rem;
+text-align: left;
+border-bottom: 1px solid #2d3748;
+}
+
+th {
+background-color: rgba(0, 243, 255, 0.1);
+color: var(--accent);
+font-weight: 600;
+white-space: nowrap;
+}
+
+tr:last-child td { border-bottom: none; }
+tr:hover td { background-color: rgba(255, 255, 255, 0.02); }
+
+/* Botones y enlaces */
+.recursos-adicionales {
+text-align: center;
+margin-top: 4rem;
+padding-top: 2rem;
+border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.button-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 1.2rem;
+margin-top: 2rem;
+}
+
+a.button {
+display: inline-block;
+width: 100%;
+max-width: 450px;
+text-align: center;
+background-color: transparent;
+color: var(--accent);
+padding: 1rem 1.5rem;
+border: 2px solid var(--accent);
+border-radius: 2rem;
+text-decoration: none;
+font-weight: 700;
+box-shadow: var(--neon-shadow);
+text-shadow: 0 0 4px rgba(0, 243, 255, 0.4);
+transition: all 0.3s ease;
+}
+
+a.button:hover { 
+background-color: var(--accent); 
+color: var(--bg); 
+box-shadow: var(--neon-shadow-hover);
+text-shadow: none;
+transform: translateY(-2px);
+}
+
+a.button:active { 
+transform: translateY(1px); 
+box-shadow: var(--neon-shadow);
+}
+
+footer {
+margin-top: auto;
+width: 100%;
+padding: 2rem 0;
+font-size: 0.9rem;
+color: #718096;
+text-align: center;
+}
+
+footer a {
+color: var(--accent);
+text-decoration: none;
+transition: text-shadow 0.3s ease;
+}
+
+footer a:hover {
+text-shadow: 0 0 8px rgba(0, 243, 255, 0.6);
+}
+
+/* --- Estilos para el Index (Cuadrícula de Navegación) --- */
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas por defecto */
+    gap: 2rem;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.course-card {
+    position: relative;
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid rgba(0, 243, 255, 0.2);
+    box-shadow: var(--neon-shadow);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none;
+}
+
+.course-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(10, 15, 22, 0.9));
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.card-overlay span {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Efectos Hover */
+.course-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: var(--accent);
+    box-shadow: var(--neon-shadow-hover);
+}
+
+.course-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Responsive: Una sola columna en móviles */
+@media (max-width: 600px) {
+    .course-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    header {
+        margin: 1rem 0;
+    }
+}

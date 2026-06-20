@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ingeniería de Prompts</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='45' fill='%2300f3ff'/%3E%3Ctext x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='70' fill='%230a0f16'%3Ei%3C/text%3E%3C/svg%3E"
+      type="image/svg+xml"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/style.css">
+  </head>
+  <body>
+    <header class="container" role="banner">
+      <h1>INGENIERÍA DE PROMPTS</h1>
+      <p class="lead">
+        Entornos Aeronáuticos (FAdeA)
+      </p>
+    </header>
+
+    <main class="container content" role="main">
+      
+      <section id="fundamentos">
+        <h2>1. Fundamentos de Interacción</h2>
+        <p>La interacción básica con un LLM depende de cuánta información de referencia (ejemplos) y qué nivel de detalle se le proporcione para ejecutar una tarea.</p>
+        
+        <ul>
+          <li><strong>Principio de Especificidad:</strong> Establece que las instrucciones vagas producen resultados vagos. Se deben eliminar las ambigüedades ("relleno") e incluir criterios exactos de longitud, tono y formato.</li>
+          <li><strong>Zero-shot Prompting:</strong> Es la solicitud directa de una tarea sin proporcionar ejemplos previos. Es útil para tareas donde el modelo ya posee un entrenamiento general fuerte.</li>
+          <li><strong>One-shot Prompting:</strong> Consiste en proporcionar un único ejemplo (datos o pautas) antes de la solicitud, estableciendo un estándar básico.</li>
+          <li><strong>Few-shot Prompting:</strong> Involucra proporcionar de 3 a 5 ejemplos de pares de entrada-salida. Esto ayuda a la IA a reconocer patrones, adaptar el tono específico de la industria e incrementa enormemente la precisión frente al Zero-shot.</li>
+        </ul>
+
+        <div class="aplicacion-box">
+          <h4>📌 Aplicación FAdeA (FAR 23 / 5 Porqués / IA-63):</h4>
+          <ul>
+            <li>
+              <strong>(Especificidad - IA-63 Pampa):</strong>
+              <div class="prompt-box">
+                <span class="prompt-text">Escribe un informe de 500 palabras sobre la aeronave IA-63 Pampa. Estructura el informe de la siguiente manera: INTRODUCCIÓN (15%), DESARROLLO (80%), CONCLUSIÓN (5%).</span>
+                <button class="copy-btn" onclick="copyPrompt(this)" title="Copiar prompt">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+              </div>
+            </li>
+            <li>
+              <strong>(Zero-shot - PMA):</strong>
+              <div class="prompt-box">
+                <span class="prompt-text">Escribe una nota para la DIGAMC mediante la que solicite la aprobación de diseño y fabricación del componente cuyo Informe Técnico adjunto.</span>
+                <button class="copy-btn" onclick="copyPrompt(this)" title="Copiar prompt">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+              </div>
+            </li>
+            <li>
+              <strong>(One-shot - PMA con ejemplo):</strong>
+              <div class="prompt-box">
+                <span class="prompt-text">Escribe una nota para la DIGAMC mediante la que solicite la aprobación de diseño y fabricación del componente cuyo Informe Técnico adjunto. Toma como modelo la nota adjunta. En caso que tenga que completar información, indícalo entre corchetes.</span>
+                <button class="copy-btn" onclick="copyPrompt(this)" title="Copiar prompt">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+              </div>
+            </li>
+            <li>
+              <strong>(Few-shot - PMA con ejemplos):</strong>
+              <div class="prompt-box">
+                <span class="prompt-text">Escribe una nota para la DIGAMC mediante la que solicite la aprobación de diseño y fabricación del componente cuyo Informe Técnico adjunto. Toma como modelo las notas adjuntas. En caso que tenga que completar información, indícalo entre corchetes.</span>
+                <button class="copy-btn" onclick="copyPrompt(this)" title="Copiar prompt">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="estructuracion">
+        <h2>2. Técnicas de Estructuración</h2>
+        <p>La arquitectura del prompt es fundamental para que el modelo procese adecuadamente múltiples capas de información sin "perderse" o confundir instrucciones con datos.</p>
+        
+        <ul>
+          <li><strong>Uso de Delimitadores (Etiquetas XML):</strong> Consiste en utilizar símbolos como <code>"""</code>, <code>###</code> o etiquetas XML (ej. <code>&lt;contexto&gt;</code>, <code>&lt;instruccion&gt;</code>) para aislar claramente el contexto, la información de referencia y la instrucción principal.</li>
+          <li><strong>Rol de las "Personas":</strong> Asignar un rol específico y experto al modelo (ej. "Actúa como un analista de datos") ajusta inmediatamente su vocabulario, enfoque analítico y profundidad técnica.</li>
+          <li><strong>Prompt Priming (Preparación Contextual):</strong> Técnica de "preparar el terreno" proporcionando contexto detallado, perfil de audiencia y antecedentes antes de formular la tarea real.</li>
+          <li><strong>Pre-filling (Prellenado de Respuestas):</strong> Guiar el tono y el formato iniciando uno mismo la respuesta de la IA (ej. iniciar la salida con una etiqueta o apertura específica) para asegurar que siga un patrón deseado.</li>
+        </ul>
+
+        <div class="aplicacion-box">
+          <h4>📌 Aplicación FAdeA (SMS / Informes Técnicos):</h4>
+          <ul>
+            <li>
+              <strong>(Etiquetas XML + Personas):</strong>
+              <div class="prompt-box">
+                <span class="prompt-text">Eres un [ROL]. Mejora la redacción del contenido en las etiquetas &lt;doc&gt;.<br>&lt;doc&gt;[PEGAR TEXTO PARA MEJORAR REDACCIÓN]&lt;/doc&gt;.</span>
+                <button class="copy-btn" onclick="copyPrompt(this)" title="Copiar prompt">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+              </div>
+            </li>
+            <li>
+              <strong>(Priming + Pre-filling - SMS):</strong>
+              <div class="prompt-box">
+                <span class="prompt-text">Contexto: Eres el Gerente de Seguridad Operacional (SMS) de FAdeA. Debes redactar un boletín urgente para técnicos de mantenimiento sobre un incidente de FOD (Foreign Object Debris) en la pista. El tono debe ser directo, preventivo y no punitivo.<br><br>Tu respuesta debe comenzar exactamente así:<br>BOLETÍN DE SEGURIDAD SMS-2026-04<br>Objetivo del boletín:</span>
+                <button class="copy-btn" onclick="copyPrompt(this)" title="Copiar prompt">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="razonamiento">
+        <h2>3. Metodologías de Razonamiento</h2>
+        <p>Estas técnicas guían el proceso lógico interno del modelo antes de que emita una respuesta, fundamentales para problemas aeronáuticos complejos.</p>
+        
+        <ul>
+          <li><strong>Chain-of-Thought (CoT):</strong> Obliga al modelo a desglosar su razonamiento declarando explícitamente "Piensa paso a paso" o solicitando una explicación progresiva. Garantiza que las respuestas sean transparentes, aunque requiere modelos con gran cantidad de parámetros para ser verdaderamente efectivo.</li>
+          <li><strong>Tree of Thoughts (ToT):</strong> Expande el CoT permitiendo al modelo explorar múltiples ramas de razonamiento de forma simultánea, evaluar los pros/contras de cada camino y seleccionar la mejor solución.</li>
+          <li><strong>Self-Consistency:</strong> Obliga al modelo a generar internamente múltiples respuestas independientes a un mismo problema complejo, seleccionando la salida final según la respuesta que más coincida o se repita, filtrando errores aislados.</li>
+          <li><strong>Step-back Prompting:</strong> Ante una pregunta muy específica, instruye a la IA a hacer una pausa, generar conceptos o principios rectores a nivel general y, solo entonces, usar ese marco macro para responder al problema micro.</li>
+        </ul>
+
+        <div class="aplicacion-box">
+          <h4>📌 Aplicación FAdeA (Diseño sistema IA-100B / Análisis 5 Porqués):</h4>
+          <ul>
+            <li>
+              <strong>(CoT - 5 Porqués):</strong>
+              <div class="prompt-box">
+                <span class="prompt-text">Ocurrió un derrame de fluido hidráulico MIL-PRF-5606 en la línea de montaje del IA-63. Realiza un análisis de 5 Porqués. Explica tu razonamiento paso a paso, asegurándote de no culpar a los operadores, sino de buscar la falla sistémica.</span>
+                <button class="copy-btn" onclick="copyPrompt(this)" title="Copiar prompt">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+              </div>
+            </li>
+            <li>
+              <strong>(ToT - Diseño):</strong>
+              <div class="prompt-box">
+                <span class="prompt-text">Es necesario el diseño conceptual del sistema de comandos de vuelo de la aeronave IA-100B. Propón 3 arquitecturas diferentes (ramas). Para cada rama, evalúa costos, peso y facilidad de certificación FAR 23. Finalmente, elige la rama más viable y justifica tu elección.</span>
+                <button class="copy-btn" onclick="copyPrompt(this)" title="Copiar prompt">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+              </div>
+            </li>
+            <li>
+              <strong>(Step-back - AS9100):</strong>
+              <div class="prompt-box">
+                <span class="prompt-text">Antes de auditar este registro de calibración específico de herramientas de torque, da un paso atrás y enumera los 4 principios fundamentales de trazabilidad metrológica según AS9100. Luego, aplica esos principios para evaluar el siguiente registro: [Datos del registro].</span>
+                <button class="copy-btn" onclick="copyPrompt(this)" title="Copiar prompt">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="frameworks">
+        <h2>4. Marcos Lógicos (Frameworks) Comparados</h2>
+        <p>Los marcos estandarizan el diseño del prompt asegurando que no se omita información vital. A continuación, se presenta una comparativa de los principales frameworks de la industria:</p>
+        
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Marco</th>
+                <th>Acrónimo / Estructura</th>
+                <th>Enfoque Principal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>P-T-C-F</strong></td>
+                <td><strong>P</strong>ersona, <strong>T</strong>area, <strong>C</strong>ontexto, <strong>F</strong>ormato</td>
+                <td>Ideal para tareas rápidas y directas. Aporta el balance perfecto de estructura y simplicidad.</td>
+              </tr>
+              <tr>
+                <td><strong>RGC</strong></td>
+                <td><strong>R</strong>ole, <strong>G</strong>oal, <strong>R</strong>esult, <strong>C</strong>ontext, <strong>C</strong>onstraint (restricción)</td>
+                <td>Sumamente estructurado para la creación de contenido con límites rígidos (longitud, estilo).</td>
+              </tr>
+              <tr>
+                <td><strong>GITHUB</strong></td>
+                <td>1. Contexto/Rol, 2. Tarea, 3. Específico (límites), 4. Preguntas, 5. Evaluar salida</td>
+                <td>Metodología conversacional. Insta a la IA a <em>preguntar</em> antes de actuar, evitando suposiciones.</td>
+              </tr>
+              <tr>
+                <td><strong>DEPTH</strong></td>
+                <td><strong>D</strong>efinir, <strong>E</strong>stablecer (contexto), <strong>P</strong>roporcionar (ejemplos), <strong>T</strong>area, <strong>H</strong>uman-loop</td>
+                <td>Muy avanzado (estándar 2025). Requiere auto-evaluación del modelo y ejemplos previos.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="aplicacion-box">
+          <h4>📌 Aplicación FAdeA (Riesgos SMS / FAR 23):</h4>
+          <ul>
+            <li>
+              <strong>(Framework P-T-C-F - Certificación FAR 23):</strong>
+              <div class="prompt-box">
+                <span class="prompt-text"><strong>Persona:</strong> Eres un Ingeniero de Certificación Aeronáutica.<br>
+                <strong>Tarea:</strong> Redacta el Plan de Ensayos en Vuelo para barrenas.<br>
+                <strong>Contexto:</strong> Aeronave IA-100B, categoría acrobática, cumplimiento de FAR 23.2135.<br>
+                <strong>Formato:</strong> Tabla Markdown con columnas: Fase de ensayo, Altitud mínima, Configuración y Criterio de aceptación.</span>
+                <button class="copy-btn" onclick="copyPrompt(this)" title="Copiar prompt">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+              </div>
+            </li>
+            <li>
+              <strong>(Framework GITHUB - Calidad AS9100):</strong>
+              <div class="prompt-box">
+                <span class="prompt-text">Actúa como un Auditor Interno AS9100. Tu tarea es crear una lista de verificación de auditoría para el pañol de herramientas. Sé específico: enfócate solo en el control de caducidad y calibración. Antes de generar la lista, hazme 3 preguntas sobre el tamaño de nuestro pañol y software actual para refinar tu respuesta.</span>
+                <button class="copy-btn" onclick="copyPrompt(this)" title="Copiar prompt">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="tecnicas-avanzadas">
+        <h2>5. Técnicas Avanzadas de Interacción</h2>
+        <p>Para exprimir al máximo a un LLM "caja negra", se utilizan enfoques avanzados para diseño recursivo y validación de certidumbre.</p>
+        
+        <ul>
+          <li><strong>Metaprompting:</strong> Le pide a la propia IA que actúe como un ingeniero de prompts y genere o mejore un prompt que se utilizará en otra instancia. Es útil para diseñar plantillas complejas sin esfuerzo manual inicial.</li>
+          <li><strong>Multi-Perspective Simulation (MPS):</strong> Exige que el modelo asuma 4 o 5 perspectivas distintas de expertos sobre un tema, evalúe puntos ciegos y luego simule un diálogo o un consenso. Ideal para revisiones de diseño o análisis de riesgos.</li>
+          <li><strong>Calibrated Confidence Prompting (CCP):</strong> Obliga al modelo a adjuntar un nivel de confianza (ej. "Alta confianza", "Especulativo") a cada una de sus afirmaciones. Minimiza los riesgos operativos evitando que la IA responda con seguridad absoluta sobre datos que desconoce (alucinaciones).</li>
+          <li><strong>ReAct (Reason + Act):</strong> Entrelaza pensamientos lógicos con llamadas a acciones (simuladas o reales). El modelo razona ("necesito el historial de la pieza"), ejecuta acción ("buscar en base de datos"), observa el resultado y continúa deduciendo.</li>
+        </ul>
+
+        <div class="aplicacion-box">
+          <h4>📌 Aplicación FAdeA (Investigación / SMS / Informes Técnicos):</h4>
+          <ul>
+            <li>
+              <strong>(Metaprompting - Investigación de mercado):</strong>
+              <div class="prompt-box">
+                <span class="prompt-text">Eres un experto en desarrollo de negocios aeronáuticos orientado a la industria de aeronaves no tripuladas.<br>En FAdeA hay urgencia por desarrollar un UAV en virtud de que tenemos capacidades para fabricación de estructuras de materiales compuestos y mano de obra de ingeniería calificada.<br>Redacta un prompt para hacer una investigación profunda que nos permita identificar claramente nichos de mercado de UAVs que permitan una inserción inmediata en el mercado con poco esfuerzo u baja inversión, ya que tenemos recursos financieros limitados.</span>
+                <button class="copy-btn" onclick="copyPrompt(this)" title="Copiar prompt">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+              </div>
+            </li>
+            <li>
+              <strong>(MPS - Revisión IA-100B):</strong>
+              <div class="prompt-box">
+                <span class="prompt-text">Vamos a revisar la modificación del diseño del tren de aterrizaje del IA-100B. Analiza el cambio asumiendo simultáneamente las perspectivas de: 1) Ingeniero de Estructuras, 2) Técnico de Mantenimiento de Línea, 3) Piloto de Pruebas y 4) Auditor de Calidad AS9100. Crea una tabla con las preocupaciones de cada uno y luego sintetiza un consenso general.</span>
+                <button class="copy-btn" onclick="copyPrompt(this)" title="Copiar prompt">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+              </div>
+            </li>
+            <li>
+              <strong>(CCP - Análisis de Causa Raíz / SMS):</strong>
+              <div class="prompt-box">
+                <span class="prompt-text">Analiza las posibles causas del desgaste prematuro en las pastillas de freno de la aeronave IA-63 Pampa III después de la modificación del sistema de control de frenos.<br>Para cada causa raíz sugerida, incluye una etiqueta de Confianza Calibrada —Alta, Media, Baja o Especulativa— basada en la evidencia disponible, la plausibilidad técnica, la trazabilidad con la modificación realizada y el grado de verificación objetiva posible.</span>
+                <button class="copy-btn" onclick="copyPrompt(this)" title="Copiar prompt">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+              </div>
+            </li>
+            <li>
+              <strong>(ReAct - Gestión de Calidad):</strong>
+              <div class="prompt-box">
+                <span class="prompt-text">Problema: Lote de remaches rechazados en la recepción. Paso 1: Piensa sobre las acciones a tomar bajo AS9100. Paso 2: Simula la acción Revisar Certificado de Conformidad del proveedor. Paso 3: Observación: Falta ensayo de cizalladura. Paso 4: Concluye la acción correctiva inmediata requerida.</span>
+                <button class="copy-btn" onclick="copyPrompt(this)" title="Copiar prompt">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- SECCIÓN SOLICITADA DE ENLACES -->
+      <section class="recursos-adicionales">
+        <h2>Recursos y Guías Oficiales</h2>
+        <p class="lead">Explora la documentación oficial de los principales modelos de lenguaje.</p>
+        
+        <div class="button-container">
+          <a class="button" href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview" target="_blank" rel="noopener noreferrer">
+            Guía de Prompts para Claude (Anthropic)
+          </a>
+          <a class="button" href="https://developers.openai.com/api/docs/guides/prompt-guidance" target="_blank" rel="noopener noreferrer">
+            Guía de Prompts para GPT (OpenAI)
+          </a>
+          <a class="button" href="https://blogthinkbig.com/hablale-bien-la-guia-de-google-para-escribir-prompts-efectivos-en-gemini" target="_blank" rel="noopener noreferrer">
+            Guía de Prompts para Gemini (Google)
+          </a>
+          <a class="button" href="https://www.coursera.org/specializations/prompting-essentials-google" target="_blank" rel="noopener noreferrer">
+            Google Prompting Essentials Specialization
+          </a>
+          <a class="button" href="index.html">Volver al Inicio</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer role="contentinfo">
+      © 2026 Guillermo A. Robiglio · <a href="https://ingg.ar/" target="_blank" rel="noopener noreferrer">ingg.ar</a><br>
+      <span style="font-size: 0.8rem; margin-top: 0.5rem; display: inline-block;">Fábrica Argentina de Aviones (FAdeA)</span>
+    </footer>
+
+    <!-- Script para copiar al portapapeles -->
+    <script>
+      function copyPrompt(button) {
+        // Encontrar el contenedor del prompt actual
+        const promptBox = button.parentElement;
+        const promptText = promptBox.querySelector('.prompt-text').innerText;
+        
+        // Crear un textarea temporal para forzar la copia vía execCommand (Mejor soporte en Iframes)
+        const textArea = document.createElement("textarea");
+        textArea.value = promptText;
+        textArea.style.position = "fixed";  // Evitar scroll al final de la página
+        textArea.style.top = "0";
+        textArea.style.left = "0";
+        
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        
+        try {
+          document.execCommand('copy');
+          
+          // Efecto visual: cambiar el ícono a un tilde (checkmark) por 2 segundos
+          const originalHTML = button.innerHTML;
+          button.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+          
+          setTimeout(() => { 
+            button.innerHTML = originalHTML; 
+          }, 2000);
+        } catch (err) {
+          console.error('No se pudo copiar al portapapeles', err);
+        }
+        
+        document.body.removeChild(textArea);
+      }
+    </script>
+  </body>
+</html>

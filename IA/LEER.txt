@@ -1,1 +1,0 @@
-El archivo index.html que se encuentra en esta carpeta va es el que se abre al acceder a la página ingg.ar/ia

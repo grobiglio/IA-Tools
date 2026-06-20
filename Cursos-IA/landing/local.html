@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demo: IA local en Chrome (Summarizer / Translator / LanguageDetector)</title>
+  <style>
+    :root { --bg:#F4F6F8; --fg:#1F2A44; --accent:#0077B6; }
+    html, body { height:100%; background:var(--bg); color:var(--fg); font-family:system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji","Segoe UI Emoji"; }
+    .container{ max-width:980px; margin:24px auto; padding:0 16px; }
+    h1{ font-weight:800; letter-spacing:.2px; }
+    section{ background:#fff; border-radius:16px; padding:16px; margin:16px 0; box-shadow:0 6px 20px rgba(0,0,0,.06);} 
+    section h2{ margin:0 0 8px 0; font-size:1.15rem; }
+    textarea{ width:100%; min-height:120px; resize:vertical; padding:12px; border-radius:12px; border:1px solid #d0d7de; font-size:14px; }
+    button{ appearance:none; border:0; border-radius:12px; padding:10px 14px; margin:8px 6px 0 0; background:var(--accent); color:white; font-weight:600; cursor:pointer; }
+    button[disabled]{ opacity:.5; cursor:not-allowed; }
+    .row{ display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+    input, select{ padding:10px 12px; border-radius:10px; border:1px solid #d0d7de; font-size:14px; }
+    .log{ background:#0b1020; color:#c9d1d9; border-radius:12px; padding:10px; font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size:12px; max-height:220px; overflow:auto; }
+    .out{ white-space:pre-wrap; background:#f8fafc; border:1px dashed #cbd5e1; border-radius:12px; padding:12px; min-height:64px; }
+    kbd{ background:#eef2ff; border:1px solid #c7d2fe; border-bottom-width:3px; border-radius:6px; padding:2px 6px; font-family:inherit; }
+    .tag{ display:inline-block; background:#eef6ff; color:#0f3b66; border:1px solid #b6dcff; border-radius:999px; padding:2px 8px; margin-right:8px; font-size:12px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>IA local en Chrome — Demo práctica</h1>
+    <p>
+      Esta página ejerce de POC para las <strong>Built‑in AI APIs</strong> de Chrome (modelo on‑device). Incluye <span class="tag">LanguageDetector</span><span class="tag">Translator</span><span class="tag">Summarizer</span>.
+    </p>
+
+    <section>
+      <h2>1) Detección de idioma (LanguageDetector)</h2>
+      <div class="row">
+        <button id="btnInitLD">Inicializar detector</button>
+        <span id="ldStatus">— sin inicializar</span>
+      </div>
+      <p>
+        Texto de entrada:
+      </p>
+      <textarea id="ldInput" placeholder="Pegá aquí un párrafo en cualquier idioma…"></textarea>
+      <div class="row">
+        <button id="btnDetect" disabled>Detectar idioma</button>
+      </div>
+      <div id="ldOutput" class="out" aria-live="polite"></div>
+    </section>
+
+    <section>
+      <h2>2) Traducción on‑device (Translator)</h2>
+      <div class="row">
+        <label>Origen (BCP‑47): <input id="trFrom" value="auto" placeholder="ej. en, es, fr"></label>
+        <label>Destino (BCP‑47): <input id="trTo" value="en" placeholder="ej. en, es, fr"></label>
+        <button id="btnInitTR">Inicializar traductor</button>
+        <span id="trStatus">— sin inicializar</span>
+      </div>
+      <textarea id="trInput" placeholder="Pegá texto a traducir…"></textarea>
+      <div class="row">
+        <button id="btnTranslate" disabled>Traducir</button>
+      </div>
+      <div id="trOutput" class="out" aria-live="polite"></div>
+    </section>
+
+    <section>
+      <h2>3) Resumen local (Summarizer)</h2>
+      <div class="row">
+        <label>Tipo:
+          <select id="sumType">
+            <option value="key-points" selected>Puntos clave</option>
+            <option value="tldr">TL;DR</option>
+            <option value="teaser">Teaser</option>
+            <option value="headline">Titular</option>
+          </select>
+        </label>
+        <label>Longitud:
+          <select id="sumLength">
+            <option value="short">Corta</option>
+            <option value="medium" selected>Media</option>
+            <option value="long">Larga</option>
+          </select>
+        </label>
+        <label>Formato:
+          <select id="sumFormat">
+            <option value="markdown" selected>Markdown</option>
+            <option value="plain-text">Texto plano</option>
+          </select>
+        </label>
+        <button id="btnInitSUM">Inicializar resumidor</button>
+        <span id="sumStatus">— sin inicializar</span>
+      </div>
+      <textarea id="sumInput" placeholder="Pegá contenido largo para resumir…"></textarea>
+      <div class="row">
+        <button id="btnSummarize" disabled>Resumir</button>
+      </div>
+      <div id="sumOutput" class="out" aria-live="polite"></div>
+    </section>
+
+    <section>
+      <h2>Log</h2>
+      <div id="log" class="log" aria-live="polite"></div>
+      <p style="font-size:12px;opacity:.8;">Sugerencia: la primera vez, Chrome puede descargar el modelo on‑device. Si ves mensajes de descarga, es normal.</p>
+    </section>
+  </div>
+
+  <script>
+    const $ = (sel) => document.querySelector(sel);
+    const log = (msg) => { const el = $('#log'); el.textContent += `\n${new Date().toLocaleTimeString()} — ${msg}`; el.scrollTop = el.scrollHeight; };
+
+    // ====== Language Detector ======
+    let detector = null;
+    $('#btnInitLD').addEventListener('click', async () => {
+      if (!('LanguageDetector' in self)) {
+        log('LanguageDetector NO soportado en este navegador.');
+        $('#ldStatus').textContent = '— no soportado';
+        return;
+      }
+      try {
+        const avail = await LanguageDetector.availability();
+        log(`LD availability: ${avail}`);
+        detector = await LanguageDetector.create({
+          monitor(m){ m.addEventListener('downloadprogress', e => log(`LD descarga: ${(e.loaded*100).toFixed(0)}%`)); }
+        });
+        $('#ldStatus').textContent = '— listo';
+        $('#btnDetect').disabled = false;
+      } catch (err) { log(`LD error: ${err.message || err}`); }
+    });
+
+    $('#btnDetect').addEventListener('click', async () => {
+      try {
+        const text = $('#ldInput').value.trim();
+        if (!text) return;
+        const results = await detector.detect(text);
+        const lines = results.map(r => `${r.detectedLanguage} (${(r.confidence*100).toFixed(2)}%)`).join('\n');
+        $('#ldOutput').textContent = lines || 'Sin resultado';
+      } catch (err) { log(`Detect error: ${err.message || err}`); }
+    });
+
+    // ====== Translator ======
+    let translator = null;
+    $('#btnInitTR').addEventListener('click', async () => {
+      if (!('Translator' in self)) { log('Translator NO soportado.'); $('#trStatus').textContent = '— no soportado'; return; }
+      try {
+        let src = $('#trFrom').value.trim();
+        const tgt = $('#trTo').value.trim() || 'en';
+        if (!src || src === 'auto') {
+          // Auto: detectamos primero con LD si está disponible
+          if ('LanguageDetector' in self) {
+            const tmp = await LanguageDetector.create();
+            const res = await tmp.detect($('#trInput').value.slice(0, 400));
+            src = res?.[0]?.detectedLanguage || 'auto';
+            log(`Origen detectado ≈ ${src}`);
+          } else {
+            src = 'es';
+          }
+        }
+        const avail = await Translator.availability({ sourceLanguage: src, targetLanguage: tgt });
+        log(`TR availability [${src}->${tgt}]: ${avail}`);
+        translator = await Translator.create({
+          sourceLanguage: src,
+          targetLanguage: tgt,
+          monitor(m){ m.addEventListener('downloadprogress', e => log(`TR descarga: ${(e.loaded*100).toFixed(0)}%`)); }
+        });
+        $('#trStatus').textContent = `— listo (${src}→${tgt})`;
+        $('#btnTranslate').disabled = false;
+      } catch (err) { log(`Translator error: ${err.message || err}`); }
+    });
+
+    $('#btnTranslate').addEventListener('click', async () => {
+      try {
+        const text = $('#trInput').value.trim();
+        if (!text) return;
+        const out = await translator.translate(text);
+        $('#trOutput').textContent = out;
+      } catch (err) { log(`Translate error: ${err.message || err}`); }
+    });
+
+    // ====== Summarizer ======
+    let summarizer = null;
+    $('#btnInitSUM').addEventListener('click', async () => {
+      if (!('Summarizer' in self)) { log('Summarizer NO soportado.'); $('#sumStatus').textContent = '— no soportado'; return; }
+      try {
+        const type = $('#sumType').value; const length = $('#sumLength').value; const format = $('#sumFormat').value;
+        const avail = await Summarizer.availability();
+        log(`SUM availability: ${avail}`);
+        summarizer = await Summarizer.create({
+          type, length, format,
+          monitor(m){ m.addEventListener('downloadprogress', e => log(`SUM descarga: ${(e.loaded*100).toFixed(0)}%`)); }
+        });
+        $('#sumStatus').textContent = `— listo (${type}/${length}/${format})`;
+        $('#btnSummarize').disabled = false;
+      } catch (err) { log(`Summarizer error: ${err.message || err}`); }
+    });
+
+    $('#btnSummarize').addEventListener('click', async () => {
+      try {
+        const text = $('#sumInput').value.trim();
+        if (!text) return;
+        const out = await summarizer.summarize(text, { context: 'Audiencia técnica (ingeniería y programación).' });
+        $('#sumOutput').textContent = out;
+      } catch (err) { log(`Summarize error: ${err.message || err}`); }
+    });
+  </script>
+</body>
+</html>

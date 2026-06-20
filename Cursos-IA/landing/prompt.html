@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manual Técnico: Ingeniería de Prompts (FAdeA)</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='45' fill='%2300f3ff'/%3E%3Ctext x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='70' fill='%230a0f16'%3Ei%3C/text%3E%3C/svg%3E"
+      type="image/svg+xml"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0a0f16; /* Fondo oscuro principal */
+        --bg-surface: #121a24; /* Fondo para cajas y tablas */
+        --fg: #e2e8f0; /* Texto claro */
+        --accent: #00f3ff; /* Azul neón */
+        --text-muted: #a0aec0;
+        --neon-shadow: 0 0 8px rgba(0, 243, 255, 0.5), 0 0 16px rgba(0, 243, 255, 0.3);
+        --neon-shadow-hover: 0 0 12px rgba(0, 243, 255, 0.8), 0 0 24px rgba(0, 243, 255, 0.6), 0 0 35px rgba(0, 243, 255, 0.4);
+      }
+
+      * { box-sizing: border-box; }
+      html, body { height: 100%; scroll-behavior: smooth; }
+
+      body {
+        margin: 0;
+        font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        background: var(--bg);
+        color: var(--fg);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      /* Scrollbar personalizado */
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: var(--bg); }
+      ::-webkit-scrollbar-thumb { background: #2d3748; border-radius: 4px; }
+      ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+      .container {
+        width: 100%;
+        max-width: 960px;
+        padding: 1.5rem 1.25rem;
+      }
+
+      header {
+        margin: 2rem 0 1rem;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        margin-bottom: 1rem;
+        color: var(--accent);
+        text-shadow: 0 0 10px rgba(0, 243, 255, 0.6);
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        color: var(--accent);
+        border-bottom: 1px solid rgba(0, 243, 255, 0.2);
+        padding-bottom: 0.5rem;
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+        color: #fff;
+        margin-top: 2rem;
+      }
+
+      p {
+        line-height: 1.7;
+        margin-bottom: 1.2rem;
+      }
+
+      p.lead {
+        font-size: clamp(1rem, 2.2vw, 1.1rem);
+        margin: 0 0 1.5rem;
+        color: var(--text-muted);
+        text-align: center;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .content {
+        text-align: left;
+      }
+
+      ul, ol {
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+        padding-left: 1.5rem;
+      }
+
+      li { margin-bottom: 0.8rem; }
+      
+      strong { color: #fff; }
+
+      /* Estilo para los recuadros de Aplicación FAdeA */
+      .aplicacion-box {
+        background: var(--bg-surface);
+        border-left: 4px solid var(--accent);
+        padding: 1.5rem;
+        margin: 2rem 0;
+        border-radius: 0 0.5rem 0.5rem 0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      }
+
+      .aplicacion-box h4 {
+        margin-top: 0;
+        color: var(--accent);
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .aplicacion-box ul {
+        margin-bottom: 0;
+      }
+
+      .aplicacion-box li {
+        margin-bottom: 1rem;
+      }
+      .aplicacion-box li:last-child {
+        margin-bottom: 0;
+      }
+
+      code {
+        background-color: #1a202c;
+        color: #63b3ed;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        font-family: monospace;
+        font-size: 0.9em;
+      }
+
+      /* Tabla de Frameworks */
+      .table-responsive {
+        width: 100%;
+        overflow-x: auto;
+        margin: 2rem 0;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background: var(--bg-surface);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      th, td {
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 1px solid #2d3748;
+      }
+
+      th {
+        background-color: rgba(0, 243, 255, 0.1);
+        color: var(--accent);
+        font-weight: 600;
+        white-space: nowrap;
+      }
+
+      tr:last-child td { border-bottom: none; }
+      tr:hover td { background-color: rgba(255, 255, 255, 0.02); }
+
+      /* Botones y enlaces */
+      .recursos-adicionales {
+        text-align: center;
+        margin-top: 4rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+      }
+
+      .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem;
+        margin-top: 2rem;
+      }
+
+      a.button {
+        display: inline-block;
+        width: 100%;
+        max-width: 450px;
+        text-align: center;
+        background-color: transparent;
+        color: var(--accent);
+        padding: 1rem 1.5rem;
+        border: 2px solid var(--accent);
+        border-radius: 2rem;
+        text-decoration: none;
+        font-weight: 700;
+        box-shadow: var(--neon-shadow);
+        text-shadow: 0 0 4px rgba(0, 243, 255, 0.4);
+        transition: all 0.3s ease;
+      }
+
+      a.button:hover { 
+        background-color: var(--accent); 
+        color: var(--bg); 
+        box-shadow: var(--neon-shadow-hover);
+        text-shadow: none;
+        transform: translateY(-2px);
+      }
+      
+      a.button:active { 
+        transform: translateY(1px); 
+        box-shadow: var(--neon-shadow);
+      }
+
+      footer {
+        margin-top: auto;
+        width: 100%;
+        padding: 2rem 0;
+        font-size: 0.9rem;
+        color: #718096;
+        text-align: center;
+      }
+
+      footer a {
+        color: var(--accent);
+        text-decoration: none;
+        transition: text-shadow 0.3s ease;
+      }
+
+      footer a:hover {
+        text-shadow: 0 0 8px rgba(0, 243, 255, 0.6);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="container" role="banner">
+      <h1>INGENIERÍA DE PROMPTS</h1>
+      <p class="lead">
+        Con aplicaciones para el entorno de FAdeA
+      </p>
+    </header>
+
+    <main class="container content" role="main">
+      
+      <section id="fundamentos">
+        <h2>1. Fundamentos de Interacción</h2>
+        <p>La interacción básica con un LLM depende de cuánta información de referencia (ejemplos) y qué nivel de detalle se le proporcione para ejecutar una tarea.</p>
+        
+        <ul>
+          <li><strong>Principio de Especificidad:</strong> Establece que las instrucciones vagas producen resultados vagos. Se deben eliminar las ambigüedades ("relleno") e incluir criterios exactos de longitud, tono y formato.</li>
+          <li><strong>Zero-shot Prompting:</strong> Es la solicitud directa de una tarea sin proporcionar ejemplos previos. Es útil para tareas donde el modelo ya posee un entrenamiento general fuerte.</li>
+          <li><strong>One-shot Prompting:</strong> Consiste en proporcionar un único ejemplo (datos o pautas) antes de la solicitud, estableciendo un estándar básico.</li>
+          <li><strong>Few-shot Prompting:</strong> Involucra proporcionar de 3 a 5 ejemplos de pares de entrada-salida. Esto ayuda a la IA a reconocer patrones, adaptar el tono específico de la industria e incrementa enormemente la precisión frente al Zero-shot.</li>
+        </ul>
+
+        <div class="aplicacion-box">
+          <h4>📌 Aplicación FAdeA (FAR 23 / 5 Porqués / IA-63):</h4>
+          <ul>
+            <li><strong>(Especificidad - IA-63 Pampa III):</strong> "Escribe las especificaciones técnicas para el reemplazo del actuador electrohidráulico del IA-63 Pampa III. El documento debe tener 3 secciones: requisitos de potencia, interfaces mecánicas y normativas ambientales MIL-STD. Usa tono estrictamente técnico y formato de viñetas."</li>
+            <li><strong>(Zero-shot - AS9100):</strong> "Clasifica el siguiente hallazgo como 'Conformidad', 'No Conformidad Menor' o 'No Conformidad Mayor' según AS9100. Hallazgo: 'Falta de firma del inspector en la orden de trabajo OT-452'."</li>
+            <li><strong>(One-shot - 5 Porqués):</strong> "Ejemplo de 5 Porqués: Problema: Motor no arranca. 1. ¿Por qué? Batería muerta. 2. ¿Por qué? Alternador roto. 3. ¿Por qué? Banda rota. 4. ¿Por qué? Desgaste. 5. ¿Por qué? Mantenimiento omitido. -> Causa: Falla de plan de mantenimiento. Ahora, haz un 5 Porqués para el Problema: 'Fisura detectada en el tren de aterrizaje del IA-100B'."</li>
+            <li><strong>(Few-shot - FAR 23):</strong> "Basado en estos 3 ejemplos de redacción de cumplimiento normativo (Ej 1: texto, Ej 2: texto, Ej 3: texto), redacta el párrafo de cumplimiento para el requisito de fatiga estructural (Subparte C) del IA-100B."</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="estructuracion">
+        <h2>2. Técnicas de Estructuración</h2>
+        <p>La arquitectura del prompt es fundamental para que el modelo procese adecuadamente múltiples capas de información sin "perderse" o confundir instrucciones con datos.</p>
+        
+        <ul>
+          <li><strong>Uso de Delimitadores (Etiquetas XML):</strong> Consiste en utilizar símbolos como <code>"""</code>, <code>###</code> o etiquetas XML (ej. <code>&lt;contexto&gt;</code>, <code>&lt;instruccion&gt;</code>) para aislar claramente el contexto, la información de referencia y la instrucción principal.</li>
+          <li><strong>Rol de las "Personas":</strong> Asignar un rol específico y experto al modelo (ej. "Actúa como un analista de datos") ajusta inmediatamente su vocabulario, enfoque analítico y profundidad técnica.</li>
+          <li><strong>Prompt Priming (Preparación Contextual):</strong> Técnica de "preparar el terreno" proporcionando contexto detallado, perfil de audiencia y antecedentes antes de formular la tarea real.</li>
+          <li><strong>Pre-filling (Prellenado de Respuestas):</strong> Guiar el tono y el formato iniciando uno mismo la respuesta de la IA (ej. iniciar la salida con una etiqueta o apertura específica) para asegurar que siga un patrón deseado.</li>
+        </ul>
+
+        <div class="aplicacion-box">
+          <h4>📌 Aplicación FAdeA (SMS / Informes Técnicos):</h4>
+          <ul>
+            <li><strong>(Etiquetas XML + Personas):</strong> "Eres un Auditor Líder AS9100. Evalúa el procedimiento contenido en las etiquetas <code>&lt;doc&gt;</code>. Encuentra desviaciones respecto a la norma. <code>&lt;doc&gt;</code>[Texto del procedimiento de control de herramientas]<code>&lt;/doc&gt;</code>."</li>
+            <li><strong>(Priming + Pre-filling - SMS):</strong> "Contexto: Eres el Gerente de Seguridad Operacional (SMS) de FAdeA. Debes redactar un boletín urgente para técnicos de mantenimiento sobre un incidente de FOD (Foreign Object Debris) en la pista. El tono debe ser directo, preventivo y no punitivo. <br><br>Tu respuesta debe comenzar exactamente así:<br><em>BOLETÍN DE SEGURIDAD SMS-2026-04</em><br><em>Objetivo del boletín:</em> "</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="razonamiento">
+        <h2>3. Metodologías de Razonamiento</h2>
+        <p>Estas técnicas guían el proceso lógico interno del modelo antes de que emita una respuesta, fundamentales para problemas aeronáuticos complejos.</p>
+        
+        <ul>
+          <li><strong>Chain-of-Thought (CoT):</strong> Obliga al modelo a desglosar su razonamiento declarando explícitamente "Piensa paso a paso" o solicitando una explicación progresiva. Garantiza que las respuestas sean transparentes, aunque requiere modelos con gran cantidad de parámetros para ser verdaderamente efectivo.</li>
+          <li><strong>Tree of Thoughts (ToT):</strong> Expande el CoT permitiendo al modelo explorar múltiples ramas de razonamiento de forma simultánea, evaluar los pros/contras de cada camino y seleccionar la mejor solución.</li>
+          <li><strong>Self-Consistency:</strong> Obliga al modelo a generar internamente múltiples respuestas independientes a un mismo problema complejo, seleccionando la salida final según la respuesta que más coincida o se repita, filtrando errores aislados.</li>
+          <li><strong>Step-back Prompting:</strong> Ante una pregunta muy específica, instruye a la IA a hacer una pausa, generar conceptos o principios rectores a nivel general y, solo entonces, usar ese marco macro para responder al problema micro.</li>
+        </ul>
+
+        <div class="aplicacion-box">
+          <h4>📌 Aplicación FAdeA (Modernización IA-63 / Análisis 5 Porqués):</h4>
+          <ul>
+            <li><strong>(CoT - 5 Porqués):</strong> "Ocurrió un derrame de fluido hidráulico Skydrol en la línea de montaje del IA-63. Realiza un análisis de 5 Porqués. Explica tu razonamiento paso a paso, asegurándote de no culpar a los operadores, sino de buscar la falla sistémica."</li>
+            <li><strong>(ToT - Diseño):</strong> "Para modernizar el sistema de aviónica del IA-100B, propón 3 arquitecturas diferentes (ramas). Para cada rama, evalúa costos, peso y facilidad de certificación FAR 23. Finalmente, elige la rama más viable y justifica tu elección."</li>
+            <li><strong>(Step-back - AS9100):</strong> "Antes de auditar este registro de calibración específico de herramientas de torque, da un paso atrás y enumera los 4 principios fundamentales de trazabilidad metrológica según AS9100. Luego, aplica esos principios para evaluar el siguiente registro: [Datos del registro]."</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="frameworks">
+        <h2>4. Marcos Lógicos (Frameworks) Comparados</h2>
+        <p>Los marcos estandarizan el diseño del prompt asegurando que no se omita información vital. A continuación, se presenta una comparativa de los principales frameworks de la industria:</p>
+        
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Marco</th>
+                <th>Acrónimo / Estructura</th>
+                <th>Enfoque Principal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>P-T-C-F</strong></td>
+                <td><strong>P</strong>ersona, <strong>T</strong>area, <strong>C</strong>ontexto, <strong>F</strong>ormato</td>
+                <td>Ideal para tareas rápidas y directas. Aporta el balance perfecto de estructura y simplicidad.</td>
+              </tr>
+              <tr>
+                <td><strong>RGC</strong></td>
+                <td><strong>R</strong>ole, <strong>G</strong>oal, <strong>R</strong>esult, <strong>C</strong>ontext, <strong>C</strong>onstraint (restricción)</td>
+                <td>Sumamente estructurado para la creación de contenido con límites rígidos (longitud, estilo).</td>
+              </tr>
+              <tr>
+                <td><strong>GITHUB</strong></td>
+                <td>1. Contexto/Rol, 2. Tarea, 3. Específico (límites), 4. Preguntas, 5. Evaluar salida</td>
+                <td>Metodología conversacional. Insta a la IA a <em>preguntar</em> antes de actuar, evitando suposiciones.</td>
+              </tr>
+              <tr>
+                <td><strong>DEPTH</strong></td>
+                <td><strong>D</strong>efinir, <strong>E</strong>stablecer (contexto), <strong>P</strong>roporcionar (ejemplos), <strong>T</strong>area, <strong>H</strong>uman-loop</td>
+                <td>Muy avanzado (estándar 2025). Requiere auto-evaluación del modelo y ejemplos previos.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="aplicacion-box">
+          <h4>📌 Aplicación FAdeA (Riesgos SMS / FAR 23):</h4>
+          <ul>
+            <li><strong>(Framework P-T-C-F - Certificación FAR 23):</strong>
+              <ul>
+                <li><strong>Persona:</strong> Eres un Ingeniero de Certificación Aeronáutica.</li>
+                <li><strong>Tarea:</strong> Redacta el Plan de Ensayos en Vuelo para barrenas.</li>
+                <li><strong>Contexto:</strong> Aeronave IA-100B, categoría acrobática, cumplimiento de FAR 23.2135.</li>
+                <li><strong>Formato:</strong> Tabla Markdown con columnas: Fase de ensayo, Altitud mínima, Configuración y Criterio de aceptación.</li>
+              </ul>
+            </li>
+            <li><strong>(Framework GITHUB - Calidad AS9100):</strong><br>
+              "Actúa como un Auditor Interno AS9100. Tu tarea es crear una lista de verificación de auditoría para el pañol de herramientas. Sé específico: enfócate solo en el control de caducidad y calibración. <em>Antes de generar la lista, hazme 3 preguntas sobre el tamaño de nuestro pañol y software actual para refinar tu respuesta</em>."
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="tecnicas-avanzadas">
+        <h2>5. Técnicas Avanzadas de Interacción</h2>
+        <p>Para exprimir al máximo a un LLM "caja negra", se utilizan enfoques avanzados para diseño recursivo y validación de certidumbre.</p>
+        
+        <ul>
+          <li><strong>Metaprompting:</strong> Le pide a la propia IA que actúe como un ingeniero de prompts y genere o mejore un prompt que se utilizará en otra instancia. Es útil para diseñar plantillas complejas sin esfuerzo manual inicial.</li>
+          <li><strong>Multi-Perspective Simulation (MPS):</strong> Exige que el modelo asuma 4 o 5 perspectivas distintas de expertos sobre un tema, evalúe puntos ciegos y luego simule un diálogo o un consenso. Ideal para revisiones de diseño o análisis de riesgos.</li>
+          <li><strong>Calibrated Confidence Prompting (CCP):</strong> Obliga al modelo a adjuntar un nivel de confianza (ej. "Alta confianza", "Especulativo") a cada una de sus afirmaciones. Minimiza los riesgos operativos evitando que la IA responda con seguridad absoluta sobre datos que desconoce (alucinaciones).</li>
+          <li><strong>ReAct (Reason + Act):</strong> Entrelaza pensamientos lógicos con llamadas a acciones (simuladas o reales). El modelo razona ("necesito el historial de la pieza"), ejecuta acción ("buscar en base de datos"), observa el resultado y continúa deduciendo.</li>
+        </ul>
+
+        <div class="aplicacion-box">
+          <h4>📌 Aplicación FAdeA (Diseño / SMS / Informes Técnicos):</h4>
+          <ul>
+            <li><strong>(Metaprompting - Certificación):</strong> "Eres un experto en ingeniería de prompts. Diseña el prompt perfecto para que otra IA redacte un informe de cumplimiento FAR 23 sobre materiales compuestos. Incluye en el prompt las variables que debe rellenar el usuario, el rol técnico y restricciones estrictas sobre el formato."</li>
+            <li><strong>(MPS - Revisión IA-100B):</strong> "Vamos a revisar la modificación del diseño del tren de aterrizaje del IA-100B. Analiza el cambio asumiendo simultáneamente las perspectivas de: 1) Ingeniero de Estructuras, 2) Técnico de Mantenimiento de Línea, 3) Piloto de Pruebas y 4) Auditor de Calidad AS9100. Crea una tabla con las preocupaciones de cada uno y luego sintetiza un consenso general."</li>
+            <li><strong>(CCP - Análisis de Causa Raíz / SMS):</strong> "Analiza las posibles causas del desgaste prematuro en los álabes del motor del IA-63 Pampa III basados en los síntomas adjuntos. Para cada causa raíz sugerida, incluye una etiqueta de Confianza Calibrada (Alta, Media, Baja o Especulativa) basada en principios termodinámicos."</li>
+            <li><strong>(ReAct - Gestión de Calidad):</strong> "Problema: Lote de remaches rechazados en la recepción. Paso 1: Piensa sobre las acciones a tomar bajo AS9100. Paso 2: Simula la acción Revisar Certificado de Conformidad del proveedor. Paso 3: Observación: Falta ensayo de cizalladura. Paso 4: Concluye la acción correctiva inmediata requerida."</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- SECCIÓN SOLICITADA DE ENLACES -->
+      <section class="recursos-adicionales">
+        <h2>Recursos y Guías Oficiales</h2>
+        <p class="lead">Explora la documentación oficial de los principales modelos de lenguaje.</p>
+        
+        <div class="button-container">
+          <a class="button" href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview" target="_blank" rel="noopener noreferrer">
+            Guía de Prompts para Claude (Anthropic)
+          </a>
+          <a class="button" href="https://developers.openai.com/api/docs/guides/prompt-guidance" target="_blank" rel="noopener noreferrer">
+            Guía de Prompts para GPT (OpenAI)
+          </a>
+          <a class="button" href="https://blogthinkbig.com/hablale-bien-la-guia-de-google-para-escribir-prompts-efectivos-en-gemini" target="_blank" rel="noopener noreferrer">
+            Guía de Prompts para Gemini (Google)
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer role="contentinfo">
+      © 2026 Guillermo A. Robiglio · <a href="https://ingg.ar/" target="_blank" rel="noopener noreferrer">ingg.ar</a><br>
+      <span style="font-size: 0.8rem; margin-top: 0.5rem; display: inline-block;">Fábrica Argentina de Aviones (FAdeA)</span>
+    </footer>
+  </body>
+</html>

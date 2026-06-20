@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curso de ChatGPT</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='45' fill='%2300f3ff'/%3E%3Ctext x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='70' fill='%230a0f16'%3Ei%3C/text%3E%3C/svg%3E"
+      type="image/svg+xml"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0a0f16; /* Fondo oscuro principal */
+        --fg: #e2e8f0; /* Texto claro */
+        --accent: #00f3ff; /* Azul neón */
+        --neon-shadow: 0 0 8px rgba(0, 243, 255, 0.5), 0 0 16px rgba(0, 243, 255, 0.3);
+        --neon-shadow-hover: 0 0 12px rgba(0, 243, 255, 0.8), 0 0 24px rgba(0, 243, 255, 0.6), 0 0 35px rgba(0, 243, 255, 0.4);
+      }
+
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+
+      body {
+        margin: 0;
+        font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        background: var(--bg);
+        color: var(--fg);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        min-height: 100vh;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 960px;
+        padding: 1.5rem 1.25rem;
+      }
+
+      header {
+        margin: 1rem 0 1rem;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin-bottom: 0.5rem;
+        color: var(--accent);
+        text-shadow: 0 0 10px rgba(0, 243, 255, 0.6); /* Brillo en el título */
+      }
+
+      p.lead {
+        font-size: clamp(1rem, 2.2vw, 1.1rem);
+        margin: 0 0 1.5rem;
+        color: #a0aec0; /* Texto secundario un poco más apagado */
+      }
+
+      .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem; /* Separación ligeramente mayor para que no se superpongan los brillos */
+        margin-bottom: 2rem;
+      }
+
+      a.button {
+        display: inline-block;
+        width: 100%;
+        max-width: 350px;
+        text-align: center;
+        background-color: transparent; /* Fondo transparente para destacar el borde neón */
+        color: var(--accent);
+        padding: 0.9rem 1rem;
+        border: 2px solid var(--accent);
+        border-radius: 2rem;
+        text-decoration: none;
+        font-weight: 700;
+        box-shadow: var(--neon-shadow);
+        text-shadow: 0 0 4px rgba(0, 243, 255, 0.4);
+        transition: all 0.3s ease;
+      }
+
+      a.button:hover { 
+        background-color: var(--accent); 
+        color: var(--bg); /* El texto se vuelve oscuro al hacer hover */
+        box-shadow: var(--neon-shadow-hover);
+        text-shadow: none;
+        transform: translateY(-2px); /* Pequeño efecto de elevación */
+      }
+      
+      a.button:active { 
+        transform: translateY(1px); 
+        box-shadow: var(--neon-shadow);
+      }
+
+      footer {
+        margin-top: auto;
+        width: 100%;
+        padding: 1rem 0;
+        font-size: 0.9rem;
+        color: #718096;
+      }
+
+      footer a {
+        color: var(--accent);
+        text-decoration: none;
+        transition: text-shadow 0.3s ease;
+      }
+
+      footer a:hover {
+        text-shadow: 0 0 8px rgba(0, 243, 255, 0.6);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="container" role="banner">
+      <h1>Curso de ChatGPT</h1>
+      <p class="lead">
+        Una introducción práctica al uso de inteligencia artificial conversacional
+        para potenciar tu productividad.
+      </p>
+    </header>
+
+    <main class="container" role="main">
+      <div class="button-container" aria-label="Accesos del curso">
+        <a class="button" href="https://ingg.ar/curso-chatgpt/may26/" target="_blank" rel="noopener noreferrer">Curso web</a>
+        <a class="button" href="https://ingg.ar/curso-chatgpt/nov25/" target="_blank" rel="noopener noreferrer">Curso web (anterior)</a>
+        <!-- <a class="button" href="https://ingg.ar/curso-chatgpt/" target="_blank" rel="noopener noreferrer">Curso web (viejo)</a> -->
+        <a class="button" href="https://fadeasa-my.sharepoint.com/:f:/g/personal/robiglio_fadeasa_com_ar/EgrK9MIgvVFPmnoKvEpw4jcBks6_g5lFGM-Tf6VHR0hZVw?e=bXHv5w" target="_blank" rel="noopener noreferrer">Apuntes</a>
+        <a class="button" href="https://ingg.ar/examen-curso-chatgpt" target="_blank" rel="noopener noreferrer">Examen</a>
+        <a class="button" href="https://chatgpt.com/g/g-6908bd74e33c8191b9fe6db4fd424042-asistente-curso-de-ia-fadea" target="_blank" rel="noopener noreferrer">GPT Asistente</a>
+        <a class="button" href="https://ingg.ar/herramientas-ia/" target="_blank" rel="noopener noreferrer">Herramientas IA</a>
+        <a class="button" href="enlaces.html" target="_blank" rel="noopener noreferrer">Enlaces de interés</a>
+      </div>
+    </main>
+
+    <footer role="contentinfo">
+      © 2026 Guillermo A. Robiglio · <a href="https://ingg.ar/enlaces/" target="_blank" rel="noopener noreferrer">ingg.ar</a>
+    </footer>
+  </body>
+</html>

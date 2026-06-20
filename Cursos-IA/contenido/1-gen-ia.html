@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA Generativa: El Nuevo Paradigma</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='45' fill='%2300f3ff'/%3E%3Ctext x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='70' fill='%230a0f16'%3Ei%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header class="container" role="banner">
+        <h1>IA GENERATIVA</h1>
+        <p class="lead">Modelos, Arquitecturas y el Futuro de la Creación Sintética</p>
+    </header>
+
+    <main class="container content" role="main">
+        
+        <section id="introduccion">
+            <h2>1. ¿Qué es la IA Generativa?</h2>
+            <p>La Inteligencia Artificial Generativa (GenAI) representa un cambio fundamental: hemos pasado de máquinas que solo clasifican o predicen datos (IA discriminativa) a sistemas capaces de <strong>crear contenido original</strong>. Ya sea texto, imágenes, código o audio, la GenAI utiliza redes neuronales profundas para aprender patrones en conjuntos masivos de datos y generar nuevas instancias que parecen creadas por humanos.</p>
+            
+            <div class="aplicacion-box">
+                <h4>📌 Nota de Divulgación:</h4>
+                <p>Es importante entender que la IA Generativa es solo una parte de un ecosistema mucho más vasto. Para comprender cómo encaja en el mapa completo, te recomiendo leer: 
+                <a href="https://open.substack.com/pub/grobiglio/p/el-universo-de-la-ia?r=6ycdae&utm_campaign=post-expanded-share&utm_medium=post%20viewer" target="_blank" style="color: var(--accent); font-weight: bold;">El Universo de la IA</a>.</p>
+            </div>
+        </section>
+
+        <section id="arquitectura">
+            <h2>2. El Corazón Tecnológico: Arquitectura Transformer</h2>
+            <p>Si la IA Generativa es un motor, el <strong>Transformer</strong> es su pistón principal. Presentada por Google en 2017, esta arquitectura revolucionó el procesamiento del lenguaje natural (NLP).</p>
+            
+            <ul>
+                <li><strong>Mecanismo de Atención (Self-Attention):</strong> Permite al modelo "mirar" todas las partes de una secuencia simultáneamente y ponderar qué palabras son más importantes para entender el contexto.</li>
+                <li><strong>Procesamiento en Paralelo:</strong> A diferencia de modelos antiguos (RNN), los Transformers procesan datos de forma masiva y paralela, lo que permite entrenarlos con casi toda la información disponible en Internet.</li>
+                <li><strong>Tokenización:</strong> Antes de "leer", la IA divide el texto en unidades llamadas <em>tokens</em> (fragmentos de palabras), convirtiéndolos en vectores numéricos que el procesador puede entender.</li>
+            </ul>
+        </section>
+
+        <section id="llm-multimodalidad">
+            <h2>3. De LLMs a la Multimodalidad</h2>
+            <p>Los <strong>Large Language Models (LLMs)</strong> como GPT-4, Claude o Gemini son los exponentes más conocidos de esta tecnología. Sin embargo, la frontera actual es la <strong>Multimodalidad</strong>.</p>
+            
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Concepto</th>
+                            <th>Descripción</th>
+                            <th>Ejemplos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>LLM Tradicional</strong></td>
+                            <td>Entrada de texto, salida de texto. Optimizado para razonamiento y lenguaje.</td>
+                            <td>GPT-3.5, Llama 2</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Multimodalidad</strong></td>
+                            <td>Capacidad de procesar y generar múltiples tipos de datos (imagen, audio, video) en un solo modelo.</td>
+                            <td>GPT-4o, Gemini 1.5 Pro</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Modelos de Difusión</strong></td>
+                            <td>Especializados en crear imágenes de alta calidad "limpiando" ruido aleatorio progresivamente.</td>
+                            <td>Stable Diffusion, Midjourney</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="entrenamiento">
+            <h2>4. ¿Cómo se entrena un gigante?</h2>
+            <p>Crear un modelo de frontera no es solo cuestión de hardware; es un proceso refinado de varias etapas:</p>
+            <ol>
+                <li><strong>Pre-entrenamiento:</strong> El modelo lee billones de palabras para aprender gramática, hechos y razonamiento básico.</li>
+                <li><strong>Fine-tuning:</strong> Se ajusta el modelo para tareas específicas (ej. medicina o leyes).</li>
+                <li><strong>RLHF (Aprendizaje por Refuerzo):</strong> Humanos evalúan las respuestas de la IA, premiando las útiles y seguras, para alinear el comportamiento del modelo con los valores humanos.</li>
+            </ol>
+        </section>
+
+        <section class="recursos-adicionales">
+            <h2>Explora más sobre GenAI</h2>
+            <div class="button-container">
+                <a class="button" href="https://research.google/pubs/attention-is-all-you-need/" target="_blank">Paper Original: Attention Is All You Need</a>
+                <a class="button" href="https://openai.com/news/" target="_blank">Últimas noticias de OpenAI</a>
+                <a class="button" href="index.html">Volver al Inicio</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer role="contentinfo">
+        © 2026 Guillermo A. Robiglio · <a href="https://ingg.ar/" target="_blank" rel="noopener noreferrer">ingg.ar</a><br>
+        <span style="font-size: 0.8rem; margin-top: 0.5rem; display: inline-block;">Fábrica Argentina de Aviones (FAdeA)</span>
+    </footer>
+</body>
+</html>
