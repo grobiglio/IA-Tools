@@ -97,6 +97,10 @@ a.button:active {
     box-shadow: var(--neon-shadow);
 }
 
+a.button i {
+    margin-right: 0.5rem;
+}
+
 footer {
     margin-top: auto;
     width: 100%;
