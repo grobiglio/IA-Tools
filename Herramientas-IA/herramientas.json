@@ -58,9 +58,8 @@
         {
           "id": "grok3",
           "nombre": "Grok",
-          "url": "https://grok.x.ai/",
+          "url": "https://grok.com/",
           "logo": "logo_grok.png",
-          "modalTitulo": "Grok 3",
           "descripcionHtml": "Es un gran modelo de lenguaje (LLM) desarrollado por xAI, la empresa de Elon Musk. Se distingue por su capacidad para responder a preguntas con humor e ingenio, y por su acceso en tiempo real a la información a través de la plataforma X (anteriormente Twitter).",
           "tutorial": "https://youtube.com/playlist?list=PLMkO9wseBDZYyxa1BencAFKi0PG2QYHb8&si=HFc_a_Pgk8f-xiwO"
         },
@@ -183,16 +182,19 @@
       "herramientas": [
         {
           "id": "notebooklm",
-          "nombre": "Notebook LM",
-          "url": "https://notebooklm.google.com/",
+          "nombre": "Gemini Notebook",
+          "url": "https://notebook.google.com/",
           "logo": "logo_notebooklm.png",
-          "alt": "NotebookLM Logo",
-          "descripcionHtml": "NotebookLM es una herramienta en línea de investigación. Desarrollada por Google Labs, utiliza inteligencia artificial, específicamente Google Gemini, para ayudar a los usuarios a interactuar con sus propios documentos (llamados fuentes). NotebookLM puede generar resúmenes, explicaciones y respuestas basados en el contenido cargado por el usuario. Las respuestas generadas por NotebookLM pueden ser guardadas como notas que a su vez pueden formar parte de la misma fuente de datos. También incluye la opción \"Resumen de audio\", que resume los documentos en un formato conversacional, similar a un podcast.",
+          "alt": "Gemini Notebook Logo",
+          "descripcionHtml": "Gemini Notebook (hasta julio de 2026, NotebookLM) es una herramienta en línea de investigación desarrollada por Google. Utiliza inteligencia artificial para ayudar a los usuarios a interactuar con sus propios documentos (llamados fuentes): genera resúmenes, explicaciones y respuestas basados en el contenido cargado. Las respuestas pueden guardarse como notas que a su vez pasan a formar parte de la misma fuente de datos. También incluye la opción \"Resumen de audio\", que resume los documentos en un formato conversacional, similar a un podcast.",
           "enlaces": {
             "en": "https://en.wikipedia.org/wiki/NotebookLM",
             "es": "https://es.wikipedia.org/wiki/NotebookLM"
           },
-          "tutorial": "https://youtube.com/playlist?list=PLMkO9wseBDZZtYIHoy4tjlcpXsbBtmKct&si=p6n7pfmj626Dpa0S"
+          "tutorial": "https://youtube.com/playlist?list=PLMkO9wseBDZZtYIHoy4tjlcpXsbBtmKct&si=p6n7pfmj626Dpa0S",
+          "nombresPrevios": [
+            "Notebook LM"
+          ]
         },
         {
           "id": "notion",
@@ -215,7 +217,7 @@
         {
           "id": "make",
           "nombre": "Make",
-          "url": "https://us2.make.com/",
+          "url": "https://www.make.com/",
           "logo": "logo_make.png",
           "descripcionHtml": "Una plataforma de automatización visual que permite conectar aplicaciones y servicios (APIs) para crear flujos de trabajo (escenarios) sin necesidad de código.",
           "tutorial": null
@@ -257,7 +259,7 @@
           "url": "https://aistudio.google.com/prompts/new_chat",
           "logo": "logo_ia_studio.png",
           "alt": "Google AI Studio Logo",
-          "modalTitulo": "Google IA Studio",
+          "modalTitulo": "Google AI Studio",
           "descripcionHtml": "Es una herramienta online que permite a los desarrolladores y usuarios experimentar y prototipar rápidamente con los modelos de Gemini. Es el entorno ideal para crear prompts, encadenar modelos y construir aplicaciones de IA.",
           "tutorial": "https://youtube.com/playlist?list=PLMkO9wseBDZbqJ4aXwRpjpsRU27ox59sv&si=cYjw1F8rPjE1LWoC"
         },
