@@ -3,8 +3,8 @@
   "short_name": "IA Tools",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#ffd700",
+  "background_color": "#121212",
+  "theme_color": "#121212",
   "orientation": "portrait",
   "icons": [
     {

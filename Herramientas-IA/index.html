@@ -768,7 +768,9 @@
       // Registro del Service Worker para PWA
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('sw.js')
+          // updateViaCache: 'none' evita que el propio sw.js se sirva desde la
+          // caché HTTP y una versión nueva tarde en llegar.
+          navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' })
             .then(registration => {
               console.log('ServiceWorker registrado con éxito:', registration.scope);
             })
