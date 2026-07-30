@@ -1,0 +1,366 @@
+{
+  "_comentario": "Fuente de verdad de la grilla y los modales. Editar aquí y ejecutar: node build.js",
+  "etiquetasEnlaces": {
+    "en": "More info (EN)",
+    "es": "Más info (ES)"
+  },
+  "categorias": [
+    {
+      "id": "chatbots",
+      "titulo": "Chatbots",
+      "herramientas": [
+        {
+          "id": "gemini",
+          "nombre": "Gemini",
+          "url": "https://gemini.google.com/",
+          "logo": "logo_gemini.png",
+          "descripcionHtml": "Gemini (anteriormente Bard) es la familia de modelos de lenguaje grande (LLM) de Google, diseñado para ser multimodal y altamente capaz en diversas tareas, desde la generación de texto hasta el razonamiento complejo.",
+          "enlaces": {
+            "en": "https://en.wikipedia.org/wiki/Gemini_(chatbot)",
+            "es": "https://es.wikipedia.org/wiki/Gemini_(bot_conversacional)"
+          },
+          "tutorial": "https://youtube.com/playlist?list=PLMkO9wseBDZbnPGPowtK2c11udkzwGMp-&si=VSgn6ekdmgaBiT5p"
+        },
+        {
+          "id": "chatgpt",
+          "nombre": "ChatGPT",
+          "url": "https://chat.openai.com/",
+          "logo": "logo_chatgpt.png",
+          "descripcionHtml": "Desarrollado por OpenAI, ChatGPT es un chatbot impulsado por los modelos GPT. Es conocido por su capacidad para mantener conversaciones naturales, responder preguntas, generar código y resumir textos de manera coherente.",
+          "enlaces": {
+            "en": "https://en.wikipedia.org/wiki/ChatGPT",
+            "es": "https://es.wikipedia.org/wiki/ChatGPT"
+          },
+          "tutorial": "https://youtube.com/playlist?list=PLMkO9wseBDZZKqv5FNah7UvZS928bV71H&si=m3xUb-m5dFbWCvzq"
+        },
+        {
+          "id": "copilot",
+          "nombre": "Copilot",
+          "url": "https://copilot.microsoft.com/",
+          "logo": "logo_microsoft_copilot.png",
+          "alt": "Microsoft Copilot Logo",
+          "modalTitulo": "Microsoft Copilot",
+          "descripcionHtml": "Microsoft Copilot es un asistente virtual de inteligencia artificial desarrollado por Microsoft. Utiliza un modelo de lenguaje de gran tamaño (LLM) para generar texto, traducir idiomas, crear diferentes tipos de contenido creativo y responder a tus preguntas de forma informativa. También puede realizar algunas tareas en Windows 11, como escribir código, crear presentaciones y editar documentos.",
+          "enlaces": {
+            "en": "https://en.wikipedia.org/wiki/Microsoft_Copilot",
+            "es": "https://es.wikipedia.org/wiki/ChatGPT"
+          },
+          "tutorial": "https://youtube.com/playlist?list=PLMkO9wseBDZaGSP2OChIAOkLjaZ-DrzTx&si=50T-gvLvGkroN5OB"
+        },
+        {
+          "id": "claude",
+          "nombre": "Claude",
+          "url": "https://claude.ai/new",
+          "logo": "logo_claude.png",
+          "descripcionHtml": "Son modelos de lenguaje desarrollados por Anthropic. Se destacan por su enfoque en la seguridad y la utilidad, siendo particularmente buenos en el resumen, la escritura creativa y el manejo de conversaciones largas y complejas.",
+          "tutorial": "https://youtube.com/playlist?list=PLMkO9wseBDZaVRx39Ue3JKZA7dUGI47BZ&si=sR9TuEemaNX_uquq"
+        },
+        {
+          "id": "grok3",
+          "nombre": "Grok",
+          "url": "https://grok.x.ai/",
+          "logo": "logo_grok.png",
+          "modalTitulo": "Grok 3",
+          "descripcionHtml": "Es un gran modelo de lenguaje (LLM) desarrollado por xAI, la empresa de Elon Musk. Se distingue por su capacidad para responder a preguntas con humor e ingenio, y por su acceso en tiempo real a la información a través de la plataforma X (anteriormente Twitter).",
+          "tutorial": "https://youtube.com/playlist?list=PLMkO9wseBDZYyxa1BencAFKi0PG2QYHb8&si=HFc_a_Pgk8f-xiwO"
+        },
+        {
+          "id": "deepseek",
+          "nombre": "DeepSeek",
+          "url": "https://www.deepseek.com/",
+          "logo": "logo_deepseek.png",
+          "modalTitulo": "Deepseek",
+          "descripcionHtml": "Es una plataforma de modelos de lenguaje abierto desarrollada por DeepSeek AI. Ofrece modelos multilingües y multimodales de alto rendimiento, destacándose por su modelo de codificación (DeepSeek Coder) y su compromiso con la investigación abierta.",
+          "tutorial": null
+        },
+        {
+          "id": "qwen",
+          "nombre": "Qwen",
+          "url": "https://chat.qwen.ai/",
+          "logo": "logo_qwen.png",
+          "descripcionHtml": "Son modelos de lenguaje de código abierto de Alibaba Group. Están diseñados para ser potentes y eficientes, capaces de manejar una amplia gama de tareas, incluyendo comprensión, generación y programación, con un fuerte enfoque en el soporte multilingüe.",
+          "tutorial": null
+        },
+        {
+          "id": "mistral",
+          "nombre": "Mistral",
+          "url": "https://chat.mistral.ai/chat",
+          "logo": "logo_mistral.png",
+          "descripcionHtml": "Es un modelo de lenguaje de alto rendimiento desarrollado por la compañía francesa Mistral AI. Es conocido por su eficiencia, velocidad y excelencia en razonamiento, matemáticas y codificación, a menudo superando a modelos más grandes en tareas específicas.",
+          "tutorial": null
+        },
+        {
+          "id": "kimi",
+          "nombre": "Kimi",
+          "url": "https://www.kimi.com/",
+          "logo": "https://www.kimi.com/favicon.ico",
+          "descripcionHtml": "Un asistente de chat con IA desarrollado por Moonshot AI. Su principal diferenciador es su capacidad para manejar ventanas de contexto extremadamente grandes, lo que le permite procesar y resumir documentos y libros muy extensos con gran precisión.",
+          "tutorial": null
+        },
+        {
+          "id": "chatz",
+          "nombre": "Chat Z",
+          "url": "https://chat.z.ai/",
+          "logo": "logo_chat_z.png",
+          "alt": "Chat Z Logo",
+          "descripcionHtml": "ChatZ (frecuentemente referido como Chat Z) es una plataforma de inteligencia artificial diseñada para facilitar la interacción entre usuarios y modelos de lenguaje avanzados.<br>Algunos puntos clave sobre esta herramienta:<br>✔ Acceso a modelos potentes: Permite interactuar con tecnologías como GPT-4 de OpenAI y modelos de la familia Claude de Anthropic en una sola interfaz.<br>✔ Multimodalidad: Estos servicios permiten no solo chatear, sino también generar imágenes, analizar documentos PDF y realizar búsquedas web en tiempo real.<br>✔ Versatilidad: Se utiliza comúnmente para redacción de textos, programación, traducción y resolución de dudas complejas.",
+          "enlaces": {
+            "en": "https://z.ai/blog/glm-4.7?_gl=1*1byew69*_gcl_au*ODA0Mzk0NjU5LjE3NjY3OTAzNzI.*_ga*MTk3MTgxNjczMy4xNzY2NzkwMzcy*_ga_Z8QTHYBHP3*czE3NjczNzg4NDEkbzMkZzEkdDE3NjczNzg4NjAkajQxJGwwJGgw"
+          },
+          "tutorial": null
+        }
+      ]
+    },
+    {
+      "id": "investigacion",
+      "titulo": "Investigación",
+      "herramientas": [
+        {
+          "id": "perplexity",
+          "nombre": "Perplexity",
+          "url": "https://www.perplexity.ai/",
+          "logo": "logo_perplexity.png",
+          "descripcionHtml": "Es un motor de conocimiento conversacional y motor de búsqueda potenciado por IA. Su principal característica es que proporciona respuestas directas y concisas, citando siempre las fuentes web que utilizó para generar esa respuesta.",
+          "tutorial": "https://youtube.com/playlist?list=PLMkO9wseBDZYjYXgm7fe_pp6FcVKYQhai&si=7RvDMJ7rYza2RBZk"
+        },
+        {
+          "id": "consensus",
+          "nombre": "Consensus",
+          "url": "https://consensus.app/",
+          "logo": "logo_consensus.png",
+          "descripcionHtml": "Consensus es un motor de búsqueda basado en IA, diseñado específicamente para la investigación académica y científica. Permite a los usuarios plantear preguntas de investigación y recibir respuestas basadas en evidencia, sintetizadas a partir de una base de datos de más de 200 millones de artículos revisados ​​por pares.",
+          "enlaces": {
+            "en": "https://help.consensus.app/en/articles/9922673-how-consensus-works"
+          },
+          "tutorial": null
+        },
+        {
+          "id": "atlas",
+          "nombre": "Atlas Research",
+          "url": "https://atlas-research.io/",
+          "logo": "logo_atlas_research.png",
+          "descripcionHtml": "Atlas Research es un espacio de trabajo impulsado por IA, diseñado para la investigación computacional. Unifica el flujo de trabajo de investigación al permitir a los usuarios:<br>✔ Escribir y ejecutar código en <em>Jupyter notebooks</em> integrados.<br>✔ Analizar artículos mediante el procesamiento de PDF con IA para extraer métodos y hallazgos.<br>✔ Organizar el conocimiento mediante notas de Markdown vinculadas en un gráfico de conocimiento.",
+          "enlaces": {
+            "en": "https://atlas-research.io/docs"
+          },
+          "tutorial": null
+        }
+      ]
+    },
+    {
+      "id": "agentes",
+      "titulo": "Agentes",
+      "herramientas": [
+        {
+          "id": "minimax",
+          "nombre": "Minimax",
+          "url": "https://chat.minimax.io/",
+          "logo": "https://chat.minimax.io/favicon.ico",
+          "descripcionHtml": "MiniMax Agent es un agente de propósito general capaz de completar tareas complejas a largo plazo. Con el respaldo de un sistema multiagente, puede formular soluciones expertas mediante una planificación de varios pasos, desglosar con flexibilidad los requisitos de las tareas y ejecutar múltiples subtareas para obtener el resultado final.",
+          "tutorial": null
+        },
+        {
+          "id": "genspark",
+          "nombre": "Genspark",
+          "url": "https://www.genspark.ai/",
+          "logo": "https://www.genspark.ai/favicon.ico",
+          "descripcionHtml": "Un motor de búsqueda y descubrimiento impulsado por IA. En lugar de solo enlaces, genera 'Sparkpages', páginas de resumen creadas por IA sobre un tema específico, combinando información de múltiples fuentes.",
+          "tutorial": "https://youtube.com/playlist?list=PLMkO9wseBDZZ3N9hzSlQQMMB02Ktmnk1K&si=dTG7UP7Mh6TJUtAz"
+        },
+        {
+          "id": "manus",
+          "nombre": "Manus",
+          "url": "https://manus.im/",
+          "logo": "https://manus.im/favicon.ico",
+          "descripcionHtml": "Un asistente de escritura con IA enfocado en la generación de contenido extenso y la optimización de SEO. Está diseñado para ayudar a crear artículos, entradas de blog y textos de marketing de manera rápida y eficiente.",
+          "tutorial": null
+        }
+      ]
+    },
+    {
+      "id": "productividad",
+      "titulo": "Productividad",
+      "herramientas": [
+        {
+          "id": "notebooklm",
+          "nombre": "Notebook LM",
+          "url": "https://notebooklm.google.com/",
+          "logo": "logo_notebooklm.png",
+          "alt": "NotebookLM Logo",
+          "descripcionHtml": "NotebookLM es una herramienta en línea de investigación. Desarrollada por Google Labs, utiliza inteligencia artificial, específicamente Google Gemini, para ayudar a los usuarios a interactuar con sus propios documentos (llamados fuentes). NotebookLM puede generar resúmenes, explicaciones y respuestas basados en el contenido cargado por el usuario. Las respuestas generadas por NotebookLM pueden ser guardadas como notas que a su vez pueden formar parte de la misma fuente de datos. También incluye la opción \"Resumen de audio\", que resume los documentos en un formato conversacional, similar a un podcast.",
+          "enlaces": {
+            "en": "https://en.wikipedia.org/wiki/NotebookLM",
+            "es": "https://es.wikipedia.org/wiki/NotebookLM"
+          },
+          "tutorial": "https://youtube.com/playlist?list=PLMkO9wseBDZZtYIHoy4tjlcpXsbBtmKct&si=p6n7pfmj626Dpa0S"
+        },
+        {
+          "id": "notion",
+          "nombre": "Notion",
+          "url": "https://www.notion.com/",
+          "logo": "logo_notion.png",
+          "descripcionHtml": "Una plataforma de productividad todo en uno que combina notas, tareas, wikis y bases de datos. Recientemente ha integrado funciones de IA (Notion AI) para resumir, escribir, traducir y organizar contenido.",
+          "enlaces": {
+            "en": "https://en.wikipedia.org/wiki/Notion_(productivity_software)",
+            "es": "https://es.wikipedia.org/wiki/Notion"
+          },
+          "tutorial": "https://youtube.com/playlist?list=PLMkO9wseBDZYwDAzWFzXp0HdyokmFyTto&si=wBbom12MY3mWy1-Q"
+        }
+      ]
+    },
+    {
+      "id": "automatizacion",
+      "titulo": "Automatización",
+      "herramientas": [
+        {
+          "id": "make",
+          "nombre": "Make",
+          "url": "https://us2.make.com/",
+          "logo": "https://www.make.com/favicon.ico",
+          "descripcionHtml": "Una plataforma de automatización visual que permite conectar aplicaciones y servicios (APIs) para crear flujos de trabajo (escenarios) sin necesidad de código.",
+          "tutorial": null
+        },
+        {
+          "id": "n8n",
+          "nombre": "n8n",
+          "url": "https://n8n.io/",
+          "logo": "https://www.n8n.io/favicon.ico",
+          "alt": "N8N Logo",
+          "descripcionHtml": "n8n (pronunciado n-ocho-n) te ayuda a conectar cualquier aplicación con una API y a manipular sus datos con poco o ningún código.<br>n8n es:<br>✔ Personalizable: flujos de trabajo altamente flexibles y la opción de crear nodos personalizados.<br>✔ Práctico: usa npm o Docker para probar n8n, o la opción de alojamiento en la nube si prefieres que n8n se encargue de la infraestructura.<br>✔ Privado: puedes aloja n8n tú mismo para mayor privacidad y seguridad.",
+          "enlaces": {
+            "en": "https://docs.n8n.io/"
+          },
+          "tutorial": "https://youtube.com/playlist?list=PLMkO9wseBDZaCdUOXuKkSAanXgyRoTITl&si=IkzevIdijDCCt6Gu"
+        },
+        {
+          "id": "opal",
+          "nombre": "OPAL",
+          "url": "https://opal.withgoogle.com/",
+          "pendiente": true
+        }
+      ]
+    },
+    {
+      "id": "vibecoding",
+      "titulo": "Vibe Coding",
+      "herramientas": [
+        {
+          "id": "firebase",
+          "nombre": "Firebase Studio",
+          "url": "https://studio.firebase.google.com/",
+          "logo": "logo_firebase_studio.png",
+          "descripcionHtml": "Es una herramienta de Google que forma parte de la plataforma Firebase. Está orientada a desarrolladores para construir, probar e implementar aplicaciones. El Studio ofrece un entorno para experimentar con las capacidades de IA y prompts dentro de los proyectos de desarrollo.",
+          "tutorial": null
+        },
+        {
+          "id": "iastudio",
+          "nombre": "AI Studio",
+          "url": "https://aistudio.google.com/prompts/new_chat",
+          "logo": "logo_ia_studio.png",
+          "alt": "Google AI Studio Logo",
+          "modalTitulo": "Google IA Studio",
+          "descripcionHtml": "Es una herramienta online que permite a los desarrolladores y usuarios experimentar y prototipar rápidamente con los modelos de Gemini. Es el entorno ideal para crear prompts, encadenar modelos y construir aplicaciones de IA.",
+          "tutorial": "https://youtube.com/playlist?list=PLMkO9wseBDZbqJ4aXwRpjpsRU27ox59sv&si=cYjw1F8rPjE1LWoC"
+        },
+        {
+          "id": "lovable",
+          "nombre": "Lovable",
+          "url": "https://lovable.dev/",
+          "logo": "https://lovable.dev/favicon.ico",
+          "descripcionHtml": "Una plataforma de 'Vibe Coding' que permite a los desarrolladores construir sitios web o aplicaciones web sin necesidad de utilizar código.",
+          "tutorial": "https://youtube.com/playlist?list=PLMkO9wseBDZaX9xtr8vDbnMjDU39k8WeG&si=2fIgkaZcNqwyVpNU"
+        },
+        {
+          "id": "replit",
+          "nombre": "Replit",
+          "url": "https://replit.com/~",
+          "logo": "logo_replit.png",
+          "descripcionHtml": "Replit, anteriormente conocida como Repl.it, es un entorno de desarrollo integrado (IDE) en línea que admite diversos lenguajes de programación. En septiembre de 2024 se convirtió en un agente de IA para la automatización del desarrollo de software, con el que los usuarios pueden interactuar en lenguaje natural.",
+          "enlaces": {
+            "en": "https://en.wikipedia.org/wiki/Replit",
+            "es": "https://es.wikipedia.org/wiki/Replit"
+          },
+          "tutorial": null
+        },
+        {
+          "id": "antigravity",
+          "nombre": "Antigravity",
+          "url": "https://antigravity.google/",
+          "logo": "logo_antigravity.png",
+          "descripcionHtml": "Google Antigravity es una plataforma de desarrollo con agentes que evoluciona el IDE hacia una era centrada en los agentes. Antigravity permite a los desarrolladores operar a un nivel superior, orientado a tareas, gestionando agentes en diferentes espacios de trabajo, manteniendo la experiencia habitual de un IDE de IA. Antigravity integra los agentes en su propia interfaz y les proporciona las herramientas necesarias para operar de forma autónoma en el editor, la terminal y el navegador, priorizando la verificación y la comunicación de alto nivel mediante tareas y artefactos.",
+          "enlaces": {
+            "en": "https://antigravity.google/docs/home"
+          },
+          "tutorial": "https://youtube.com/playlist?list=PLMkO9wseBDZYtvufn_ofJ5UW5zY-LZPgl&si=KsFnMQoHD2VpLqwO",
+          "nota": "Esta capacidad permite a los agentes planificar y ejecutar tareas de software más complejas e integrales, optimizando todos los aspectos del desarrollo, desde la creación de funcionalidades, la iteración de la interfaz de usuario y la corrección de errores hasta la investigación y la generación de informes."
+        },
+        {
+          "id": "cursor",
+          "nombre": "Cursor",
+          "url": "https://cursor.com/",
+          "pendiente": true
+        },
+        {
+          "id": "claudecode",
+          "nombre": "Claude Code",
+          "url": "https://claude.com/product/claude-code",
+          "pendiente": true
+        },
+        {
+          "id": "codex",
+          "nombre": "Codex",
+          "url": "https://openai.com/codex/",
+          "pendiente": true
+        }
+      ]
+    },
+    {
+      "id": "videoimagen",
+      "titulo": "Video e Imagen",
+      "herramientas": [
+        {
+          "id": "runway",
+          "nombre": "Runway",
+          "url": "https://runwayml.com/",
+          "logo": "logo_runway.png",
+          "descripcionHtml": "Runway (a menudo conocida como RunwayML) es una plataforma líder de IA generativa especializada en la creación y edición de video de alta fidelidad. A partir de diciembre de 2025, es reconocida por sus modelos de video líderes en la industria, que destacan en simulación física y realismo cinematográfico.",
+          "enlaces": {
+            "en": "https://en.wikipedia.org/wiki/Runway_(company)",
+            "es": "https://es.wikipedia.org/wiki/Runway"
+          },
+          "tutorial": null
+        },
+        {
+          "id": "midjourney",
+          "nombre": "Midjourney",
+          "url": "https://www.midjourney.com/",
+          "pendiente": true
+        },
+        {
+          "id": "flux",
+          "nombre": "Flux",
+          "url": "https://blackforestlabs.ai/",
+          "pendiente": true
+        },
+        {
+          "id": "ideogram",
+          "nombre": "Ideogram",
+          "url": "https://ideogram.ai/",
+          "pendiente": true
+        },
+        {
+          "id": "luma",
+          "nombre": "Luma",
+          "url": "https://lumalabs.ai/",
+          "pendiente": true
+        },
+        {
+          "id": "kling",
+          "nombre": "Kling",
+          "url": "https://klingai.com/",
+          "pendiente": true
+        }
+      ]
+    }
+  ]
+}
