@@ -93,7 +93,7 @@
           "id": "kimi",
           "nombre": "Kimi",
           "url": "https://www.kimi.com/",
-          "logo": "https://www.kimi.com/favicon.ico",
+          "logo": "logo_kimi.png",
           "descripcionHtml": "Un asistente de chat con IA desarrollado por Moonshot AI. Su principal diferenciador es su capacidad para manejar ventanas de contexto extremadamente grandes, lo que le permite procesar y resumir documentos y libros muy extensos con gran precisión.",
           "tutorial": null
         },
@@ -155,7 +155,7 @@
           "id": "minimax",
           "nombre": "Minimax",
           "url": "https://chat.minimax.io/",
-          "logo": "https://chat.minimax.io/favicon.ico",
+          "logo": "logo_minimax.png",
           "descripcionHtml": "MiniMax Agent es un agente de propósito general capaz de completar tareas complejas a largo plazo. Con el respaldo de un sistema multiagente, puede formular soluciones expertas mediante una planificación de varios pasos, desglosar con flexibilidad los requisitos de las tareas y ejecutar múltiples subtareas para obtener el resultado final.",
           "tutorial": null
         },
@@ -163,7 +163,7 @@
           "id": "genspark",
           "nombre": "Genspark",
           "url": "https://www.genspark.ai/",
-          "logo": "https://www.genspark.ai/favicon.ico",
+          "logo": "logo_genspark.png",
           "descripcionHtml": "Un motor de búsqueda y descubrimiento impulsado por IA. En lugar de solo enlaces, genera 'Sparkpages', páginas de resumen creadas por IA sobre un tema específico, combinando información de múltiples fuentes.",
           "tutorial": "https://youtube.com/playlist?list=PLMkO9wseBDZZ3N9hzSlQQMMB02Ktmnk1K&si=dTG7UP7Mh6TJUtAz"
         },
@@ -171,7 +171,7 @@
           "id": "manus",
           "nombre": "Manus",
           "url": "https://manus.im/",
-          "logo": "https://manus.im/favicon.ico",
+          "logo": "logo_manus.png",
           "descripcionHtml": "Un asistente de escritura con IA enfocado en la generación de contenido extenso y la optimización de SEO. Está diseñado para ayudar a crear artículos, entradas de blog y textos de marketing de manera rápida y eficiente.",
           "tutorial": null
         }
@@ -216,7 +216,7 @@
           "id": "make",
           "nombre": "Make",
           "url": "https://us2.make.com/",
-          "logo": "https://www.make.com/favicon.ico",
+          "logo": "logo_make.png",
           "descripcionHtml": "Una plataforma de automatización visual que permite conectar aplicaciones y servicios (APIs) para crear flujos de trabajo (escenarios) sin necesidad de código.",
           "tutorial": null
         },
@@ -224,8 +224,7 @@
           "id": "n8n",
           "nombre": "n8n",
           "url": "https://n8n.io/",
-          "logo": "https://www.n8n.io/favicon.ico",
-          "alt": "N8N Logo",
+          "logo": "logo_n8n.png",
           "descripcionHtml": "n8n (pronunciado n-ocho-n) te ayuda a conectar cualquier aplicación con una API y a manipular sus datos con poco o ningún código.<br>n8n es:<br>✔ Personalizable: flujos de trabajo altamente flexibles y la opción de crear nodos personalizados.<br>✔ Práctico: usa npm o Docker para probar n8n, o la opción de alojamiento en la nube si prefieres que n8n se encargue de la infraestructura.<br>✔ Privado: puedes aloja n8n tú mismo para mayor privacidad y seguridad.",
           "enlaces": {
             "en": "https://docs.n8n.io/"
@@ -266,7 +265,7 @@
           "id": "lovable",
           "nombre": "Lovable",
           "url": "https://lovable.dev/",
-          "logo": "https://lovable.dev/favicon.ico",
+          "logo": "logo_lovable.png",
           "descripcionHtml": "Una plataforma de 'Vibe Coding' que permite a los desarrolladores construir sitios web o aplicaciones web sin necesidad de utilizar código.",
           "tutorial": "https://youtube.com/playlist?list=PLMkO9wseBDZaX9xtr8vDbnMjDU39k8WeG&si=2fIgkaZcNqwyVpNU"
         },
