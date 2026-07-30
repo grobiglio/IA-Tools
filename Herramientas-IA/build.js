@@ -152,9 +152,12 @@ function detectarRenombres(datos, htmlPrevio) {
 function filaHTML(h) {
   if (h.pendiente) return `            <!-- PENDIENTE: ${h.nombre}${h.url ? ` (${h.url})` : ""} -->`;
 
+  // Sin tutorial: se emite sin href ni target. Antes eran href="#" target="_blank",
+  // así que un clic abría una pestaña en blanco. Sigue siendo un .youtube-button,
+  // que es de lo que depende el evento click_tutorial de GA4.
   const yt = h.tutorial
     ? `<a href="${escAttr(h.tutorial)}" class="youtube-button" target="_blank" rel="noopener">▶</a>`
-    : `<a href="#" class="youtube-button sin-enlace" target="_blank" aria-disabled="true" tabindex="-1" title="Tutorial próximamente">▶</a>`;
+    : `<a class="youtube-button sin-enlace" role="link" aria-disabled="true" title="Tutorial próximamente">▶</a>`;
 
   return [
     `            <!-- ${h.nombre.toUpperCase()} -->`,
