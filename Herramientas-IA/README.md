@@ -2,15 +2,11 @@
 
 `index.html` es un **artefacto generado**. La fuente de verdad es `herramientas.json`.
 
-Antes, agregar una herramienta obligaba a editar tres bloques de HTML a mano en un
-archivo de casi 900 líneas, y nada actualizaba la lista de precache. Ahora es editar
-un objeto y correr un comando.
+Antes, agregar una herramienta obligaba a editar tres bloques de HTML a mano en un archivo de casi 900 líneas, y nada actualizaba la lista de precache. Ahora es editar un objeto y correr un comando.
 
 ## Agregar una herramienta (3 pasos)
 
-**1. El logo** — guardalo en esta carpeta como `logo_<id>.png`: PNG con transparencia,
-lienzo cuadrado de 64×64 y el dibujo centrado. Todos tienen la misma caja, así el
-tamaño se controla desde el CSS y no hace falta ningún `style` suelto.
+**1. El logo** — guardalo en esta carpeta como `logo_<id>.png`: PNG con transparencia, lienzo cuadrado de 64×64 y el dibujo centrado. Todos tienen la misma caja, así el tamaño se controla desde el CSS y no hace falta ningún `style` suelto.
 
 Partiendo del favicon del sitio:
 
@@ -22,12 +18,9 @@ convert "/tmp/x.src[$f]" -background none -alpha on \
         -resize 64x64 -gravity center -extent 64x64 -strip PNG32:logo_<id>.png
 ```
 
-Si el archivo es un `.ico` y ImageMagick se queja de que no reconoce el formato,
-antepone `ico:` a la ruta. Y nunca decidas con `curl -I`: algunos sitios devuelven
-`content-length: 0` en HEAD y el GET sí trae la imagen.
+Si el archivo es un `.ico` y ImageMagick se queja de que no reconoce el formato, antepone `ico:` a la ruta. Y nunca decidas con `curl -I`: algunos sitios devuelven `content-length: 0` en HEAD y el GET sí trae la imagen.
 
-**2. Los datos** — agregá el objeto en `herramientas.json`, dentro de la categoría que
-corresponda. El orden del array es el orden en que se ve la grilla.
+**2. Los datos** — agregá el objeto en `herramientas.json`, dentro de la categoría que corresponda. El orden del array es el orden en que se ve la grilla.
 
 ```json
 {
@@ -54,10 +47,30 @@ corresponda. El orden del array es el orden en que se ve la grilla.
 | `tutorial` | sí | URL de la playlist, o `null` para que el ▶ salga deshabilitado |
 | `alt` | no | Por defecto `"<nombre> Logo"` |
 | `modalTitulo` | no | Por defecto el `nombre`. Útil si el título largo no entra en el botón |
-| `enlaces` | no | `{"en": "...", "es": "..."}`, ambas opcionales |
+| `enlaces` | no | `{"en": "...", "es": "..."}`, ambas opcionales. Ver el criterio abajo |
 | `nombresPrevios` | no | Nombres anteriores. Ver abajo |
 | `pendiente` | no | `true` deja la herramienta anotada sin que se renderice |
 | `nota` | no | Apunte para vos. Nunca se emite al HTML |
+
+## Criterio para los botones "More info" / "Más info"
+
+Documentación oficial primero; Wikipedia solo como último recurso. Para cada idioma:
+
+1. Documentación o centro de ayuda oficial en ese idioma.
+2. Si no hay, el artículo de Wikipedia en ese idioma.
+3. Si tampoco hay, se omite ese botón. Vale más un solo botón que uno que no aporta.
+
+Nunca pongas documentación en inglés detrás del botón que dice ES: la etiqueta estaría
+mintiendo sobre el idioma.
+
+Varios sitios ofrecen la versión en español con un sufijo predecible, que conviene probar
+antes de caer en Wikipedia: `?hl=es` en las propiedades de Google, `/es/` o `/es-es/` en
+los centros de ayuda hechos con Intercom o Zendesk (Manus, Make, Notion, Microsoft y
+Anthropic tienen español real por esa vía).
+
+Al verificar un enlace, tené en cuenta que **muchos sitios responden 403 a `curl` por
+bloqueo de bots aunque funcionen perfecto en un navegador**. Un 403 no es un enlace roto;
+un 404 sí.
 
 ## Reglas
 
