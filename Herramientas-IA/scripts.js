@@ -28,39 +28,36 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // --- NUEVO CÓDIGO DARK MODE ---
-  const themeToggle = document.getElementById("theme-toggle");
-  const body = document.body;
+  // --- TEMA CLARO / OSCURO ---
+  // El script del <head> ya fijó data-theme antes del primer pintado; acá solo
+  // se sincroniza el botón y se atiende el clic.
+  const raiz = document.documentElement;
+  const toggle = document.getElementById("theme-toggle");
 
-  // Función para aplicar el tema
-  const applyTheme = (isDark) => {
-    if (isDark) {
-      body.classList.add("dark-mode");
-    } else {
-      body.classList.remove("dark-mode");
-    }
+  const pintarToggle = (tema) => {
+    if (!toggle) return;
+    const oscuro = tema === "dark";
+    toggle.textContent = oscuro ? "☀️" : "🌙";
+    toggle.setAttribute("aria-pressed", String(oscuro));
+    toggle.setAttribute("aria-label", oscuro ? "Cambiar a tema claro" : "Cambiar a tema oscuro");
+    toggle.title = toggle.getAttribute("aria-label");
   };
 
-  // Cargar preferencia guardada al cargar la página
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
-    themeToggle.checked = true; // Sincroniza el checkbox
-    applyTheme(true); // Aplica el tema oscuro
-  } else {
-    themeToggle.checked = false; // Sincroniza el checkbox
-    applyTheme(false); // Aplica el tema claro (por defecto)
-  }
+  pintarToggle(raiz.getAttribute("data-theme") || "dark");
 
-  // Evento al cambiar el toggle
-  themeToggle.addEventListener("change", () => {
-    if (themeToggle.checked) {
-      // Si está marcado (oscuro)
-      applyTheme(true);
-      localStorage.setItem("theme", "dark"); // Guarda la preferencia
-    } else {
-      // Si no está marcado (claro)
-      applyTheme(false);
-      localStorage.setItem("theme", "light"); // Guarda la preferencia
-    }
-  });
+  if (toggle) {
+    toggle.addEventListener("click", () => {
+      const nuevo = raiz.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      raiz.setAttribute("data-theme", nuevo);
+      try {
+        localStorage.setItem("theme", nuevo);
+      } catch (e) {
+        // Modo privado: el tema cambia igual, solo no se recuerda.
+      }
+      pintarToggle(nuevo);
+
+      const meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute("content", nuevo === "dark" ? "#121212" : "#f8f9fa");
+    });
+  }
 });

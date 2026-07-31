@@ -1,13 +1,136 @@
+/* ===========================================================================
+   Herramientas IA — hoja única, con los dos temas en variables.
+
+   Antes había dos archivos completos (styles.css y styles-dark.css) con los
+   mismos selectores en el mismo orden y solo los colores distintos, lo que
+   garantizaba que tarde o temprano divergieran. Ahora el layout se escribe
+   una vez y cada tema aporta únicamente sus ~30 valores.
+
+   El tema se aplica con data-theme en <html>, que fija un script inline del
+   <head> antes del primer pintado (si no, se vería un destello del tema
+   equivocado). Oscuro es el predeterminado, como siempre fue esta página.
+   =========================================================================== */
+
+:root {
+  color-scheme: dark;
+
+  /* Superficies y texto */
+  --bg: #121212;
+  --text: #e0e0e0;
+  --surface: #1e1e1e;
+  --surface-borde: 1px solid #333333;
+  --surface-sombra: 0 4px 8px rgba(0, 0, 0, 0.5);
+  --titulo: #ffffff;
+
+  /* Botón de herramienta */
+  --btn-bg: #000000;
+  --btn-text: #ffffff;
+  --btn-borde: 2px solid #ffd700;
+  --btn-sombra: 0 0 5px #ffd700;
+  --btn-bg-hover: #111111;
+  --btn-sombra-hover: 0 0 15px #ffd700;
+
+  /* Botón de información */
+  --info-bg: #333333;
+  --info-text: #ffd700;
+  --info-borde: 1px solid #444444;
+  --info-bg-hover: #444444;
+  --info-text-hover: #ffffff;
+
+  /* Botón de YouTube */
+  --yt-bg: #cc0000;
+  --yt-bg-hover: #ff0000;
+  --yt-off-bg: #333333;
+  --yt-off-text: #555555;
+
+  /* Modal */
+  --modal-velo: rgba(0, 0, 0, 0.8);
+  --modal-bg: #1e1e1e;
+  --modal-text: #dddddd;
+  --modal-borde: 1px solid #444444;
+  --modal-sombra: 0 5px 15px rgba(0, 0, 0, 0.5);
+  --cerrar: #aaaaaa;
+  --cerrar-hover: #ffffff;
+
+  /* Acento: enlaces de modal y del footer */
+  --acento: #ffd700;
+  --acento-contraste: #000000;
+  --footer-enlace: #ffd700;
+
+  /* Recursos adicionales */
+  --extra-sombra: 0 4px 8px rgba(0, 0, 0, 0.3);
+  --texto-tenue: #bbbbbb;
+
+  /* Footer */
+  --footer-bg: #000000;
+  --footer-text: #888888;
+  --footer-borde: 1px solid #333333;
+}
+
+/* Los bordes que en claro no existían se declaran transparentes en vez de
+   "none", para que la geometría sea idéntica en los dos temas y nada se
+   desplace un píxel al cambiar. */
+html[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: #f8f9fa;
+  --text: #212529;
+  --surface: #ffffff;
+  --surface-borde: 1px solid #e0e0e0;
+  --surface-sombra: 0 4px 8px rgba(0, 0, 0, 0.05);
+  --titulo: #333333;
+
+  --btn-borde: 2px solid transparent;
+  --btn-sombra: none;
+  --btn-bg-hover: #222222;
+  --btn-sombra-hover: none;
+
+  --info-bg: #ced4da;
+  --info-text: #495057;
+  --info-borde: 1px solid transparent;
+  --info-bg-hover: #adb5bd;
+  --info-text-hover: #212529;
+
+  --yt-bg: #ff0000;
+  --yt-bg-hover: #cc0000;
+  --yt-off-bg: #e9ecef;
+  --yt-off-text: #adb5bd;
+
+  --modal-velo: rgba(0, 0, 0, 0.4);
+  --modal-bg: #ffffff;
+  --modal-text: inherit;
+  --modal-borde: 1px solid transparent;
+  --modal-sombra: 0 5px 15px rgba(0, 0, 0, 0.3);
+  --cerrar-hover: #000000;
+
+  --acento: #4285f4;
+  --acento-contraste: #ffffff;
+  --footer-enlace: #007bff;
+
+  --extra-sombra: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --texto-tenue: #555555;
+
+  --footer-bg: #f2f2f2;
+  --footer-text: #333333;
+  --footer-borde: 1px solid transparent;
+}
+
+/* --- Estructura ----------------------------------------------------------- */
+
 body {
   font-family: sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #f8f9fa;
+  background-color: var(--bg);
+  color: var(--text);
   margin: 0;
 }
 
+/* Sticky footer: .content-wrapper es la columna y .container se estira, así
+   que el footer queda abajo aunque la página sea corta. El footer va DENTRO
+   de este wrapper. */
 .content-wrapper {
   display: flex;
   flex-direction: column;
@@ -24,22 +147,40 @@ body {
   flex: 1;
 }
 
+.header-image {
+  display: block;
+  max-width: 100%;
+  width: 350px;
+  height: auto;
+  margin: 0 auto 20px auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.header-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Categorías y grilla -------------------------------------------------- */
+
 .category-container {
   width: 100%;
   max-width: 600px;
   margin-bottom: 30px;
   padding: 20px 20px 30px 20px;
-  background-color: #ffffff;
+  background-color: var(--surface);
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  border: 1px solid #e0e0e0;
+  box-shadow: var(--surface-sombra);
+  border: var(--surface-borde);
 }
 
 .category-container h2 {
   text-align: center;
   margin-top: 0;
   margin-bottom: 25px;
-  color: #333;
+  color: var(--titulo);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -55,6 +196,8 @@ body {
   max-width: 90%;
 }
 
+/* display: contents hace que los tres botones de la fila sean celdas directas
+   de .button-grid, y así las tres columnas se alinean entre filas. */
 .ai-button-row {
   display: contents;
 }
@@ -64,16 +207,17 @@ body {
   align-items: center;
   justify-content: center;
   padding: 15px;
-  border: none;
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
-  color: #fff;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
   width: 100%;
   box-sizing: border-box;
-  background-color: black;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: var(--btn-borde);
+  box-shadow: var(--btn-sombra);
 }
 
 .ai-button img,
@@ -84,10 +228,10 @@ body {
 }
 
 .ai-button:hover {
-  background-color: #222;
+  background-color: var(--btn-bg-hover);
+  box-shadow: var(--btn-sombra-hover);
 }
 
-/* Estilo para el botón de Información (el signo de pregunta) */
 .info-button {
   display: flex;
   align-items: center;
@@ -95,11 +239,11 @@ body {
   padding: 0;
   aspect-ratio: 1 / 1;
   height: 100%;
-  border: none;
+  border: var(--info-borde);
   border-radius: 5px;
   cursor: pointer;
-  background-color: #ced4da;
-  color: #495057;
+  background-color: var(--info-bg);
+  color: var(--info-text);
   font-weight: bold;
   font-size: 1.2em;
   transition: background-color 0.3s ease;
@@ -107,11 +251,10 @@ body {
 }
 
 .info-button:hover {
-  background-color: #adb5bd;
-  color: #212529;
+  background-color: var(--info-bg-hover);
+  color: var(--info-text-hover);
 }
 
-/* Estilo para el botón de YouTube */
 .youtube-button {
   display: flex;
   align-items: center;
@@ -122,7 +265,7 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: #ff0000;
+  background-color: var(--yt-bg);
   color: #ffffff;
   font-weight: bold;
   font-size: 1.2em;
@@ -132,20 +275,22 @@ body {
 }
 
 .youtube-button:hover {
-  background-color: #cc0000;
+  background-color: var(--yt-bg-hover);
 }
 
+/* Herramientas que todavía no tienen tutorial grabado. */
 .youtube-button.sin-enlace {
-  background-color: #e9ecef;
-  color: #adb5bd;
+  background-color: var(--yt-off-bg);
+  color: var(--yt-off-text);
   cursor: default;
 }
 
 .youtube-button.sin-enlace:hover {
-  background-color: #e9ecef;
+  background-color: var(--yt-off-bg);
 }
 
-/* --- Estilos del Modal (Ventana Emergente) --- */
+/* --- Modales -------------------------------------------------------------- */
+
 .modal {
   display: none;
   position: fixed;
@@ -155,22 +300,25 @@ body {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: var(--modal-velo);
   justify-content: center;
   align-items: center;
 }
 
 .modal-content {
-  background-color: #ffffff;
+  background-color: var(--modal-bg);
+  color: var(--modal-text);
   margin: auto;
   padding: 20px;
   border-radius: 8px;
   width: 90%;
   max-width: 400px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--modal-sombra);
   position: relative;
   animation-name: animatetop;
   animation-duration: 0.4s;
+  border: var(--modal-borde);
+  text-align: left;
 }
 
 @keyframes animatetop {
@@ -185,7 +333,7 @@ body {
 }
 
 .close-button {
-  color: #aaa;
+  color: var(--cerrar);
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -196,7 +344,7 @@ body {
 
 .close-button:hover,
 .close-button:focus {
-  color: #000;
+  color: var(--cerrar-hover);
   text-decoration: none;
   cursor: pointer;
 }
@@ -208,41 +356,41 @@ body {
 }
 
 .modal-links a {
-  color: #4285f4;
+  color: var(--acento);
   text-decoration: none;
   font-weight: bold;
   padding: 8px 15px;
-  border: 1px solid #4285f4;
+  border: 1px solid var(--acento);
   border-radius: 5px;
   transition: background-color 0.3s, color 0.3s;
 }
 
 .modal-links a:hover {
-  background-color: #4285f4;
-  color: #fff;
+  background-color: var(--acento);
+  color: var(--acento-contraste);
   text-decoration: none;
 }
 
-/* --- Sección Recursos Adicionales --- */
+/* --- Recursos adicionales ------------------------------------------------- */
+
 .additional-links {
   text-align: center;
   margin: 30px auto;
   padding: 30px 20px;
-  background-color: #ffffff;
+  background-color: var(--surface);
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--extra-sombra);
   font-size: 1em;
   max-width: 600px;
-  border-top: none;
+  border: var(--surface-borde);
 }
 
 .additional-links h2 {
   font-size: 1.5em;
-  color: #333;
+  color: var(--titulo);
   margin-bottom: 25px;
 }
 
-/* Contenedor flexible para botón y texto */
 .additional-cta {
   display: flex;
   align-items: center;
@@ -251,57 +399,55 @@ body {
   flex-wrap: wrap; /* Permite que el texto baje en celulares */
 }
 
-/* Botón específico de esta sección */
+/* Sobrescribe el width: 100% de .ai-button para que se ajuste al contenido. */
 .additional-cta-button {
-  /* Sobrescribe el width: 100% de .ai-button para que se ajuste al contenido */
-  width: auto !important; 
+  width: auto !important;
   min-width: 200px;
   padding: 10px 20px;
 }
 
-/* Asegura que el texto del enlace sea blanco y sin subrayado */
 .additional-links a.ai-button {
-  color: #fff;
+  color: var(--btn-text);
   text-decoration: none;
 }
 
 .additional-links a.ai-button:hover {
-  color: #fff; /* Mantiene blanco al hover */
-  background-color: #222; /* Mismo hover que los otros botones */
+  color: var(--btn-text);
+  background-color: var(--btn-bg-hover);
 }
 
 .additional-cta-text {
   margin: 0;
-  color: #555;
+  color: var(--texto-tenue);
   max-width: 360px;
   line-height: 1.35;
   text-align: left; /* Lectura más natural junto al botón */
 }
 
-/* Ajuste para móviles: centra el texto si la pantalla es muy chica */
 @media (max-width: 480px) {
   .additional-cta-text {
     text-align: center;
   }
 }
 
-/* --- Footer --- */
+/* --- Footer --------------------------------------------------------------- */
+
 .footer {
   text-align: center;
   margin: 0;
-  /* margin-top: auto; */
   padding: 40px;
-  background-color: #f2f2f2;
+  background-color: var(--footer-bg);
   font-size: 0.8em;
+  border-top: var(--footer-borde);
 }
 
 .footer p {
   margin: 0;
-  color: #333;
+  color: var(--footer-text);
 }
 
 .footer a {
-  color: #007bff;
+  color: var(--footer-enlace);
   text-decoration: none;
 }
 
@@ -309,19 +455,83 @@ body {
   text-decoration: underline;
 }
 
-/* Estilo para el emoji en la esquina */
+/* --- Botones de las esquinas ---------------------------------------------- */
+
+/* Emoji que lleva a la guía "¿Cuál IA elegir?". */
 .corner-link {
   position: absolute;
   top: 15px;
   left: 15px;
-  font-size: 2rem; /* Tamaño del emoji */
+  font-size: 2rem;
   text-decoration: none;
-  z-index: 1000; /* Asegura que quede por encima de otros elementos */
+  z-index: 1000;
   transition: transform 0.2s ease;
   line-height: 1;
 }
 
 .corner-link:hover {
-  transform: scale(1.2); /* Efecto zoom al pasar el mouse */
+  transform: scale(1.2);
   text-decoration: none;
+}
+
+/* Cambio de tema, en espejo del anterior. Clase propia a propósito: el
+   tracking de GA4 hace querySelector('.corner-link') y se quedaría con el
+   primero que encuentre, registrando cada cambio de tema como una visita a
+   la guía. */
+.corner-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 1000;
+  font-size: 2rem;
+  line-height: 1;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.corner-toggle:hover {
+  transform: scale(1.2);
+}
+
+/* background: none y border: none matan el foco por defecto del navegador. */
+.corner-toggle:focus-visible,
+.ai-button:focus-visible,
+.info-button:focus-visible,
+.youtube-button:focus-visible,
+.corner-link:focus-visible {
+  outline: 2px solid var(--acento);
+  outline-offset: 3px;
+}
+
+/* --- Utilidades ----------------------------------------------------------- */
+
+/* Copia local de la utilidad de Bootstrap, por si el CDN no responde. */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-button,
+  .info-button,
+  .youtube-button,
+  .header-image,
+  .corner-link,
+  .corner-toggle {
+    transition: none;
+  }
+  .modal-content {
+    animation: none;
+  }
 }
