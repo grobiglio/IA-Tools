@@ -60,33 +60,18 @@ Documentación oficial primero; Wikipedia solo como último recurso. Para cada i
 2. Si no hay, el artículo de Wikipedia en ese idioma.
 3. Si tampoco hay, se omite ese botón. Vale más un solo botón que uno que no aporta.
 
-Nunca pongas documentación en inglés detrás del botón que dice ES: la etiqueta estaría
-mintiendo sobre el idioma.
+Nunca pongas documentación en inglés detrás del botón que dice ES: la etiqueta estaría mintiendo sobre el idioma.
 
-Varios sitios ofrecen la versión en español con un sufijo predecible, que conviene probar
-antes de caer en Wikipedia: `?hl=es` en las propiedades de Google, `/es/` o `/es-es/` en
-los centros de ayuda hechos con Intercom o Zendesk (Manus, Make, Notion, Microsoft y
-Anthropic tienen español real por esa vía).
+Varios sitios ofrecen la versión en español con un sufijo predecible, que conviene probar antes de caer en Wikipedia: `?hl=es` en las propiedades de Google, `/es/` o `/es-es/` en los centros de ayuda hechos con Intercom o Zendesk (Manus, Make, Notion, Microsoft y Anthropic tienen español real por esa vía).
 
-Al verificar un enlace, tené en cuenta que **muchos sitios responden 403 a `curl` por
-bloqueo de bots aunque funcionen perfecto en un navegador**. Un 403 no es un enlace roto;
-un 404 sí.
+Al verificar un enlace, tené en cuenta que **muchos sitios responden 403 a `curl` por bloqueo de bots aunque funcionen perfecto en un navegador**. Un 403 no es un enlace roto; un 404 sí.
 
 ## Reglas
 
-- **No edites `index.html` entre `<!-- BEGIN:… -->` y `<!-- END:… -->`**, ni `sw.js`
-  entre `// BEGIN:…` y `// END:…`. Se pisan en el próximo build. Todo lo demás de
-  esos archivos —el `<head>`, el tracking, el footer— se edita a mano como siempre.
-- **El `nombre` es lo que llega a Google Analytics** como parámetro `herramienta`.
-  Si una herramienta se renombra, cambialo igual: mostrar un nombre que ya no existe
-  da peor impresión que perder continuidad en un informe. Pero agregá el anterior a
-  `nombresPrevios`, para poder sumar las dos etiquetas al leer GA4. `node build.js`
-  avisa cuando detecta un renombre, y te recuerda documentarlo si te olvidaste.
-- **El `id` conviene dejarlo quieto** aunque cambie el nombre: fija el id del modal y
-  el nombre del archivo de logo. Cambiarlo no rompe nada de cara afuera, solo obliga a
-  renombrar el PNG.
-- **Nada de logos hotlinkeados.** Dependían de que otro sitio no cambiara ni bloqueara
-  la descarga.
+- **No edites `index.html` entre `<!-- BEGIN:… -->` y `<!-- END:… -->`**, ni `sw.js` entre `// BEGIN:…` y `// END:…`. Se pisan en el próximo build. Todo lo demás de esos archivos —el `<head>`, el tracking, el footer— se edita a mano como siempre.
+- **El `nombre` es lo que llega a Google Analytics** como parámetro `herramienta`. Si una herramienta se renombra, cambialo igual: mostrar un nombre que ya no existe da peor impresión que perder continuidad en un informe. Pero agregá el anterior a `nombresPrevios`, para poder sumar las dos etiquetas al leer GA4. `node build.js` avisa cuando detecta un renombre, y te recuerda documentarlo si te olvidaste.
+- **El `id` conviene dejarlo quieto** aunque cambie el nombre: fija el id del modal y el nombre del archivo de logo. Cambiarlo no rompe nada de cara afuera, solo obliga a renombrar el PNG.
+- **Nada de logos hotlinkeados.** Dependían de que otro sitio no cambiara ni bloqueara la descarga.
 
 ## Comandos
 
@@ -100,12 +85,6 @@ python3 -m http.server 8000   # previsualizar en http://localhost:8000/
 
 ## Cómo está armado
 
-- `herramientas.json` → `build.js` → las dos regiones generadas de `index.html` y la
-  lista de precache de `sw.js`. La salida es HTML estático: los buscadores ven los
-  nombres y las descripciones, y la página funciona sin JavaScript.
-- `styles.css` es una sola hoja con los dos temas en variables. El tema se aplica con
-  `data-theme` en `<html>`, que fija un script del `<head>` antes del primer pintado.
-  Oscuro es el predeterminado; `cual.html` está fijada en claro.
-- `sw.js` usa red primero para el HTML y caché primero para el resto, y su
-  `CACHE_NAME` lleva un hash del contenido: al regenerar, el caché viejo se borra solo
-  y una herramienta nueva se ve en la primera recarga.
+- `herramientas.json` → `build.js` → las dos regiones generadas de `index.html` y la lista de precache de `sw.js`. La salida es HTML estático: los buscadores ven los nombres y las descripciones, y la página funciona sin JavaScript.
+- `styles.css` es una sola hoja con los dos temas en variables. El tema se aplica con `data-theme` en `<html>`, que fija un script del `<head>` antes del primer pintado. Oscuro es el predeterminado; `cual.html` está fijada en claro.
+- `sw.js` usa red primero para el HTML y caché primero para el resto, y su `CACHE_NAME` lleva un hash del contenido: al regenerar, el caché viejo se borra solo y una herramienta nueva se ve en la primera recarga.
