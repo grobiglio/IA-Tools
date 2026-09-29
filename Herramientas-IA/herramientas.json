@@ -276,8 +276,15 @@
         {
           "id": "opal",
           "nombre": "OPAL",
-          "url": "https://opal.withgoogle.com/",
-          "pendiente": true
+          "url": "https://opal.google/",
+          "logo": "logo_opal.png",
+          "alt": "Google Opal Logo",
+          "modalTitulo": "Opal (Google Labs)",
+          "descripcionHtml": "Opal es un experimento de Google Labs para armar mini aplicaciones de IA describiéndolas en lenguaje natural, sin escribir código. Lo que se obtiene no es una respuesta suelta sino un flujo de trabajo visual —una cadena de prompts, modelos y herramientas— que se puede retocar paso por paso, probar y compartir con un enlace para que otros lo usen.",
+          "enlaces": {
+            "en": "https://developers.google.com/opal/overview"
+          },
+          "tutorial": null
         }
       ]
     },
@@ -351,19 +358,38 @@
           "id": "cursor",
           "nombre": "Cursor",
           "url": "https://cursor.com/",
-          "pendiente": true
+          "logo": "logo_cursor.png",
+          "descripcionHtml": "Cursor es un editor de código con IA integrada, construido sobre Visual Studio Code, así que quien ya usa ese editor se mueve en un entorno conocido. Su diferencia está en que entiende el proyecto completo: se le pide un cambio en lenguaje natural y lo aplica sobre varios archivos a la vez, mostrando cada modificación para aceptarla o descartarla.",
+          "enlaces": {
+            "en": "https://cursor.com/docs",
+            "es": "https://es.wikipedia.org/wiki/Cursor_(editor_de_c%C3%B3digo)"
+          },
+          "tutorial": null
         },
         {
           "id": "claudecode",
           "nombre": "Claude Code",
           "url": "https://claude.com/product/claude-code",
-          "pendiente": true
+          "logo": "logo_claudecode.png",
+          "descripcionHtml": "Claude Code es el agente de programación de Anthropic. Trabaja desde la terminal —y también dentro de VS Code o de los editores de JetBrains— sobre el código que ya está en la computadora: lee el proyecto, edita los archivos, ejecuta comandos, corre las pruebas y prepara los commits. A diferencia de un autocompletado, recibe la tarea en lenguaje natural y la resuelve de punta a punta.",
+          "enlaces": {
+            "en": "https://docs.claude.com/en/docs/claude-code/overview",
+            "es": "https://docs.claude.com/es/docs/claude-code/overview"
+          },
+          "tutorial": null
         },
         {
           "id": "codex",
           "nombre": "Codex",
           "url": "https://openai.com/codex/",
-          "pendiente": true
+          "alt": "OpenAI Codex Logo",
+          "logo": "logo_codex.png",
+          "descripcionHtml": "Codex es el agente de programación de OpenAI. Recibe una tarea descrita en lenguaje natural, escribe el código, lo ejecuta y propone los cambios para revisarlos. Se usa desde la terminal, desde una extensión del editor o en la nube, donde cada tarea corre aislada en su propio entorno y varias pueden avanzar en paralelo.",
+          "enlaces": {
+            "en": "https://developers.openai.com/codex/",
+            "es": "https://es.wikipedia.org/wiki/Codex_(agente_de_inteligencia_artificial)"
+          },
+          "tutorial": null
         }
       ]
     },
@@ -387,30 +413,69 @@
           "id": "midjourney",
           "nombre": "Midjourney",
           "url": "https://www.midjourney.com/",
-          "pendiente": true
+          "logo": "logo_midjourney.png",
+          "descripcionHtml": "Midjourney genera imágenes a partir de una descripción escrita y se la reconoce sobre todo por su calidad estética: los resultados tienen aire de ilustración, de fotografía o de pintura más que de render automático. Nació funcionando dentro de Discord y hoy también se usa desde su propio sitio, donde además se pueden generar variantes, ampliar el encuadre y retocar por zonas.",
+          "enlaces": {
+            "en": "https://docs.midjourney.com/",
+            "es": "https://es.wikipedia.org/wiki/Midjourney"
+          },
+          "tutorial": null
         },
         {
           "id": "flux",
           "nombre": "Flux",
           "url": "https://blackforestlabs.ai/",
-          "pendiente": true
+          "alt": "Black Forest Labs FLUX Logo",
+          "logo": "logo_flux.png",
+          "modalTitulo": "FLUX (Black Forest Labs)",
+          "descripcionHtml": "FLUX es la familia de modelos de generación de imágenes de Black Forest Labs, el laboratorio alemán fundado por varios de los creadores de Stable Diffusion. Se destaca por seguir con fidelidad las indicaciones del prompt y por manejar bien el texto dentro de la imagen. Como varias de sus versiones se publican con los pesos abiertos, muchas otras herramientas lo usan por detrás sin decirlo.",
+          "enlaces": {
+            "en": "https://docs.bfl.ai/"
+          },
+          "tutorial": null
         },
         {
           "id": "ideogram",
           "nombre": "Ideogram",
           "url": "https://ideogram.ai/",
-          "pendiente": true
+          "logo": "logo_ideogram.png",
+          "descripcionHtml": "Ideogram genera imágenes a partir de texto y su diferencial es, justamente, el texto: es de las pocas herramientas que escribe carteles, logotipos y tipografías legibles dentro de la imagen. Suma además edición por zonas, referencias de estilo y plantillas pensadas para piezas gráficas.",
+          "enlaces": {
+            "en": "https://docs.ideogram.ai/"
+          },
+          "tutorial": null
         },
         {
           "id": "luma",
           "nombre": "Luma",
-          "url": "https://lumalabs.ai/",
-          "pendiente": true
+          "url": "https://lumalabs.ai/dream-machine",
+          "alt": "Luma AI Logo",
+          "modalTitulo": "Luma AI (Dream Machine)",
+          "logo": "logo_luma.png",
+          "descripcionHtml": "Luma AI es la empresa detrás de Dream Machine, un generador de video por IA que arma clips a partir de una descripción escrita o de una imagen inicial. Permite encadenar tomas, extender un clip ya generado y sostener la coherencia de un personaje entre escenas distintas, que es donde suelen fallar estas herramientas.",
+          "enlaces": {
+            "en": "https://docs.lumalabs.ai/",
+            "es": "https://es.wikipedia.org/wiki/Dream_Machine_(modelo_de_texto_a_v%C3%ADdeo)"
+          },
+          "tutorial": null
         },
         {
           "id": "kling",
           "nombre": "Kling",
-          "url": "https://klingai.com/",
+          "url": "https://kling.ai/",
+          "alt": "Kling AI Logo",
+          "modalTitulo": "Kling AI",
+          "logo": "logo_kling.png",
+          "descripcionHtml": "Kling es el generador de video de la china Kuaishou. Produce clips a partir de un texto o de una imagen y se destaca en el movimiento y en la física de las escenas: cuerpos que se desplazan sin deformarse y objetos que caen como corresponde. Agrega control de cámara, extensión de los clips y sincronización de labios con una pista de audio.",
+          "enlaces": {
+            "en": "https://en.wikipedia.org/wiki/Kling_AI"
+          },
+          "tutorial": null
+        },
+        {
+          "id": "seedance",
+          "nombre": "Seedance",
+          "url": "https://seed.bytedance.com/seedance",
           "pendiente": true
         }
       ]

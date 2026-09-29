@@ -63,7 +63,7 @@ Then open the relevant `index.html` (e.g. `http://localhost:8000/Herramientas-IA
 The four items previously listed here — data-driven rendering, self-hosted favicons, a complete PWA precache and a single consolidated stylesheet — were all implemented on 2026-07-30. What remains open:
 
 - **`cual.html` isn't themed**: it shares `styles.css` but its own inline `<style>` still has light colors hardcoded, so it's pinned to `data-theme="light"`. Converting those ~6 rules to the shared tokens would let it follow the user's theme.
-- **9 tools sitting in the backlog** as `"pendiente": true` entries in `herramientas.json` (OPAL; Cursor, Claude Code, Codex; Midjourney, Flux, Ideogram, Luma, Kling). They need a logo, a description and a URL to go live.
+- **1 tool sitting in the backlog** as a `"pendiente": true` entry in `herramientas.json`: Seedance. The other nine (OPAL; Cursor, Claude Code, Codex; Midjourney, Flux, Ideogram, Luma, Kling) went live on 2026-09-28. Seedance stayed out because `seedance.ai` states in its own footer that it is not affiliated with ByteDance, the actual author of the model — it needs a decision on which URL it should point to (the official ByteDance model page, Dreamina, or none).
 - **Firebase Studio is being sunset by Google** (new workspaces disabled since 2026-06-22, full shutdown announced for 2027) — decide whether to drop it from the Vibe Coding category or leave it with a note.
-- **No automated tests**: `node build.js --check` covers staleness and the button↔modal bijection, but there's no link checker for the 26 tool URLs, which do rot (`us2.make.com` had gone 404).
-- **13 of 26 tools still have no tutorial** (`"tutorial": null`), rendered as a disabled ▶.
+- **No automated tests**: `node build.js --check` covers staleness and the button↔modal bijection, but there's no link checker for the 35 tool URLs, which do rot (`us2.make.com` had gone 404).
+- **22 of 35 tools still have no tutorial** (`"tutorial": null`), rendered as a disabled ▶ — the nine added on 2026-09-28 all came in without one.
