@@ -1,8 +1,16 @@
-# Inteligencia Artificial: herramientas, recursos y cursos
+# Inteligencia Artificial: herramientas y recursos
 
-Este repositorio reúne una colección de contenidos web en español para conocer, aprender y aplicar inteligencia artificial. El proyecto está organizado en tres áreas principales: un directorio de herramientas, una selección de recursos de aprendizaje y materiales para cursos de IA.
+Este repositorio reúne una colección de contenidos web en español para conocer, aprender y aplicar inteligencia artificial. El proyecto está organizado en tres partes: una página de entrada al ecosistema, un directorio de herramientas y una selección de recursos de aprendizaje.
 
 ## Contenido del repositorio
+
+### Ecosistema IA
+
+Página de entrada con accesos rápidos a todo el ecosistema: Herramientas IA, Recursos IA, la Biblioteca IA, el canal de WhatsApp de Python & IA y un bloc de notas.
+
+**Acceso web:** [ingg.ar/ia](https://ingg.ar/ia/)
+
+**Carpeta:** [`Landing/`](Landing/)
 
 ### Herramientas IA
 
@@ -32,34 +40,17 @@ Selección curada de enlaces para continuar aprendiendo sobre inteligencia artif
 - Capacitación de Google Cloud
 - Canales temáticos de WhatsApp
 
-**Acceso web:** [ingg.ar/enlaces](https://ingg.ar/enlaces/)
+**Acceso web:** [ingg.ar/ia/recursos](https://ingg.ar/ia/recursos/)
 
 **Carpeta:** [`Recursos-IA/`](Recursos-IA/)
-
-### Cursos IA
-
-Materiales y páginas web para cursos introductorios y capacitaciones sobre inteligencia artificial. Los contenidos principales abarcan:
-
-1. IA generativa
-2. Ingeniería de prompts
-3. Funcionalidades de ChatGPT
-4. Otras herramientas de IA
-
-La sección también contiene páginas de acceso a cursos, apuntes, evaluaciones, recursos complementarios y demostraciones prácticas.
-
-**Acceso web:** [ingg.ar/curso-chatgpt](https://ingg.ar/curso-chatgpt/)
-
-**Carpeta:** [`Cursos-IA/`](Cursos-IA/)
 
 ## Estructura
 
 ```text
 .
+├── Landing/          # Página de entrada al ecosistema
 ├── Herramientas-IA/  # Directorio y guía de herramientas de IA
-├── Recursos-IA/      # Cursos, enlaces y canales recomendados
-└── Cursos-IA/
-    ├── contenido/    # Módulos formativos
-    └── landing/      # Páginas de acceso y recursos del curso
+└── Recursos-IA/      # Cursos, enlaces y canales recomendados
 ```
 
 ## Uso local

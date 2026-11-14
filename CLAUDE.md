@@ -4,11 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-Static, multi-page website (no framework, no build step, no package manager) with content in Spanish about artificial intelligence: a tools directory, a curated resources page, and course materials. Author: Guillermo A. Robiglio. Each top-level folder is deployed independently under `ingg.ar`:
+Static, multi-page website (no framework, no build step, no package manager) with content in Spanish about artificial intelligence: an entry/landing page, a tools directory and a curated resources page. Author: Guillermo A. Robiglio. Each top-level folder is deployed independently under `ingg.ar`:
 
+- `Landing/` → `ingg.ar/ia/`
 - `Herramientas-IA/` → `ingg.ar/herramientas-ia/`
-- `Recursos-IA/` → `ingg.ar/enlaces/`
-- `Cursos-IA/` → `ingg.ar/curso-chatgpt/`
+- `Recursos-IA/` → `ingg.ar/ia/recursos/` (`ingg.ar/enlaces/` is a separate, still-live page used as the author link in the footers)
 
 There is no server-side code, no dependencies, and no test suite. Every page is plain HTML/CSS/vanilla JS meant to be opened directly in a browser or served by any static file server.
 
@@ -46,16 +46,15 @@ Then open the relevant `index.html` (e.g. `http://localhost:8000/Herramientas-IA
 - Single `index.html` page built from repeated `.grid` sections, each pairing a `.card` (image, embedded YouTube iframe, or Udemy-style preview) with an `.explain` aside describing the resource. Follow this two-column card pattern when adding a new resource row.
 - Includes Open Graph and Twitter Card meta tags for link-preview rendering (WhatsApp/social sharing) — keep these in sync with `og-image.jpg` if content changes materially.
 
-### Cursos-IA/ (course materials)
-- `contenido/` holds the course pages themselves: `index.html` is a card-grid landing page linking to numbered topic pages (`1-gen-ia.html`, `2-prompt.html`, `3-chatgpt.html`, `4-otras-ia.html`); each topic page is a series of `<section>`s with headings, prose, and the occasional `.aplicacion-box` callout. Shared styling lives in `contenido/styles/style.css`.
-- `contenido/apuntes/` holds long-form Markdown study notes per tool (`Apunte-ChatGPT.md`, `Apunte-Claude.md`, `Apunte-Gemini.md`, `uso-ChatGPT.md`) — these are reference/study material, not rendered directly by the HTML pages.
-- `landing/` holds separate short landing pages (`index.html`, `bruner.html`, `fadea.html`) for course sign-up/access, each with its own `styles.css`.
-- New topic pages should follow the existing numbered naming convention and be added as a `course-card` in `contenido/index.html`.
+### Landing/ (ecosystem entry page)
+- Single `index.html` + `styles.css`: a header and a `.button-container` of `.button` links to the rest of the ecosystem (Herramientas IA, Recursos IA, Biblioteca IA, the Python & IA WhatsApp channel, and an inline "Notepad" that opens a `contenteditable` blank window). Font Awesome icons from cdnjs.
+- Until 2026-11-14 it lived at `Cursos-IA/landing/`. The whole `Cursos-IA/` section (course pages, Markdown study notes, the `bruner.html`/`fadea.html` landings) was removed then: the author no longer keeps links to their own courses because they go stale fast. Don't re-add dated course links here. The removed material is still in git history.
+- "Biblioteca IA" points to a Claude artifact (`claude.ai/artifact/83mk2XC3W28TjrXEFsbZJe`), not the old Google Drive folder.
 
 ## General conventions across the repo
 - All user-facing text is in Spanish (`lang="es"`); keep new content in Spanish.
 - Favicons are frequently inlined as `data:image/svg+xml` data URIs rather than separate files — follow this pattern for simple icon needs instead of adding new binary assets. This does *not* apply to the tool logos in `Herramientas-IA/`, which are local `logo_*.png` files by design.
-- Pages are self-contained: CSS is per-section (no shared global stylesheet across `Herramientas-IA`/`Recursos-IA`/`Cursos-IA`), and external libraries (Bootstrap, Google Fonts) are pulled from CDNs via `<link>`/`<script>` tags rather than bundled.
+- Pages are self-contained: CSS is per-section (no shared global stylesheet across `Landing`/`Herramientas-IA`/`Recursos-IA`), and external libraries (Bootstrap, Google Fonts) are pulled from CDNs via `<link>`/`<script>` tags rather than bundled.
 - `.gitignore` excludes `*.pptx` and `Placas*.*` (source slide decks) — these are not tracked and won't appear in the working tree.
 
 ## Pending improvements (Herramientas-IA/)
