@@ -8,7 +8,7 @@
 // invalidación deja de ser un paso manual que se olvida.
 
 // BEGIN:CACHE
-const CACHE_NAME = "herramientas-ia-ec7127d6";
+const CACHE_NAME = "herramientas-ia-a3943a3c";
 // END:CACHE
 
 // BEGIN:ASSETS
@@ -39,12 +39,14 @@ const ASSETS = [
   "./logo_minimax.png",
   "./logo_genspark.png",
   "./logo_manus.png",
+  "./logo_openclaw.png",
+  "./logo_hermes.png",
+  "./logo_paperclip.png",
   "./logo_notebooklm.png",
   "./logo_notion.png",
   "./logo_make.png",
   "./logo_n8n.png",
   "./logo_opal.png",
-  "./logo_firebase_studio.png",
   "./logo_ia_studio.png",
   "./logo_lovable.png",
   "./logo_replit.png",
