@@ -430,6 +430,38 @@ body {
   }
 }
 
+/* Accesos extra: mismo aspecto que los botones, pero clase propia para no
+   interferir con el tracking de GA4 (ver el script al final de index.html). */
+.extra-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: var(--surface-borde);
+}
+
+.extra-links a.extra-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 0.95em;
+  text-decoration: none;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: var(--btn-borde);
+  transition: all 0.3s ease;
+}
+
+.extra-links a.extra-link:hover {
+  background-color: var(--btn-bg-hover);
+  box-shadow: var(--btn-sombra-hover);
+  color: var(--btn-text);
+}
+
 /* --- Footer --------------------------------------------------------------- */
 
 .footer {

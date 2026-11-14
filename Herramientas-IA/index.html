@@ -980,6 +980,15 @@
             Accedé a una página con enlaces a cursos cuidadosamente seleccionados, canales de WhatsApp y otros recursos útiles de IA.<br>¡Todo en una sola página!
           </p>
         </div>
+
+        <!-- Clase propia (.extra-link): no reutilizar .ai-button ni
+             .additional-cta-button, que el tracking de GA4 usa para
+             click_herramienta y click_recursos. -->
+        <nav class="extra-links" aria-label="Más accesos del ecosistema">
+          <a class="extra-link" data-destino="ecosistema" href="https://ingg.ar/ia/" target="_blank" rel="noopener">🌐 Ecosistema IA</a>
+          <a class="extra-link" data-destino="biblioteca" href="https://claude.ai/artifact/83mk2XC3W28TjrXEFsbZJe" target="_blank" rel="noopener">📚 Biblioteca IA</a>
+          <a class="extra-link" data-destino="whatsapp" href="https://whatsapp.com/channel/0029VaomWyiCXC3As2SsYn1w" target="_blank" rel="noopener">💬 Canal Python &amp; IA</a>
+        </nav>
       </section>
     </div>
 
@@ -1055,6 +1064,15 @@
           });
         });
       }
+
+      // 6. TRACKING DE ACCESOS EXTRA (Ecosistema, Biblioteca, WhatsApp)
+      document.querySelectorAll('.extra-link').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          gtag('event', 'click_acceso', {
+            destino: btn.dataset.destino
+          });
+        });
+      });
     </script>
     
     <script>
