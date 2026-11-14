@@ -8,7 +8,7 @@
 // invalidación deja de ser un paso manual que se olvida.
 
 // BEGIN:CACHE
-const CACHE_NAME = "herramientas-ia-a3943a3c";
+const CACHE_NAME = "herramientas-ia-d1b95e65";
 // END:CACHE
 
 // BEGIN:ASSETS

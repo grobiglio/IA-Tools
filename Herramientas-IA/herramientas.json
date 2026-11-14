@@ -242,6 +242,13 @@
           "enlaces": {
             "en": "https://docs.paperclip.ing/"
           }
+        },
+        {
+          "id": "grokbot",
+          "nombre": "Grok Bot",
+          "url": "https://docs.x.ai/grok-bot/get-started",
+          "pendiente": true,
+          "nota": "Agentes de xAI en la nube: un 'Chief of Staff' que delega en agentes especialistas (parecido a Paperclip, pero cerrado y pago). Pendiente porque no es de acceso libre: requiere The X Subscription (Premium, Super o Ultra) o SuperGrok / SuperGrok Heavy, o ciertos planes de Cursor. La url es la documentación oficial; falta confirmar la página del producto (x.ai/grok-bot devolvía 403 a curl). Anotado el 2026-11-14."
         }
       ]
     },
