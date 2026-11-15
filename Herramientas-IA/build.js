@@ -13,6 +13,9 @@
  * Solo toca las regiones entre marcadores BEGIN/END. Todo lo demás de
  * index.html —el <head>, el tracking de GA4, el footer— queda fuera de su
  * alcance por construcción: nunca escribe por debajo de END:MODALES.
+ *
+ * Única excepción, acotada: el sufijo ?v=<hash> de las referencias a
+ * styles.css y scripts.js en index.html y cual.html (ver versionarAssets).
  */
 
 const fs = require("fs");
@@ -23,6 +26,12 @@ const DIR = __dirname;
 const DATOS = path.join(DIR, "herramientas.json");
 const INDEX = path.join(DIR, "index.html");
 const SW = path.join(DIR, "sw.js");
+const CUAL = path.join(DIR, "cual.html");
+
+// Assets que se versionan con ?v=<hash de su contenido>. El servidor (CDN de
+// Hostinger) los sirve con max-age de 7 días: sin una URL nueva, un celular o
+// un nodo del CDN puede seguir usando la versión vieja durante una semana.
+const VERSIONADOS = ["styles.css", "scripts.js"];
 
 // Assets que se precachean siempre, más allá de los logos del JSON.
 const ASSETS_FIJOS = [
@@ -250,19 +259,47 @@ function reemplazarRegion(contenido, nombre, cuerpo, comentario = "html") {
   return contenido.slice(0, desde) + "\n" + cuerpo + "\n" + sangria + contenido.slice(hasta);
 }
 
+// --- versionado de assets ---------------------------------------------------
+
+const hashArchivo = (f) =>
+  crypto.createHash("sha1").update(fs.readFileSync(path.join(DIR, f))).digest("hex").slice(0, 8);
+
+function versiones() {
+  return Object.fromEntries(VERSIONADOS.map((f) => [f, hashArchivo(f)]));
+}
+
+/**
+ * Reescribe solo el valor de href="styles.css…" / src="scripts.js…" (con o sin
+ * ?v= previo). No toca nada más del archivo.
+ */
+function versionarAssets(html, vers) {
+  let out = html;
+  for (const [f, v] of Object.entries(vers)) {
+    const re = new RegExp(`((?:href|src)=")${f.replace(".", "\\.")}(?:\\?v=[0-9a-f]*)?(")`, "g");
+    out = out.replace(re, `$1${f}?v=${v}$2`);
+  }
+  return out;
+}
+
 // --- service worker ----------------------------------------------------------
 
-function listaAssets(datos) {
+function listaAssets(datos, vers) {
   const logos = datos.categorias
     .flatMap((c) => (c.herramientas || []).filter((h) => !h.pendiente))
     .map((h) => "./" + h.logo);
 
-  const assets = [...ASSETS_FIJOS, ...new Set(logos)];
+  // Los versionados se precachean con la misma URL que pide la página, si no
+  // el caché nunca coincidiría con la petición.
+  const fijos = ASSETS_FIJOS.map((a) => {
+    const f = a.replace(/^\.\//, "");
+    return vers[f] ? `${a}?v=${vers[f]}` : a;
+  });
+  const assets = [...fijos, ...new Set(logos)];
 
   // cache.addAll es atómico: un solo 404 deja el service worker muerto.
   const faltantes = assets
     .filter((a) => a !== "./")
-    .filter((a) => !fs.existsSync(path.join(DIR, a.replace(/^\.\//, ""))));
+    .filter((a) => !fs.existsSync(path.join(DIR, a.replace(/^\.\//, "").replace(/\?.*$/, ""))));
   if (faltantes.length) throw new Error(`Assets inexistentes para el precache:\n  ${faltantes.join("\n  ")}`);
 
   return assets;
@@ -338,8 +375,12 @@ function main() {
     }
   }
 
+  const vers = versiones();
   let indexNuevo = reemplazarRegion(indexPrevio, "GRID", generarGrilla(datos));
   indexNuevo = reemplazarRegion(indexNuevo, "MODALES", generarModales(datos));
+  indexNuevo = versionarAssets(indexNuevo, vers);
+  const cualPrevio = fs.readFileSync(CUAL, "utf8");
+  const cualNuevo = versionarAssets(cualPrevio, vers);
 
   // El contrato botón ↔ modal, comprobado sobre lo que realmente se emitió.
   const referidos = [...indexNuevo.matchAll(/data-modal="([^"]+)"/g)].map((m) => m[1]).sort();
@@ -353,7 +394,7 @@ function main() {
     process.exit(1);
   }
 
-  const assets = listaAssets(datos);
+  const assets = listaAssets(datos, vers);
   const cacheName = `herramientas-ia-${hashContenido(indexNuevo)}`;
   let swNuevo = fs.readFileSync(SW, "utf8");
   swNuevo = reemplazarRegion(swNuevo, "CACHE", `const CACHE_NAME = "${cacheName}";`, "js");
@@ -367,16 +408,18 @@ function main() {
   if (soloComprobar) {
     const desactualizados = [];
     if (indexNuevo !== indexPrevio) desactualizados.push("index.html");
+    if (cualNuevo !== cualPrevio) desactualizados.push("cual.html");
     if (swNuevo !== fs.readFileSync(SW, "utf8")) desactualizados.push("sw.js");
     if (desactualizados.length) {
       console.error(`✗ Desactualizado: ${desactualizados.join(", ")}. Ejecutá: node build.js`);
       process.exit(1);
     }
-    console.log("✓ index.html y sw.js están al día");
+    console.log("✓ index.html, cual.html y sw.js están al día");
     return;
   }
 
   fs.writeFileSync(INDEX, indexNuevo);
+  fs.writeFileSync(CUAL, cualNuevo);
   fs.writeFileSync(SW, swNuevo);
 
   const resumen = datos.categorias
@@ -386,6 +429,7 @@ function main() {
   console.log(`  ${resumen}`);
   console.log(`✓ index.html: GRID (${activas.length} filas) + MODALES (${activas.length} bloques)`);
   console.log(`✓ sw.js: ${assets.length} assets · CACHE_NAME ${cacheName}`);
+  console.log(`✓ versiones: ${Object.entries(vers).map(([f, v]) => `${f}?v=${v}`).join(" · ")}`);
 }
 
 try {

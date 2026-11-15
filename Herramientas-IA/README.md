@@ -68,7 +68,7 @@ Al verificar un enlace, tené en cuenta que **muchos sitios responden 403 a `cur
 
 ## Reglas
 
-- **No edites `index.html` entre `<!-- BEGIN:… -->` y `<!-- END:… -->`**, ni `sw.js` entre `// BEGIN:…` y `// END:…`. Se pisan en el próximo build. Todo lo demás de esos archivos —el `<head>`, el tracking, el footer— se edita a mano como siempre.
+- **No edites `index.html` entre `<!-- BEGIN:… -->` y `<!-- END:… -->`**, ni `sw.js` entre `// BEGIN:…` y `// END:…`. Se pisan en el próximo build. Todo lo demás de esos archivos —el `<head>`, el tracking, el footer— se edita a mano como siempre. La única excepción es el `?v=…` de `styles.css` y `scripts.js` (en `index.html` y `cual.html`): también lo escribe el build.
 - **El `nombre` es lo que llega a Google Analytics** como parámetro `herramienta`. Si una herramienta se renombra, cambialo igual: mostrar un nombre que ya no existe da peor impresión que perder continuidad en un informe. Pero agregá el anterior a `nombresPrevios`, para poder sumar las dos etiquetas al leer GA4. `node build.js` avisa cuando detecta un renombre, y te recuerda documentarlo si te olvidaste.
 - **El `id` conviene dejarlo quieto** aunque cambie el nombre: fija el id del modal y el nombre del archivo de logo. Cambiarlo no rompe nada de cara afuera, solo obliga a renombrar el PNG.
 - **Nada de logos hotlinkeados.** Dependían de que otro sitio no cambiara ni bloqueara la descarga.
@@ -88,3 +88,4 @@ python3 -m http.server 8000   # previsualizar en http://localhost:8000/
 - `herramientas.json` → `build.js` → las dos regiones generadas de `index.html` y la lista de precache de `sw.js`. La salida es HTML estático: los buscadores ven los nombres y las descripciones, y la página funciona sin JavaScript.
 - `styles.css` es una sola hoja con los dos temas en variables. El tema se aplica con `data-theme` en `<html>`, que fija un script del `<head>` antes del primer pintado. Oscuro es el predeterminado; `cual.html` está fijada en claro.
 - `sw.js` usa red primero para el HTML y caché primero para el resto, y su `CACHE_NAME` lleva un hash del contenido: al regenerar, el caché viejo se borra solo y una herramienta nueva se ve en la primera recarga.
+- `styles.css` y `scripts.js` se referencian como `styles.css?v=<hash>`. El hosting los sirve con caché de 7 días, así que sin una URL nueva los celulares (y los nodos del CDN) podían seguir mostrando el CSS viejo durante una semana. **Si tocás `styles.css` o `scripts.js`, corré `node build.js`** aunque no hayas cambiado `herramientas.json`; `--check` avisa si te lo olvidaste.

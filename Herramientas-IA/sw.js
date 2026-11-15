@@ -8,7 +8,7 @@
 // invalidación deja de ser un paso manual que se olvida.
 
 // BEGIN:CACHE
-const CACHE_NAME = "herramientas-ia-c9312df8";
+const CACHE_NAME = "herramientas-ia-421fd350";
 // END:CACHE
 
 // BEGIN:ASSETS
@@ -16,8 +16,8 @@ const ASSETS = [
   "./",
   "./index.html",
   "./cual.html",
-  "./styles.css",
-  "./scripts.js",
+  "./styles.css?v=389eb1ec",
+  "./scripts.js?v=293c1942",
   "./manifest.json",
   "./favicon.ico",
   "./icon-192.png",
@@ -69,7 +69,9 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     caches
       .open(CACHE_NAME)
-      .then((cache) => cache.addAll(ASSETS))
+      // cache: "reload" saltea la caché HTTP del navegador: sin esto, addAll
+      // podía precachear un styles.css viejo guardado con max-age de 7 días.
+      .then((cache) => cache.addAll(ASSETS.map((u) => new Request(u, { cache: "reload" }))))
       .then(() => self.skipWaiting())
   );
 });
